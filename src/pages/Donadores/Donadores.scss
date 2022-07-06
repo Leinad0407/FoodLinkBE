@@ -1,0 +1,24 @@
+.container{
+    border: solid 1px black;
+}
+
+.row{
+    border: solid 1px black;
+    display: flex;
+    flex-direction: row;
+}
+
+.col{
+    border: solid 1px black;
+}
+
+img{
+    width: 50%;
+}
+
+.postContainer{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin: 2px 3px;
+}
