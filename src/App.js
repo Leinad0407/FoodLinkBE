@@ -7,7 +7,10 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      <h1 className="title">Hello world lwl</h1>
+      <Routes>
+        <Route path="/" element={<p>Estoy en el dashboard</p>} />
+        <Route path="about" element={<p>Estoy en about</p>} />
+      </Routes>
     </div>
   );
 }
