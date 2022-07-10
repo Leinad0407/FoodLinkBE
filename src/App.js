@@ -3,6 +3,7 @@ import "./App.scss";
 import "./sass/styles.scss";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.scss";
+import { FaBeer } from "react-icons/fa";
 
 //Components
 import Donadores from "./pages/Donadores";

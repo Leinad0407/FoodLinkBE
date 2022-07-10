@@ -4,6 +4,9 @@ import Form from "react-bootstrap/Form";
 import Stack from "react-bootstrap/Stack";
 import { Card } from "react-bootstrap";
 import Figure from "react-bootstrap/Figure";
+import { BiSearch } from "react-icons/bi";
+import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 export default function Donaciones() {
   const donaciones = [
@@ -75,7 +78,20 @@ export default function Donaciones() {
       </div>
       <div>{donacionesUI}</div>
       <div>
-        <h1>Footer</h1>
+        <img src="../public/logoFoodLink.PNG" alt="logo" />
+      </div>
+      <div>
+        <form>
+          <li>
+            <AiOutlineHome />
+          </li>
+          <li>
+            <BiSearch />
+          </li>
+          <li>
+            <AiOutlineUser />
+          </li>
+        </form>
       </div>
     </div>
   );

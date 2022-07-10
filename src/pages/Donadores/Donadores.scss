@@ -14,3 +14,17 @@
 .contenedorFigura{
     border: 1px solid black;
 }
+
+div form{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    justify-content: space-around;
+
+}
+
+div form li{
+    text-decoration: none;
+}
