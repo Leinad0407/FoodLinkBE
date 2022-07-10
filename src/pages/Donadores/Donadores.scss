@@ -1,24 +1,16 @@
-.container{
-    border: solid 1px black;
-}
+@import "~bootstrap/scss/bootstrap";
 
-.row{
-    border: solid 1px black;
-    display: flex;
-    flex-direction: row;
-}
-
-.col{
-    border: solid 1px black;
-}
-
-img{
-    width: 50%;
-}
-
-.postContainer{
-    display: flex;
-    flex-direction: row;
+.contenedorPadre{
     border: 1px solid black;
-    margin: 2px 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contenedorDescripcion{
+    border: 1px solid black;
+}
+
+.contenedorFigura{
+    border: 1px solid black;
 }

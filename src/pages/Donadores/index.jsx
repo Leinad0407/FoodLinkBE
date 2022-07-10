@@ -2,6 +2,8 @@ import "../Donadores/Donadores.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Stack from "react-bootstrap/Stack";
+import { Card } from "react-bootstrap";
+import Figure from "react-bootstrap/Figure";
 
 export default function Donaciones() {
   const donaciones = [
@@ -32,12 +34,30 @@ export default function Donaciones() {
   ];
 
   const donacionesUI = donaciones.map(({ photo, descripcion }) => (
-    <div className="postContainer">
-      <div>
-        <img alt="" src={photo} />
+    // <div className="postContainer">
+    //   <div>
+    //     <img alt="" src={photo} />
+    //   </div>
+    //   <div>
+    //     <p>{descripcion}</p>
+    //   </div>
+    // </div>
+
+    <div className="contenedorPadre">
+      <div className="contenedorFigura">
+        <Figure>
+          <Figure.Image width={400} height={409} alt="171x180" src={photo} />
+        </Figure>
       </div>
-      <div>
-        <p>{descripcion}</p>
+
+      <div className="contenedorDescripcion">
+        <Card style={{ width: "45rem" }}>
+          <Card.Body>
+            <Card.Title>Descripción</Card.Title>
+            <Card.Text>{descripcion}</Card.Text>
+            <Button variant="success">Seleccionar</Button>{" "}
+          </Card.Body>
+        </Card>
       </div>
     </div>
   ));
