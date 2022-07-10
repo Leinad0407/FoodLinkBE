@@ -4,6 +4,9 @@ import Form from "react-bootstrap/Form";
 import Stack from "react-bootstrap/Stack";
 import { Card } from "react-bootstrap";
 import Figure from "react-bootstrap/Figure";
+import { BiSearch } from "react-icons/bi";
+import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 export default function Donaciones() {
   const donaciones = [
@@ -43,15 +46,15 @@ export default function Donaciones() {
     //   </div>
     // </div>
 
-    <div className="contenedorPadre">
-      <div className="contenedorFigura">
+    <div className="postContainer">
+      <div className="figurePostContainer">
         <Figure>
-          <Figure.Image width={400} height={409} alt="171x180" src={photo} />
+          <Figure.Image className="photoPostContainer" src={photo} />
         </Figure>
       </div>
 
-      <div className="contenedorDescripcion">
-        <Card style={{ width: "45rem" }}>
+      <div className="descriptionContainer">
+        <Card>
           <Card.Body>
             <Card.Title>Descripción</Card.Title>
             <Card.Text>{descripcion}</Card.Text>
@@ -63,11 +66,16 @@ export default function Donaciones() {
   ));
 
   return (
-    <div>
-      <div>
-        <h1>Comida Disponible en tu area</h1>
+    <div className="fatherContainer">
+      <div className="titleContainer">
+        <span>
+          <h1 className="boldTitle">Comida Disponible </h1>
+        </span>
+        <span>
+          <h2 className="normalTitle">en tu area</h2>
+        </span>
       </div>
-      <div>
+      <div className="searchContainer">
         <Stack direction="horizontal" gap={1}>
           <Form.Control className="me-auto" placeholder="Buscar Platillo" />
           <Button variant="secondary">Buscar</Button>
@@ -75,7 +83,20 @@ export default function Donaciones() {
       </div>
       <div>{donacionesUI}</div>
       <div>
-        <h1>Footer</h1>
+        <img src="./public/logoFoodLink.PNG" alt="logo" />
+      </div>
+      <div className="utilitiesContainer">
+        <form>
+          <li>
+            <AiOutlineHome />
+          </li>
+          <li>
+            <BiSearch />
+          </li>
+          <li>
+            <AiOutlineUser />
+          </li>
+        </form>
       </div>
     </div>
   );
