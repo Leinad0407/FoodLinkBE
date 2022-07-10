@@ -7,6 +7,7 @@ import "./App.scss";
 //Components
 import Donadores from "./pages/Donadores";
 import Home from "./pages/Home"
+import Registro from "./pages/formularioRegistro";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </Routes> 
       <Routes>
         <Route path="/" element={<Home />} />
+      </Routes>
+      <Routes>
+        <Route path="/registro" element={<Registro />} />
       </Routes>
     </div>
   );
