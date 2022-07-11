@@ -2,15 +2,15 @@ import "../formularioRegistro/formularioRegistro.scss";
 
 export default function Registro(){
     return(
-        <div className="container ">
+        <div className="container">
             <section class="d-flex justify-content-center align-items-center">
-            <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
+            <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100">
                 <div class="mb-4 d-flex justify-content-start align-items-center">
               
-                <h2 class="text-success mt-4" >Registrate con Nosotros</h2>
+                <h2 class="text-success mt-4">Registrate con Nosotros</h2>
                 </div>
                 <div class="mb-1">
-                    <form id = "contacto" >
+                    <form id = "contacto">
                         <div class="mb-4 d-flex justify-content-between">
                             <div>
                                 <label for="nombre"> <i class="bi bi-person-fill"></i> Nombre</label>
@@ -74,7 +74,7 @@ export default function Registro(){
 
                     <div class="mb-4  ">
                         <label for="genero"><i class="bi bi-gender-ambiguous"></i> Genero:</label>
-                        <input type="radio" class="form-check-input p-3"  name="genero"  value="masculino" ></input> Masculino
+                        <input type="radio" class="form-check-input "  name="genero"  value="masculino" ></input> Masculino
                         <input type="radio" class="form-check-input" name="genero"  value="femenino" ></input> Femenino
                         <div class="genero text"></div>
                     </div>  
