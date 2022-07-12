@@ -6,12 +6,12 @@ import "./App.scss";
 
 //Components
 import Donadores from "./pages/Donadores";
-<<<<<<< HEAD
+
 import Home from "./pages/Home"
 import Registro from "./pages/formularioRegistro";
-=======
+
 import CreateDonations from "./pages/CreateDonations";
->>>>>>> daniel
+
 
 function App() {
   return (
