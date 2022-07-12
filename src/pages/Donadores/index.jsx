@@ -64,7 +64,7 @@ export default function Donaciones() {
           </Button>
         </Stack>
       </div>
-      <div>{donationsUI}</div>
+      <div id="main">{donationsUI}</div>
       <div>
         <img src="../../../public/logoFoodLink.PNG" alt="logo" />
       </div>

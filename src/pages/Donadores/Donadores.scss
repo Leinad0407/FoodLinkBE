@@ -9,6 +9,12 @@ $bgMainColor:#f2f4f4;
 
 
 $mainWeight: 500;
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .fatherContainer{
     background-color: $bgMainColor;
