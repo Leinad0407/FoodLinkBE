@@ -8,8 +8,6 @@ import "./App.scss";
 import Donadores from "./pages/Donadores";
 import Home from "./pages/Home";
 import Registro from "./pages/formularioRegistro";
-import Home from "./pages/Home";
-import Registro from "./pages/formularioRegistro";
 import CreateDonations from "./pages/CreateDonations";
 
 function App() {
@@ -17,12 +15,6 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/donadores" element={<Donadores />} />
-      </Routes>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
-        <Route path="/registro" element={<Registro />} />
       </Routes>
       <Routes>
         <Route path="/" element={<Home />} />
