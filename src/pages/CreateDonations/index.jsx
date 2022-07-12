@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
 import Form from "react-bootstrap/Form";
+import { createDonations } from "../../services/createPostDonations";
 
 export default function CreateDonations() {
   const [foodType, setFoodType] = useState("");
@@ -15,14 +16,37 @@ export default function CreateDonations() {
   const [donor, setDonor] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log("Jalando Ando");
+    const newDonation = {
+      foodType,
+      amount,
+      foodDescription,
+      city,
+      suburb,
+      estate,
+      street,
+      postalCode,
+      numberAdress,
+      donor,
+      phoneNumber,
+    };
+    try {
+      await createDonations(newDonation);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <h2>Sube tu comida</h2>
       <form>
-        <h3>Tipo de comida</h3>
+        <p>Tipo de comida</p>
         <div>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="disabledSelect">Food Type</Form.Label>
+            <Form.Label htmlFor="disabledSelect">Tipo de comida</Form.Label>
             <Form.Select id="disabledSelect">
               <option>Pollo</option>
               <option>Pescado</option>
