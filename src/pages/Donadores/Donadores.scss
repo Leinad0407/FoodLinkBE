@@ -1,5 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
 
+$mainColor: #57B186;
+$secondaryColor: #3C5298;
+$transparent: #9f9f9f0a;
+$lightgrey: #9f9f9f6c;
+
+$bgMainColor:#f2f4f4;
+
+
+$mainWeight: 500;
+
+.fatherContainer{
+    background-color: $bgMainColor;
+}
+
 body{
     width: 100%;
     display: flex;
@@ -8,40 +22,68 @@ body{
 }
 .postContainer{
     width: 90%;
-    border: 1px solid black;
+    border: 1px solid $lightgrey;
+    border-radius: 20px;
+    background-color: $lightgrey;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    margin: 8px;
+    margin: 1rem;
+    
+}
+
+.postContainer:hover{
+    background-color: $secondaryColor;
+    transform: scale(1.04);
+}
+.figure{
+    height: 200%;
 }
 
 .figurePostContainer{
     width: 30%;
+    
 }
 
 .photoPostContainer{
     width: 100%;
+    
 }
 
 .descriptionContainer{
+    // background-color: $transparent;
     text-align: justify;
     width: 100%;
 }
+.card{
+    background-color: $transparent;
+}
+.card-body{
+    background-color: $transparent;
+}
 
 .titleContainer{
-    border: 1px solid black;
+    
+    border-radius: 0 0 20px 20px;
     margin: 5px;
+    background-color: $bgMainColor;
+    box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+
 
 }
 
 .boldTitle{
     text-overflow: bold;
+    color: $secondaryColor;
+    font-weight: 700;
 }
 
-.ormalTitle{
-    color:aqua;
+.normalTitle{
+    color:$secondaryColor;
 }
 
 .searchContainer{
@@ -51,6 +93,7 @@ margin: 8px;
 
 .utilitiesContainer form{
     border: 1px solid black;
+    border-radius: 20px;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -62,5 +105,27 @@ margin: 8px;
 .utilitiesContainer form li{
     text-decoration: none;
 
+
+}
+
+//Empieza estilizado
+.selectButton{
+    border-radius: 10px;
+    background-color: $mainColor;
+    font-weight: $mainWeight;
+}
+
+.card-text{
+    text-transform:uppercase;
+}
+.searchContainer{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+#searchButton{
+    background-color: $secondaryColor;
+    font-weight: $mainWeight;
 
 }

@@ -35,9 +35,11 @@ export default function Donaciones() {
       <div className="descriptionContainer">
         <Card>
           <Card.Body>
-            <Card.Title>Descripción</Card.Title>
+            <Card.Title>Descripción:</Card.Title>
             <Card.Text>{foodDescription}</Card.Text>
-            <Button variant="success">Seleccionar</Button>
+            <Button className="selectButton" variant="success">
+              Seleccionar
+            </Button>
           </Card.Body>
         </Card>
       </div>
@@ -51,18 +53,20 @@ export default function Donaciones() {
           <h1 className="boldTitle">Comida Disponible </h1>
         </span>
         <span>
-          <h2 className="normalTitle">en tu area</h2>
+          <h2 className="normalTitle">en tu área</h2>
         </span>
       </div>
       <div className="searchContainer">
         <Stack direction="horizontal" gap={1}>
-          <Form.Control className="me-auto" placeholder="Buscar Platillo" />
-          <Button variant="secondary">Buscar</Button>
+          <Form.Control className="me-auto" placeholder="Buscar Platillo..." />
+          <Button id="searchButton" variant="secondary">
+            Buscar
+          </Button>
         </Stack>
       </div>
       <div>{donationsUI}</div>
       <div>
-        <img src="./public/logoFoodLink.PNG" alt="logo" />
+        <img src="../../../public/logoFoodLink.PNG" alt="logo" />
       </div>
       <div className="utilitiesContainer">
         <form>
