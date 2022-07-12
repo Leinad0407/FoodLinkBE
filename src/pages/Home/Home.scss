@@ -1,3 +1,94 @@
 body {
-    background-color: beige;
+    background-color: F2F4F4;
+    text-align: center;
+}
+
+
+.text-container {
+    background-color: #57B186;
+    color: whitesmoke;
+    height: 70px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.carousel-item {
+    height: 40vh;
+    min-height: 100px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+h1{
+    filter: drop-shadow(0 0 0.75rem  rgb(50, 50, 50));
+}
+
+.text-Welcome {
+   
+    text-align: center;
+    padding-top: px;
+}
+
+h2{
+    color: #57B186;
+   
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.btn-buscador {
+    background-color: #3C5298;
+    color: whitesmoke;
+    width: 220px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    margin: 15px auto 20px auto;
+    filter: drop-shadow(0 0 0.25rem  gray);
+}
+.btn-buscador:hover {
+    background-color: #2f4079;
+}
+
+
+.btn-donador {
+    background-color: #57B186;
+    color: whitesmoke;
+    width: 220px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    margin: 5px auto 15px auto;
+    filter: drop-shadow(0 0 0.25rem  gray);
+}
+
+.btn-donador:hover {
+    background-color: #408363;
+}
+
+
+.logo-container {
+    width: 300px;
+    height: 150px;
+    margin: 30px auto 0px auto;
+    text-align: center;
+    
+}
+
+
+.footer {
+    background-color: #3C5298;
+    height: 35px;
+    color: white;
+    text-align: center;
+    
 }
