@@ -9,56 +9,64 @@ import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { getDonations } from "../../services/postDonaciones";
 import { useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+
+import Header from "../../components/header/header";
 
 export default function Donaciones() {
   const [donations, setDonations] = useState([]);
+
+  //RRD
+  const navigate = useNavigate();
 
   //REQUEST A Donations
   useEffect(() => {
     const getDonationsQuery = async () => {
       const donations = await getDonations();
-      console.log(donations, "Respuesta del servidor");
+
       setDonations(donations);
     };
     getDonationsQuery();
   }, []);
-  console.log(donations, "STATE donations");
+  console.log(donations);
 
-  const donationsUI = donations.map(({ foodDescription, foodPhoto }) => (
-    <div className="postContainer">
-      <div className="figurePostContainer">
-        <Figure>
-          <Figure.Image className="photoPostContainer" src={foodPhoto} />
-        </Figure>
-      </div>
+  const donationsUI = donations.map(
+    ({ _id, foodDescription, foodPhoto, index }) => (
+      <div
+        key={index}
+        onClick={() => navigate(`detail/${_id}`)}
+        className="postContainer"
+      >
+        <div className="figurePostContainer">
+          <Figure>
+            <Figure.Image className="photoPostContainer" src={foodPhoto} />
+          </Figure>
+        </div>
 
-      <div className="descriptionContainer">
-        <Card>
-          <Card.Body>
-            <Card.Title>Descripción:</Card.Title>
-            <Card.Text>{foodDescription}</Card.Text>
-            <Button className="selectButton" variant="success">
-              Seleccionar
-            </Button>
-          </Card.Body>
-        </Card>
+        <div className="descriptionContainer">
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                <strong className="text-uppercase">Descripción:</strong>
+              </Card.Title>
+              <Card.Text>{foodDescription}</Card.Text>
+              <Button className="selectButton" variant="success">
+                Seleccionar
+              </Button>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
-    </div>
-  ));
+    )
+  );
 
   return (
     <div className="fatherContainer">
-      <div className="titleContainer">
-        <span>
-          <h1 className="boldTitle">Comida Disponible </h1>
-        </span>
-        <span>
-          <h2 className="normalTitle">en tu área</h2>
-        </span>
-      </div>
+      <Header ph1="Comida Disponible" ph2="en tu área" />
+
       <div className="searchContainer">
         <Stack direction="horizontal" gap={1}>
-          <Form.Control className="me-auto" placeholder="Buscar Platillo..." />
+          <Form.Control className="me-auto" placeholder="Buscar platillo..." />
           <Button id="searchButton" variant="secondary">
             Buscar
           </Button>
@@ -81,6 +89,7 @@ export default function Donaciones() {
           </li>
         </form>
       </div>
+      <Outlet />
     </div>
   );
 }

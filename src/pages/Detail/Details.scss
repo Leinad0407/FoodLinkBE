@@ -1,0 +1,43 @@
+@import "../Donadores/Donadores.scss";
+
+.img{
+    height:auto;
+    width: calc(100% - 5rem);
+    border-radius: 10px;
+    margin: 0 0 5rem 0 ;
+}
+#donorInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subtitle{
+    margin: 5rem 0 5rem 0 ;
+
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 90%;
+    background-color: $lightgrey;
+    box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+
+}
+#getButton{
+    border-radius: 10px;
+    background-color: $mainColor;
+    font-weight: $mainWeight;
+    width: 20rem;
+}
+
+Button{
+    
+    width: 10rem;
+}
+
+#backBtn{
+    margin: 1rem;
+    margin-right: calc(100% - 15rem);
+}
+
