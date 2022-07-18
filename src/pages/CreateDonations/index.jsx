@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import { createDonations } from "../../services/createPostDonations";
+import { postDonation } from "../../services/createPostDonations";
 
 export default function CreateDonations() {
   const [userID, setUserID] = useState("");
@@ -8,6 +8,7 @@ export default function CreateDonations() {
   const [foodPhoto, setFoodPhoto] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [tags, setTags] = useState([]);
   const [postedDate, setPostedDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
@@ -27,6 +28,7 @@ export default function CreateDonations() {
       foodPhoto,
       address,
       phoneNumber,
+      tags,
       postedDate,
       foodDescription,
       foodCondition,
@@ -37,9 +39,8 @@ export default function CreateDonations() {
       // postalCode,
       // numberAdress,
     };
-
     try {
-      await createDonations(newDonation);
+      await postDonation(newDonation);
     } catch (error) {
       console.error(error);
     }
@@ -85,6 +86,14 @@ export default function CreateDonations() {
           />
         </div>
         <div>
+          <p>Tags</p>
+          <input
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+            placeholder="tag"
+          />
+        </div>
+        <div>
           <input
             value={postedDate}
             onChange={(e) => setPostedDate(e.target.value)}
@@ -106,7 +115,9 @@ export default function CreateDonations() {
             placeholder="New or not new"
           />
         </div>
-        <button type="submit">Confirmar Donacion</button>
+        <button onClick={handleSubmit} type="submit">
+          Confirmar Donacion
+        </button>
         {/* <div>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledSelect">Tipo de comida</Form.Label>
