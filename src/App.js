@@ -9,17 +9,18 @@ import Donadores from "./pages/Donadores";
 // import Home from "./pages/Home";
 // import Registro from "./pages/formularioRegistro";
 import CreateDonations from "./pages/CreateDonations";
+import DonationDetail from "./pages/Detail/Detail";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="donations/detail/:id" element={<DonationDetail />} />
+
         <Route path="/donadores" element={<Donadores />} />
       </Routes>
       {/* <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
         <Route path="/registro" element={<Registro />} />
       </Routes> */}
       <Routes>
