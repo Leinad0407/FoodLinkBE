@@ -1,13 +1,13 @@
-import "../formularioRegistro/formularioRegistro.scss";
+import "../formularioRegistroDonador/formularioRegistroDonador.scss";
 
-export default function Registro(){
+export default function RegistroDonador(){
     return(
         <div className="container">
-            <section class="d-flex justify-content-center align-items-center">
-            <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100">
-                <div class="mb-4 d-flex justify-content-start align-items-center">
+            <section class="d-flex justify-content-center align-items-center mt-4">
+            <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100 ">
+                <div class="mb-4 d-flex justify-content-start align-items-center mt-4">
               
-                <h2 class="text-success text-center mt-4">Registrate con Nosotros</h2>
+                <h2 class="text-success text-center  mt-4">Registrate con Nosotros</h2>
                 </div>
                 <div class="mb-1">
                     <form id = "contacto">
@@ -65,11 +65,6 @@ export default function Registro(){
                         <input type="cel" class="form-control" name="telefono" id="telefono" placeholder= "ej: 6691008819" required></input>
                         <div class="telefono text"></div>
                         
-                    </div>
-                    <div>
-                        <label for="tipo"> <i class="bi bi-briefcase-fill"></i> Tipo de negocio</label>
-                        <input type="text" class="form-control" name="tipo" id="tipo" placeholder= "ej: Tienda abarrotes" required></input>
-                        <div class="tipo text "></div>
                     </div>
 
                     <div class="mb-4  ">
