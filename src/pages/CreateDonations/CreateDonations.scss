@@ -5,6 +5,10 @@ body{
     box-sizing: border-box;
 }
 
+h2{
+    margin: 40px;
+}
+
 .formDonations{
     display: flex;
     box-sizing: border-box;
@@ -26,43 +30,42 @@ body{
     margin: 2px;
 }
 
-.foodMesureAndDescription input{
-
+.foodMesureAndDescription div input{
+    size: "lg";
+    
 }
 
-
 .addresInfo{
-
-    margin: 15px;
-    display: flex;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: center;
+    margin: 30px;
 }
 
 .addresInfo div{
     margin: 15px;
 }
 
-.addresInfo div p{
+.addresInfo2{
+    display: flex;
+    flex-direction: row;
+}
+
+.addresInfo3{
+    display: flex;
+    flex-direction: row;
+}
+.addresInfo1 p{
     margin: 2px;
 }
 
-.addresInfo1{
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: row;
-    align-items: center;
+.addresInfo2 p{
+    margin: 2px;
 }
 
-.addresInfo2{
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: row;
-    align-items:center;
-
+.addresInfo3 p{
+    margin: 2px;
 }
 
 .personalInfo{

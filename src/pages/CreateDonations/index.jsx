@@ -140,7 +140,7 @@ export default function CreateDonations() {
           </div>
         </div>
         <div className="addresInfo">
-          <div>
+          <div className="addresInfo1">
             <p>Dirección</p>
             <input
               value={address}
@@ -148,33 +148,41 @@ export default function CreateDonations() {
               placeholder="calle, manzana y número"
             />
           </div>
-          <div className="addresInfo1">
-            <p>Colonia</p>
-            <input
-              value={neighborhood}
-              onChange={(e) => setNeighborhood(e.target.value)}
-              placeholder="Colonia"
-            />
-            <p>Ciudad</p>
-            <input
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              placeholder="Ciudad"
-            />
-          </div>
           <div className="addresInfo2">
-            <p>Estado</p>
-            <input
-              value={estate}
-              onChange={(e) => setEstate(e.target.value)}
-              placeholder="Estado"
-            />
-            <p>Codigo postal</p>
-            <input
-              value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
-              placeholder="Codigo postal"
-            />
+            <div>
+              <p>Colonia</p>
+              <input
+                value={neighborhood}
+                onChange={(e) => setNeighborhood(e.target.value)}
+                placeholder="Colonia"
+              />
+            </div>
+            <div>
+              <p>Ciudad</p>
+              <input
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="Ciudad"
+              />
+            </div>
+          </div>
+          <div className="addresInfo3">
+            <div>
+              <p>Estado</p>
+              <input
+                value={estate}
+                onChange={(e) => setEstate(e.target.value)}
+                placeholder="Estado"
+              />
+            </div>
+            <div>
+              <p>Codigo postal</p>
+              <input
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
+                placeholder="Codigo postal"
+              />
+            </div>
           </div>
         </div>
 
