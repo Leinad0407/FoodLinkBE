@@ -1,0 +1,90 @@
+body{
+    width: 100%;
+    background-color: #f4f4f6;
+    margin: 15px;
+    box-sizing: border-box;
+}
+
+.formDonations{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foodMesureAndDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foodMesureAndDescription div{
+    margin: 15px;
+}
+
+.foodMesureAndDescription div p{
+    margin: 2px;
+}
+
+.foodMesureAndDescription input{
+
+}
+
+
+.addresInfo{
+
+    margin: 15px;
+    display: flex;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.addresInfo div{
+    margin: 15px;
+}
+
+.addresInfo div p{
+    margin: 2px;
+}
+
+.addresInfo1{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addresInfo2{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items:center;
+
+}
+
+.personalInfo{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items:center;
+
+}
+
+.personalInfo div{
+    margin: 15px;
+}
+
+.personalInfo p{
+    margin: 2px;
+}
+
+button{
+    background-color: #16c281;
+}
+
+button:hover{
+    background-color: #60d360;
+}
