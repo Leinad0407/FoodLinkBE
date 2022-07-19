@@ -1,13 +1,20 @@
 export const postDonation = async (
   userID,
   food,
+  mesure,
   foodPhoto,
   address,
+  neighborhood,
+  city,
+  estate,
+  postalCode,
+  donor,
   phoneNumber,
   tags,
   postedDate,
   foodDescription,
-  foodCondition
+  foodCondition,
+  recommendations
 ) => {
   fetch("http://localhost:8080/donations", {
     method: "POST",
@@ -17,13 +24,20 @@ export const postDonation = async (
     body: JSON.stringify({
       userID,
       food,
+      mesure,
       foodPhoto,
       address,
+      neighborhood,
+      city,
+      estate,
+      postalCode,
+      donor,
       phoneNumber,
       tags,
       postedDate,
       foodDescription,
       foodCondition,
+      recommendations,
     }),
   });
 };

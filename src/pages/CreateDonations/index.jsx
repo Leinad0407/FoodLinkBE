@@ -49,6 +49,23 @@ export default function CreateDonations() {
     }
   };
 
+  const handleChangeFood = ({ target: { value } }, from) => {
+    if (
+      from === "typeFood" &&
+      "typeFood" === "Ensalada(huevo, pollo, jamón, atún o macarrones)"
+    ) {
+      setRecommendations((value = "Congele durante 3 días"));
+    } else if (from === "typeFood" && "typeFood" === "Hot Dogs") {
+      setRecommendations(
+        (value = "Mantenga a temperatura ambiente maximo 5 dias")
+      );
+    } else if (from === "typeFood" && "typeFood" === "Fiambre") {
+      setRecommendations(
+        (value = "Mantenga a temperatura ambiente maximo 5 dias")
+      );
+    }
+  };
+
   return (
     <div className="formDonation">
       <h2>Sube tu comida</h2>
@@ -57,65 +74,125 @@ export default function CreateDonations() {
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledSelect">Tipo de comida</Form.Label>
             <Form.Select id="disabledSelect">
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Ensalada(huevo, pollo, jamón, atún o macarrones)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Hot Dogs
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Fiambre
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Tocino
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Embutidos crudos (pollo, pavo, cerdo o res)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Embutidos bien cocidos (pollo, pavo, cerdo o res)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Salchcichas
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Hamburguesas
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Carne molida(pavo, pollo, tennera, cerdo o cordero)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Carne fresca de res, ternetra, cordero o cerdo (filetes,
                 chuletas, carne asada)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Jamón fresco
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Jamón cocido
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Pollo fresco (entero o en trozos)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Pescado de aleta (salmón, atún, mújol, etc)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Pescado blanco(bacalao, trucha marina, lenguado, etc)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Mariscos (cangrejo, langosta)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Mariscos (almejas, mejillones, ostras)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Mariscos (calamar)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Huevos (huevos crudos con cascara)
               </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
+              <option
+                value={food}
+                onChange={(e) => handleChangeFood(e, "foodType")}
+              >
                 Huevos (Claras y yemas de huvo crudas)
               </option>
             </Form.Select>
@@ -246,15 +323,15 @@ export default function CreateDonations() {
             </Form.Group>
           </div>
           <div className="recomendations">
-            <p>Recomendaciones</p>
+            <p>Recomendacion de guardado de alimento</p>
             <input
               value={recommendations}
-              onChange={(e) => setRecommendations(e.target.value)}
+              onChange={(e) => handleChangeFood(e, "recommendation")}
             />
           </div>
         </div>
+        <button type="submit">Confirmar Donacion</button>
       </form>
-      <button type="submit">Confirmar Donacion</button>
     </div>
   );
 }
