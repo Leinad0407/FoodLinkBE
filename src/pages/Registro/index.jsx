@@ -13,16 +13,16 @@ export default function Registro() {
             </h2>
         </div>
         <div>
-            <p>Username</p>
-            <input type="USERNAME" />
-            <p>Password</p>
-            <input type="CONTRASEÑA" />
+            <p>Usuario</p>
+            <input type="username" />
+            <p>Contraseña</p>
+            <input type="password" />
             <div>
                 <button className="Enter">Entrar</button>
             </div>
             <div>
             <p>Usuario Nuevo</p>
-                <button>Registrate</button>
+                <button className="Enter">Registrate</button>
             </div>
             <div>
                 <img src="" alt="Logo de foodlink aqui" className="Logo" />
