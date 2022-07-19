@@ -1,5 +1,14 @@
 
-
+.container {
+   
+    margin-top: 10%;
+    
+    
+}
+.containerSec{
+    background-color: #f2f4f4;
+    border-radius: 5%;
+}
 
 .pageTitle {
     color: #3c5298;
@@ -21,7 +30,13 @@
     background-color: #60d3b6;
     border-color: #60d3b6;
 }
-.Logo{
-    width: 10%;
-    height: 10%;
+.logo{
+    width: 100%;
+    height: 100%;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
 }

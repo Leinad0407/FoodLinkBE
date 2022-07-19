@@ -7,6 +7,7 @@ import "./App.scss";
 //Components
 
 import Registro from "./pages/Registro";
+import Tuperfil from "./pages/Tuperfil"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         
         <Route path="/Registro" element={<Registro />} />
+        <Route path="/Tuperfil" element={<Tuperfil />} />
       </Routes>
     </div>
   );
