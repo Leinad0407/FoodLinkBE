@@ -10,6 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Cartaperfil from "./CartaPerfil";
 
 
+
 export default function Tuperfil() {
     
     const [validated, setValidated] = useState(false);
@@ -109,7 +110,14 @@ export default function Tuperfil() {
           
           </Col>
         </Row>
+
+        <Col sm={1} className="Footer">
+        
        
+
+        </Col>
+
+              
       </Container>
         
        

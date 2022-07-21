@@ -3,6 +3,7 @@ import "./Registro.scss"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { RegisterButton } from "./RegisterButton";
 
 
 
@@ -18,10 +19,7 @@ export default function Registro() {
           <h1 className="pageTitle">
                 Registro
             </h1>
-            <h2>
-                Usuario existente
-            </h2>
-           
+                       
             <p>Usuario</p>
             <input type="username" placeholder="Ingresa tu usuario" />
             <p>Contraseña</p>
@@ -30,8 +28,8 @@ export default function Registro() {
                 <button className="Enter">Entrar</button>
             </div>
             <div>
-            <p>Usuario Nuevo</p>
-                <button className="Enter">Registrate</button>
+            <p className="newUser">Usuario Nuevo</p>
+                <RegisterButton></RegisterButton>
             </div>
             <div className="logo">
                 <img src="" alt="" />
