@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { RegisterButton } from "./RegisterButton";
+import { LogoutButton } from "./LogoutButton";
+import { WelcomeLogin } from "./WelcomeLogin";
 
 
 
@@ -30,6 +32,8 @@ export default function Registro() {
             <div>
             <p className="newUser">Usuario Nuevo</p>
                 <RegisterButton></RegisterButton>
+                <LogoutButton></LogoutButton>
+                <WelcomeLogin></WelcomeLogin>
             </div>
             <div className="logo">
                 <img src="" alt="" />
