@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
 
 export default function Donaciones() {
   const [donations, setDonations] = useState([]);
@@ -35,33 +36,29 @@ export default function Donaciones() {
       <div
         key={index}
         onClick={() => navigate(`detail/${_id}`)}
-        className="postContainer"
+        className="colpost col-lg-3"
+        id="postContainer"
       >
         <div className="figurePostContainer">
-          <Figure>
-            <Figure.Image className="photoPostContainer" src={foodPhoto} />
-          </Figure>
+          <Figure.Image className="foodPhoto" src={foodPhoto} />
         </div>
 
         <div className="descriptionContainer">
-          <Card>
-            <Card.Body>
-              <Card.Title>
-                <strong className="text-uppercase">Descripción:</strong>
-              </Card.Title>
-              <Card.Text>{foodDescription}</Card.Text>
-              <Button className="selectButton" variant="success">
-                Seleccionar
-              </Button>
-            </Card.Body>
-          </Card>
+          <Card.Body>
+            <strong className="text-uppercase">Descripción:</strong>
+
+            <Card.Text>{foodDescription}</Card.Text>
+            <Button className="selectButton" variant="success">
+              Seleccionar
+            </Button>
+          </Card.Body>
         </div>
       </div>
     )
   );
 
   return (
-    <div className="fatherContainer">
+    <div className="container">
       <Header ph1="Comida Disponible" ph2="en tu área" />
 
       <div className="searchContainer">
@@ -72,23 +69,26 @@ export default function Donaciones() {
           </Button>
         </Stack>
       </div>
-      <div id="main">{donationsUI}</div>
+      <div className="container " id="main">
+        <div className="row colpost">{donationsUI}</div>
+      </div>
       <div>
-        <img src="../../../public/logoFoodLink.PNG" alt="logo" />
+        <img
+          className="logoInMain"
+          src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
+          alt="logo"
+        />
       </div>
-      <div className="utilitiesContainer">
-        <form>
-          <li>
-            <AiOutlineHome />
-          </li>
-          <li>
-            <BiSearch />
-          </li>
-          <li>
-            <AiOutlineUser />
-          </li>
-        </form>
-      </div>
+      <div className="utilitiesContainer"></div>
+      <navbar className="navBar">
+        <AiOutlineHome size={80} className="navIcon" />
+
+        <BiSearch size={80} className="navIcon" />
+
+        <AiOutlineUser size={80} className="navIcon" />
+      </navbar>
+      <Footer />
+
       <Outlet />
     </div>
   );

@@ -9,9 +9,12 @@ $bgMainColor:#f2f4f4;
 
 
 $mainWeight: 500;
-#main{
+
+
+.colpost{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    
     align-items: center;
     justify-content: center;
 }
@@ -26,32 +29,32 @@ body{
     justify-content: center;
     align-items: center;
 }
-.postContainer{
-    width: 90%;
+#postContainer{
+    
     border: 1px solid $lightgrey;
     border-radius: 20px;
     background-color: $lightgrey;
-    box-sizing: border-box;
+    padding: 1rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    margin: 1rem;
+    margin: 1rem 
     
 }
 
-.postContainer:hover{
+#postContainer:hover{
     background-color: #3c51984f;
     transform: scale(1.04);
 }
-.figure{
+Figure.Image{
     height: 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.figurePostContainer{
-    width: 30%;
-    
-}
+
 
 .photoPostContainer{
     width: 100%;
@@ -94,7 +97,8 @@ body{
 
 .searchContainer{
 width: 45%;
-margin: 8px;
+margin-top: 2rem;
+margin-left: auto;
 }
 
 .utilitiesContainer form{
@@ -124,14 +128,58 @@ margin: 8px;
 .card-text{
     text-transform:uppercase;
 }
-.searchContainer{
-    margin-left: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
+// .searchContainer{
+//     margin-left: auto;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: flex-end;
+// }
 #searchButton{
     background-color: $secondaryColor;
     font-weight: $mainWeight;
 
 }
+
+.logoInMain{
+    margin: 2rem;
+}
+
+.navBar{
+    display: flex;
+   
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    height: 3rem;
+    width: 100%;
+    
+
+}
+.navIcon{
+    height: 2rem;
+    width: auto;
+    margin: 0 8rem;
+    color: $secondaryColor;
+
+}
+
+.navIcon:hover{
+    background-color: $lightgrey;
+    border-radius: 100%;
+    
+}
+ .foodPhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+ }
+
+ .figurePostContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+
+ }

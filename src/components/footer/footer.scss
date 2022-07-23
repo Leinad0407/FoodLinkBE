@@ -1,0 +1,23 @@
+@import "../../pages/Donadores/Donadores.scss";
+
+
+#firstPart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    align-content: space-around;
+    margin: 2rem;
+    
+
+}
+#fatherContainer{
+   
+    padding: 1.5rem;
+    text-transform: uppercase;
+
+    background-color: $secondaryColor;
+}
+.FoodLinkAddress{
+    margin-left: auto;
+}
