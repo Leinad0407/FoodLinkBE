@@ -23,6 +23,7 @@ function App() {
 
         <Route path="/registro" element={<Registro />} />
         <Route path="/registroDonador" element={<RegistroDonador />} />
+
         <Route path="/createDonations" element={<CreateDonations />} />
       </Routes>
     </div>

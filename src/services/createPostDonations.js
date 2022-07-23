@@ -1,19 +1,54 @@
-const generateconfig = (body) => {
-  return {
+export const postDonation = async (
+  userID,
+  food,
+  foodPhoto,
+  address,
+  phoneNumber,
+  tags,
+  postedDate,
+  foodDescription,
+  foodCondition
+) => {
+  fetch("http://localhost:8080/donations", {
     method: "POST",
     headers: {
-      "Content-Type": "Applications/JSON",
+      "Content-Type": "Application/JSON",
     },
-    body: JSON.stringify(body),
-  };
+    body: JSON.stringify({
+      userID,
+      food,
+      foodPhoto,
+      address,
+      phoneNumber,
+      tags,
+      postedDate,
+      foodDescription,
+      foodCondition,
+    }),
+  });
 };
 
-export const createDonations = async (body) => {
-  const requestConfig = generateconfig(body);
-  const response = await fetch(
-    "http://localhost:8080/donations",
-    requestConfig
-  );
-  const newDonation = response.json();
-  return newDonation;
-};
+// const postDonationSchema = new mongoose.Schema({
+//   userID: String,
+//   food: {
+//     type: String,
+//     required: true,
+//     // default: "pasta",
+//   },
+//   foodPhoto: {
+//     type: String,
+//     required: true,
+//   },
+//   address: {
+//     type: String,
+//     required: true,
+//   },
+//   phoneNumber: String,
+//   tags: Array,
+//   postedDate: {
+//     type: String,
+//     required: true,
+//   },
+//   foodDescription: String,
+//   foodCondition: String,
+// });
