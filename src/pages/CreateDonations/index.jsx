@@ -1,502 +1,102 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import { postDonation } from "../../services/createPostDonations";
-import Form from "react-bootstrap/Form";
+import "../.././services/createPostDonations";
+import { create as createPost } from "../../services/createPostDonations";
 
 export default function CreateDonations() {
   const [userID, setUserID] = useState("");
   const [food, setFood] = useState("");
-  const [mesure, setMesure] = useState("");
   const [foodPhoto, setFoodPhoto] = useState("");
   const [address, setAddress] = useState("");
-  const [neighborhood, setNeighborhood] = useState("");
-  const [city, setCity] = useState("");
-  const [estate, setEstate] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [donor, setDonor] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState("");
   const [postedDate, setPostedDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
-  const [recommendations, setRecommendations] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("Jalando Ando");
-    const newDonation = {
+    const data = {
       userID,
       food,
-      mesure,
       foodPhoto,
       address,
-      neighborhood,
-      city,
-      estate,
-      postalCode,
-      donor,
       phoneNumber,
       tags,
       postedDate,
       foodDescription,
       foodCondition,
-      recommendations,
     };
     try {
-      await postDonation(newDonation);
+      await createPost(data);
     } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleChangeFood = ({ target: { value } }, from) => {
-    if (
-      from === "typeFood" &&
-      "typeFood" === "Ensalada(huevo, pollo, jamón, atún o macarrones)"
-    ) {
-      setRecommendations((value = "Congele durante 3 días"));
-    } else if (from === "typeFood" && "typeFood" === "Hot Dogs") {
-      setRecommendations(
-        (value = "Mantenga a temperatura ambiente maximo 5 dias")
-      );
-    } else if (from === "typeFood" && "typeFood" === "Fiambre") {
-      setRecommendations(
-        (value = "Mantenga a temperatura ambiente maximo 5 dias")
-      );
+      console.log(error);
     }
   };
 
   return (
-    <div className="formDonation">
-      <h2>Sube tu comida</h2>
+    <div>
+      <div>
+        <h1>Sube tu comida</h1>
+      </div>
       <form onSubmit={handleSubmit}>
-        <div className="foodOption">
-          <Form.Group className="mb-3">
-            <Form.Label htmlFor="disabledSelect">Tipo de comida</Form.Label>
-            <Form.Select id="disabledSelect">
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Ensalada(huevo, pollo, jamón, atún o macarrones)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Hot Dogs
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Fiambre
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Tocino
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Embutidos crudos (pollo, pavo, cerdo o res)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Embutidos bien cocidos (pollo, pavo, cerdo o res)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Salchcichas
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Hamburguesas
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Carne molida(pavo, pollo, tennera, cerdo o cordero)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Carne fresca de res, ternetra, cordero o cerdo (filetes,
-                chuletas, carne asada)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Jamón fresco
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Jamón cocido
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Pollo fresco (entero o en trozos)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Pescado de aleta (salmón, atún, mújol, etc)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Pescado blanco(bacalao, trucha marina, lenguado, etc)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Mariscos (cangrejo, langosta)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Mariscos (almejas, mejillones, ostras)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Mariscos (calamar)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Huevos (huevos crudos con cascara)
-              </option>
-              <option
-                value={food}
-                onChange={(e) => handleChangeFood(e, "foodType")}
-              >
-                Huevos (Claras y yemas de huvo crudas)
-              </option>
-            </Form.Select>
-          </Form.Group>
-        </div>
-        <div className="foodMesureAndDescription">
-          <div>
-            <p>Cantidad</p>
-            <input
-              value={mesure}
-              onChange={(e) => setMesure(e.target.vale)}
-              placeholder="1, 2 personas?"
-            />
-          </div>
-          <div>
-            <p>Descripción de la comidad</p>
-            <input
-              value={foodDescription}
-              onChange={(e) => setFoodDescription(e.target.value)}
-              placeholder="Realiza una descripcion"
-            />
-          </div>
-        </div>
-        <div className="addresInfo">
-          <div className="addresInfo1">
-            <p>Dirección</p>
-            <input
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              placeholder="calle, manzana y número"
-            />
-          </div>
-          <div className="addresInfo2">
-            <div>
-              <p>Colonia</p>
-              <input
-                value={neighborhood}
-                onChange={(e) => setNeighborhood(e.target.value)}
-                placeholder="Colonia"
-              />
-            </div>
-            <div>
-              <p>Ciudad</p>
-              <input
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                placeholder="Ciudad"
-              />
-            </div>
-          </div>
-          <div className="addresInfo3">
-            <div>
-              <p>Estado</p>
-              <input
-                value={estate}
-                onChange={(e) => setEstate(e.target.value)}
-                placeholder="Estado"
-              />
-            </div>
-            <div>
-              <p>Codigo postal</p>
-              <input
-                value={postalCode}
-                onChange={(e) => setPostalCode(e.target.value)}
-                placeholder="Codigo postal"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="personalInfo">
-          <div className="donor">
-            <p>Donante</p>
-            <input
-              value={donor}
-              onChange={(e) => setDonor(e.target.value)}
-              placeholder="Nombre del donante"
-            />
-          </div>
-
-          <div className="telPhone">
-            <p>Telefono</p>
-            <input
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="5555555555"
-              type="tel"
-            />
-          </div>
-          <div className="tag">
-            <p>Tags</p>
-            <input
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
-              placeholder="tag"
-            />
-          </div>
-          <div className="dateFood">
-            <p>Fecha de preparación del alimento</p>
-            <input
-              value={postedDate}
-              onChange={(e) => setPostedDate(e.target.value)}
-              placeholder="Elije la fecha"
-              type="Date"
-            />
-          </div>
-
-          <div className="condition">
-            <p>Condicion en la que se encuentra la comida</p>
-            <input
-              value={foodCondition}
-              onChange={(e) => setFoodCondition(e.target.value)}
-              placeholder="Nueva o no es nueva?"
-            />
-          </div>
-
-          <div className="photo">
-            <Form.Group controlId="formFileLg" className="mb-3">
-              <Form.Label>
-                Sube la foto del alimento en donación aquí
-              </Form.Label>
-              <Form.Control
-                value={foodPhoto}
-                onChange={(e) => setFoodPhoto(e.target.value)}
-                type="file"
-                size="lg"
-              />
-            </Form.Group>
-          </div>
-          <div className="recomendations">
-            <p>Recomendacion de guardado de alimento</p>
-            <input
-              value={recommendations}
-              onChange={(e) => handleChangeFood(e, "recommendation")}
-            />
-          </div>
-        </div>
-        <button type="submit">Confirmar Donacion</button>
-      </form>
-    </div>
-  );
-}
-
-// const [amount, setAmount] = useState("");
-// const [suburb, setSuburb] = useState("");
-// const [estate, setEstate] = useState("");
-// const [street, setStreet] = useState("");
-// const [postalCode, setPostalCode] = useState("");
-// const [numberAdress, setNumberAdress] = useState("");
-
-// suburb,
-// estate,
-// street,
-// postalCode,
-// numberAdress,
-
-{
-  /* <div>
-          <Form.Group className="mb-3">
-            <Form.Label htmlFor="disabledSelect">Tipo de comida</Form.Label>
-            <Form.Select id="disabledSelect">
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Ensalada(huevo, pollo, jamón, atún o macarrones)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Hot Dogs
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Fiambre
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Tocino
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Embutidos crudos (pollo, pavo, cerdo o res)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Embutidos bien cocidos (pollo, pavo, cerdo o res)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Salchcichas
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Hamburguesas
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Carne molida(pavo, pollo, tennera, cerdo o cordero)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Carne fresca de res, ternetra, cordero o cerdo (filetes,
-                chuletas, carne asada)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Jamón fresco
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Jamón cocido
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Pollo fresco (entero o en trozos)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Pescado de aleta (salmón, atún, mújol, etc)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Pescado blanco(bacalao, trucha marina, lenguado, etc)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Mariscos (cangrejo, langosta)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Mariscos (almejas, mejillones, ostras)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Mariscos (calamar)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Huevos (huevos crudos con cascara)
-              </option>
-              <option value={food} onChange={(e) => setFood(e.target.value)}>
-                Huevos (Claras y yemas de huvo crudas)
-              </option>
-            </Form.Select>
-          </Form.Group>
-        </div> */
-}
-
-{
-  /* <div>
-          <p>Cantidad</p>
+        <div>
           <input
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="2 personas, 500g, etc"
+            value={userID}
+            onChange={(e) => setUserID(e.target.value)}
+            placeholder="Escribe tu nombre"
           />
-        </div> */
-}
-
-{
-  /* <div>
-          <p>Descripcion</p>
+        </div>
+        <div>
+          <input
+            value={food}
+            onChange={(e) => setFood(e.target.value)}
+            placeholder="Escribe el nombre del alimento"
+          />
+          <input
+            value={foodPhoto}
+            onChange={(e) => setFoodPhoto(e.target.value)}
+            placeholder="pega la url del alimento"
+            type="url"
+          />
+        </div>
+        <div>
+          <input
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="Escribe la ubicación del alimento a donar"
+          />
+          <input
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="Escribe el número telefónico de contacto"
+          />
+          <input
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+            placeholder="Escribe un hash tag"
+          />
+        </div>
+        <div>
+          <input
+            value={postedDate}
+            onChange={(e) => setPostedDate(e.target.value)}
+            type="date"
+          />
           <input
             value={foodDescription}
             onChange={(e) => setFoodDescription(e.target.value)}
-            placeholder="Realiza una pequeña descripción del alimento"
+            placeholder="Realiza una descripción del alimento"
           />
-        </div> */
-}
-{
-  /* <div>
-          <p>Direccion</p>
-          <div>
-        */
-}
-{
-  /* <div>
-              <p>Estado</p>
-              <input
-                value={estate}
-                onChange={(e) => setEstate(e.target.value)}
-              />
-            </div>
-          </div>
-          <div>
-            <div>
-              <p>Colonia</p>
-              <input
-                value={suburb}
-                onChange={(e) => setSuburb(e.target.value)}
-              />
-            </div>
-            <div>
-              <p>Calle</p>
-              <input
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-              />
-            </div>
-          </div>
-          <div>
-            <div>
-              <p>Numero</p>
-              <input
-                value={numberAdress}
-                onChange={(e) => setNumberAdress(e.target.value)}
-              />
-            </div>
-            <div>
-              <p>Codigo Postal</p>
-              <input
-                value={postalCode}
-                onChange={(e) => setPostalCode(e.target.value)}
-              />
-            </div> */
-}
-{
-  /* </div>
-        </div> */
-}
-
-{
-  /* <div>
-          <Form.Group controlId="formFileLg" className="mb-3">
-            <Form.Control type="file" size="lg" />
-          </Form.Group>
-        </div> */
+          <input
+            value={foodCondition}
+            onChange={(e) => setFoodCondition(e.target.value)}
+            placeholder="La comida es nueva o no es nueva?"
+          />
+        </div>
+        <button type="submit">Sube tu comida</button>
+      </form>
+    </div>
+  );
 }

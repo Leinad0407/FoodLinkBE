@@ -1,68 +1,19 @@
-export const postDonation = async (
-  userID,
-  food,
-  mesure,
-  foodPhoto,
-  address,
-  neighborhood,
-  city,
-  estate,
-  postalCode,
-  donor,
-  phoneNumber,
-  tags,
-  postedDate,
-  foodDescription,
-  foodCondition,
-  recommendations
-) => {
-  fetch("http://localhost:8080/donations", {
+const generateConfig = (body) => {
+  return {
     method: "POST",
     headers: {
       "Content-Type": "Application/JSON",
     },
-    body: JSON.stringify({
-      userID,
-      food,
-      mesure,
-      foodPhoto,
-      address,
-      neighborhood,
-      city,
-      estate,
-      postalCode,
-      donor,
-      phoneNumber,
-      tags,
-      postedDate,
-      foodDescription,
-      foodCondition,
-      recommendations,
-    }),
-  });
+    body: JSON.stringify(body),
+  };
 };
 
-// const postDonationSchema = new mongoose.Schema({
-//   userID: String,
-//   food: {
-//     type: String,
-//     required: true,
-//     // default: "pasta",
-//   },
-//   foodPhoto: {
-//     type: String,
-//     required: true,
-//   },
-//   address: {
-//     type: String,
-//     required: true,
-//   },
-//   phoneNumber: String,
-//   tags: Array,
-//   postedDate: {
-//     type: String,
-//     required: true,
-//   },
-//   foodDescription: String,
-//   foodCondition: String,
-// });
+export const create = async (body) => {
+  const requestConfig = generateConfig(body);
+  const response = await fetch(
+    "http://localhost:8080/donations",
+    requestConfig
+  );
+  const data = await response.json();
+  return data;
+};
