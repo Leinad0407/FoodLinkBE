@@ -5,6 +5,7 @@ import Stack from "react-bootstrap/Stack";
 import { Card } from "react-bootstrap";
 import Figure from "react-bootstrap/Figure";
 import { BiSearch } from "react-icons/bi";
+import { BiRestaurant } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { getDonations } from "../../services/postDonaciones";
@@ -36,7 +37,7 @@ export default function Donaciones() {
       <div
         key={index}
         onClick={() => navigate(`detail/${_id}`)}
-        className="colpost col-lg-3"
+        className="colpost  col-12 col-xl-3 col-lg-4 col-sm-12 col-xs-12"
         id="postContainer"
       >
         <div className="figurePostContainer">
@@ -50,6 +51,7 @@ export default function Donaciones() {
             <Card.Text>{foodDescription}</Card.Text>
             <Button className="selectButton" variant="success">
               Seleccionar
+              <BiRestaurant className="forkLogo" size={20}></BiRestaurant>
             </Button>
           </Card.Body>
         </div>
@@ -59,7 +61,7 @@ export default function Donaciones() {
 
   return (
     <div className="container">
-      <Header ph1="Comida Disponible" ph2="en tu área" />
+      <Header ph1="Comida Disponible " ph2=" en tu área" />
 
       <div className="searchContainer">
         <Stack direction="horizontal" gap={1}>
@@ -85,7 +87,11 @@ export default function Donaciones() {
 
         <BiSearch size={90} className="navIcon" />
 
-        <AiOutlineUser size={100} className="navIcon" />
+        <AiOutlineUser
+          size={100}
+          className="navIcon"
+          onClick={() => navigate("/profile")}
+        />
       </navbar>
       <Footer />
 

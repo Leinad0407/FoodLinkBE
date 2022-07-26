@@ -11,6 +11,8 @@ import Registro from "./pages/formularioRegistro";
 import RegistroDonador from "./pages/formularioRegistroDonador";
 import CreateDonations from "./pages/CreateDonations";
 import DonationDetail from "./pages/Detail/Detail";
+import Profile from "./pages/profile/profile";
+import ProfileEdit from "./pages/profileEdit/profileEdit";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
         <Route path="donations" element={<Donadores />} />
         <Route path="donations/detail/:id" element={<DonationDetail />} />
 
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Donadores />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/edit" element={<ProfileEdit />} />
 
         <Route path="/registro" element={<Registro />} />
         <Route path="/registroDonador" element={<RegistroDonador />} />

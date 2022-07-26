@@ -79,7 +79,7 @@ export default function DonationDetail() {
           </p>
           <p className="text-uppercase">
             <strong>Dirección:</strong>
-            <br /> {donation.addres}
+            <br /> {donation.address}
           </p>
           <p className="text-uppercase">
             <strong>Número de contacto: </strong>
