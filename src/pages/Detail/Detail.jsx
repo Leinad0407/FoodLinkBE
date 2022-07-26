@@ -26,7 +26,7 @@ export default function DonationDetail() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <Header ph1="Descripción de " ph2="la comida" />
       <Button
         id="backBtn"

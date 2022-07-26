@@ -81,11 +81,11 @@ export default function Donaciones() {
       </div>
       <div className="utilitiesContainer"></div>
       <navbar className="navBar">
-        <AiOutlineHome size={80} className="navIcon" />
+        <AiOutlineHome size={100} className="navIcon" />
 
-        <BiSearch size={80} className="navIcon" />
+        <BiSearch size={90} className="navIcon" />
 
-        <AiOutlineUser size={80} className="navIcon" />
+        <AiOutlineUser size={100} className="navIcon" />
       </navbar>
       <Footer />
 

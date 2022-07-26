@@ -1,4 +1,4 @@
-@import "../../pages/Donadores/Donadores.scss";
+// @import "../../pages/Donadores/Donadores.scss";
 
 
 #firstPart{
@@ -9,14 +9,13 @@
     align-content: space-around;
     margin: 2rem;
     
+    
 
 }
 #fatherContainer{
-   
     padding: 1.5rem;
     text-transform: uppercase;
-
-    background-color: $secondaryColor;
+    font-weight: 500;
 }
 .FoodLinkAddress{
     margin-left: auto;

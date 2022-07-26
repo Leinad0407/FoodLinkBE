@@ -40,13 +40,19 @@ body{
     flex-direction: row;
     justify-content: center;
     margin: 1rem 
+
     
 }
 
 #postContainer:hover{
     background-color: #3c51984f;
-    transform: scale(1.04);
+    // transform: scale(1.04);
+    & .figurePostContainer{
+        transform: scale(1.05);
+    }
 }
+
+
 Figure.Image{
     height: 200%;
     display: flex;
