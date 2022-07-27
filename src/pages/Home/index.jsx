@@ -3,21 +3,21 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
+import Header from "../../components/header/header";
+
 export default function Home() {
   return (
-    
-    <div className="container">
-    
-    <Carousel>
+    <div className="">
+      <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="./images/donacion4.jpg"
+            src="./images/donacion6.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h1>¿Buscas comida?</h1>
-            <p>Estas en el lugar indicado.</p>
+            <h1>Actualmente se desperdicia 30,000 toneladas de comida en México</h1>
+            <p class="caption-car">Con esto se podría alimentar a más de 20 millones de mexicanos.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -38,29 +38,30 @@ export default function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="./images/donacion2.jpg"
+            src="./images/donacion4.jpg"
             alt="Third slide"
           />
 
           <Carousel.Caption>
-            <h1>Frutas, Verduras y Comida en general</h1>
-            <p>1/3 del alimento que se produce en México se desperdicia.</p>
+            <h1>¿Buscas Comida?</h1>
+            <p class="caption-car">1/3 del alimento que se produce en México se desperdicia, nosotros te podemos ayudar.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
- <div className="text-container">
+      <div className="text-container">
         <h4>
           Comparte, evita el desperdicio y ayuda al planeta.
           <br /> La mejor app de donacion de comida
         </h4>
       </div>
+      <div className= "container">
+        <div class="text-Welcome">
+          <h2 id="welcome-text">Bienvenido a FoodLink®</h2>
+          <p >FOODLINK surge de la necesidad de reducir el desperdicio de la comida y el máximo aprovechamiento de los recursos que nos brinda nuestro planeta. El objetivo principal es 
+            generar las conexiones entre los donadores de comida con beneficiarios y asociaciones. ¿Que te gustaría hacer?</p> 
+        </div>
 
-      <div class="text-Welcome">
-        <h2 id="welcome-text">Bienvenido a FoodLink®</h2>
-        <p>que te gustaría hacer:</p>
-      </div>
-
-      <div className="card-container d-flex justify-content-around align-items-center h-100">
+      <div className="d-flex justify-content-around">
         <Card style={{ width: "25rem" }}>
           <Card.Img variant="top" src="/images/card1.jpg" />
           <Card.Body>
@@ -71,6 +72,9 @@ export default function Home() {
             </Card.Text>
             <Button className="btn-donador" variant="primary">
               Donar Comida
+            </Button>
+            <Button className="btn-donador" variant="primary">
+              Iniciar Sesión
             </Button>
           </Card.Body>
         </Card>
@@ -86,13 +90,21 @@ export default function Home() {
             <Button className="btn-buscador" variant="primary">
               ¿Buscas Comida?
             </Button>
+            <Button className="btn-buscador" variant="primary">
+              Iniciar Sesión
+            </Button>
           </Card.Body>
         </Card>
       </div>
 
       <div class="logo-container">
-        <img id="logo" src="./images/logo.png" width={300} height={83} />
+      <a class="logo-img" href="http://localhost:3000/">
+        <img src="./images/logo.png" alt="HTML tutorial" 
+       width={300} height={83} />
+          </a>
       </div>
+      </div>
+
 
       <div class="footer">
         <p>FoodLink®, Todos los derechos Reservados, 2022</p>

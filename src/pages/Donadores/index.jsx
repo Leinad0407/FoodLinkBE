@@ -66,7 +66,7 @@ export default function Donaciones() {
   ));
 
   return (
-    <div className="fatherContainer">
+    <div className="fatherContainer container">
       <div className="titleContainer">
         <span>
           <h1 className="boldTitle">Comida Disponible </h1>
