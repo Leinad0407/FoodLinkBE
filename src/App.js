@@ -10,11 +10,16 @@ import Home from "./pages/Home";
 import Registro from "./pages/formularioRegistro";
 import RegistroDonador from "./pages/formularioRegistroDonador";
 import CreateDonations from "./pages/CreateDonations";
+<<<<<<< HEAD
 import DonationDetail from "./pages/Detail/Detail";
 import Profile from "./pages/profile/profile";
 import ProfileEdit from "./pages/profileEdit/profileEdit";
 import UserDonations from "./pages/UserDonations/userDonations";
 import OrderReady from "./pages/OrderReady/orderReady";
+=======
+// import DonationDetail from "./pages/Detail/Detail";
+import Donors from "./pages/Donors";
+>>>>>>> daniel
 
 function App() {
   return (
@@ -37,6 +42,9 @@ function App() {
         <Route path="/registroDonador" element={<RegistroDonador />} />
 
         <Route path="/createDonations" element={<CreateDonations />} />
+      </Routes>
+      <Routes>
+        <Route path="/donors" element={<Donors />} />
       </Routes>
     </div>
   );
