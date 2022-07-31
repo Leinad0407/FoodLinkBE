@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.scss";
 import "./sass/styles.scss";
 import { Routes, Route, Link } from "react-router-dom";
@@ -29,7 +29,6 @@ function App() {
           path="donations/detail/:id/OrderReady"
           element={<OrderReady />}
         />
-
         <Route path="/" element={<Donadores />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
