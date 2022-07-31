@@ -10,6 +10,7 @@ import Donadores from "./pages/Donadores";
 // import Registro from "./pages/formularioRegistro";
 import CreateDonations from "./pages/CreateDonations";
 // import DonationDetail from "./pages/Detail/Detail";
+import Donors from "./pages/Donors";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/createDonations" element={<CreateDonations />} />
+      </Routes>
+      <Routes>
+        <Route path="/donors" element={<Donors />} />
       </Routes>
     </div>
   );
