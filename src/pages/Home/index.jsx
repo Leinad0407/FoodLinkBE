@@ -2,6 +2,8 @@ import "../Home/Home.scss";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 import Header from "../../components/header/header";
 
@@ -61,8 +63,10 @@ export default function Home() {
             generar las conexiones entre los donadores de comida con beneficiarios y asociaciones. ¿Que te gustaría hacer?</p> 
         </div>
 
-      <div className="d-flex justify-content-around">
-        <Card style={{ width: "25rem" }}>
+      <div >
+            <Row  className="d-flex justify-content-around" xs={1} md={2}>
+            <Col className="justify-content-center">
+          <Card style= {{ width: "25rem" }}>
           <Card.Img variant="top" src="/images/card1.jpg" />
           <Card.Body>
             <Card.Title>Donaciones</Card.Title>
@@ -78,8 +82,11 @@ export default function Home() {
             </Button>
           </Card.Body>
         </Card>
-
-        <Card style={{ width: "25rem" }}>
+          
+          </Col>
+        
+          <Col className="justify-content-center">
+          <Card style={{ width: "2  5rem" }}>
           <Card.Img variant="top" src="/images/card2.jpg" />
           <Card.Body>
             <Card.Title>Busqueda de comida</Card.Title>
@@ -95,6 +102,10 @@ export default function Home() {
             </Button>
           </Card.Body>
         </Card>
+          </Col>
+            </Row>
+          
+        
       </div>
 
       <div class="logo-container">
