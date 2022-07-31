@@ -144,6 +144,7 @@ margin-left: auto;
 #searchButton{
     background-color: $secondaryColor;
     font-weight: $mainWeight;
+    border-radius: 10px;
 
 }
 
@@ -165,14 +166,16 @@ margin-left: auto;
 .navIcon{
     height: 2rem;
     width: auto;
-    margin: 0 8rem;
+    margin: 1rem 10rem;
     color: $secondaryColor;
 
 }
 
 .navIcon:hover{
+    padding: 0.2rem;
     background-color: $lightgrey;
     border-radius: 100%;
+    transform: scale(1.05);
     
 }
  .foodPhoto{

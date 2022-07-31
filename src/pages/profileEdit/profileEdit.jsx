@@ -3,6 +3,10 @@ import TitAndSub from "../../components/tit&sub/tit&sub";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
+import { useState } from "react";
+
+//import de componentes necesarios
+import Footer from "../../components/footer/footer";
 
 //import de estilos//
 import "../profile/profile.scss";
@@ -10,16 +14,15 @@ import "../profile/profile.scss";
 export default function ProfileEdit() {
   const navigate = useNavigate();
   return (
-    <div className="container">
-      <Header className="col-12" ph1="Edita" ph2="  tu perfil" />
-
+    <div className="row container">
+      <Header className="col col-12" ph1="Edita" ph2="  tu perfil" />
       <Button
         id="backBtn"
-        className="selectButton"
+        className="col col-lg-2 selectButton"
         variant="success"
         onClick={() => navigate(-1)}
       >
-        <BsArrowLeft />
+        <BsArrowLeft size={25} />
       </Button>
       <img></img>
       <TitAndSub title="Nombre de usuario:" info="Aqui debe ir el nombre" />
@@ -29,11 +32,17 @@ export default function ProfileEdit() {
         title="Dirección de recolección:"
         info="Aqui debe ir el address"
       />
+
       <div id="profileButtons">
-        <Button onClick={() => navigate("edit")} variant="success">
+        <Button
+          className="col col-lg-2 selectButton"
+          onClick={() => navigate(-1)}
+          variant="success"
+        >
           Guardar mis datos
         </Button>
       </div>
+      <Footer />
     </div>
   );
 }

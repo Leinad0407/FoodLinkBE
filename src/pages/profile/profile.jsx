@@ -4,21 +4,28 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 
+//Import de componentes necesarios
+import Footer from "../../components/footer/footer";
+
 //import de estilos//
 import "./profile.scss";
 
 export default function Profile() {
   const navigate = useNavigate();
   return (
-    <div className="container">
-      <Header className="col-12" ph1="Detalle de" ph2="  tu perfil" />
+    <div className="container row">
+      <Header
+        className="col col-lg-12 col-12"
+        ph1="Detalle de"
+        ph2="  tu perfil"
+      />
       <Button
         id="backBtn"
-        className="selectButton"
+        className="col col-lg-2 selectButton"
         variant="success"
         onClick={() => navigate(-1)}
       >
-        <BsArrowLeft />
+        <BsArrowLeft size={25} />
       </Button>
       <img></img>
       <TitAndSub title="Nombre de usuario:" info="Aqui debe ir el nombre" />
@@ -29,12 +36,26 @@ export default function Profile() {
         info="Aqui debe ir el address"
       />
       <div id="profileButtons">
-        <Button onClick={() => navigate("edit")} variant="success">
+        <Button
+          className="col col-lg-2 selectButton"
+          onClick={() => navigate("edit")}
+          variant="success"
+        >
           {" "}
           Editar mis datos{" "}
         </Button>
-        <Button variant="success"> Mis Donaciones </Button>
+        {/* Este botón nos dirige a la pantalla donde podremos ver las donaciones
+        que ha realizado este usuario */}
+        <Button
+          onClick={() => navigate("donations")}
+          className=" col col-lg-2 selectButton"
+          variant="success"
+        >
+          {" "}
+          Mis Donaciones{" "}
+        </Button>
       </div>
+      <Footer />
     </div>
   );
 }

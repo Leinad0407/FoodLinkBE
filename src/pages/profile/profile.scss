@@ -1,5 +1,5 @@
 Button{
-
+    border-radius: 10px;
     padding: 0.5rem;
     height: 3rem;
     margin: 1rem;
@@ -8,4 +8,10 @@ Button{
     justify-content: center;
     
 
+}
+
+#backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

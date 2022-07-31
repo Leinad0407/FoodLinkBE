@@ -60,7 +60,7 @@ export default function Donaciones() {
   );
 
   return (
-    <div className="container">
+    <div className="row container">
       <Header ph1="Comida Disponible " ph2=" en tu área" />
 
       <div className="searchContainer">
@@ -83,7 +83,11 @@ export default function Donaciones() {
       </div>
       <div className="utilitiesContainer"></div>
       <navbar className="navBar">
-        <AiOutlineHome size={100} className="navIcon" />
+        <AiOutlineHome
+          onClick={() => navigate("/donations")}
+          size={100}
+          className="navIcon"
+        />
 
         <BiSearch size={90} className="navIcon" />
 

@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { retrieve as retrieveDonation } from "../../services/retrieveDonation";
 import { useNavigate } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 
 import Button from "react-bootstrap/Button";
 import "./Details.scss";
 
 import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
 
 export default function DonationDetail() {
   //Local State
@@ -26,56 +28,62 @@ export default function DonationDetail() {
   }, []);
 
   return (
-    <div className="container">
-      <Header ph1="Descripción de " ph2="la comida" />
+    <div className="row container">
+      <Header className="col col-lg-12" ph1="Descripción de " ph2="la comida" />
       <Button
         id="backBtn"
-        className="selectButton"
+        className="col col-lg-2 selectButton"
         variant="success"
         onClick={() => navigate(-1)}
       >
-        Regresar
+        <BsArrowLeft size={25} />
       </Button>
-      <div>
-        <img alt="Donors food" className="img" src={donation.foodPhoto}></img>
-        <p className="text-uppercase ">
-          <strong>Usuario donante:</strong> <br />
-          {donation.userID}
-        </p>
-        <p className="text-uppercase">
-          <strong>Fecha de creación:</strong> <br />
-          {donation.postedDate}
-        </p>
-        <p className="text-uppercase">
-          <strong>Comida:</strong> <br />
-          {donation.food}
-        </p>
-        <p className="text-uppercase">
-          <strong>Descripción:</strong> <br />
-          {donation.foodDescription}
-        </p>
-        <p className="text-uppercase" id="tags">
-          {donation.tags}
-        </p>
-        <p className="text-uppercase ">
-          <strong>Condición de comida:</strong> <br />
-          <span>{donation.foodCondition}</span>
-        </p>
+      <div className="row">
+        <img
+          className="col col-lg-12"
+          alt="Donors food"
+          id="img"
+          src={donation.foodPhoto}
+        ></img>
+        <div className="col col-lg-6" id="foodInfo">
+          <p className="text-uppercase ">
+            <strong>Usuario donante:</strong> <br />
+            {donation.userName}
+          </p>
+          <p className="text-uppercase">
+            <strong>Fecha de creación:</strong> <br />
+            {donation.postedDate}
+          </p>
+          <p className="text-uppercase">
+            <strong>Comida:</strong> <br />
+            {donation.food}
+          </p>
+          <p className="text-uppercase">
+            <strong>Descripción:</strong> <br />
+            {donation.foodDescription}
+          </p>
+          <p className="text-uppercase" id="tags">
+            {donation.tags}
+          </p>
+          <p className="text-uppercase ">
+            <strong>Condición de comida:</strong> <br />
+            <span>{donation.foodCondition}</span>
+          </p>
+          <Button
+            onClick={() => navigate("OrderReady")}
+            // id="getButton"
+            className=" col col-lg-4 selectButton"
+            variant="success"
+          >
+            PEDIR
+          </Button>
+        </div>
 
-        <Button
-          onClick={() => navigate(-1)}
-          // id="getButton"
-          className="selectButton"
-          variant="success"
-        >
-          PEDIR
-        </Button>
-
-        <div id="donorInfo">
+        <div className="col col-lg-6" id="donorInfo">
           <h4 className="subtitle">INFORMACIÓN DEL DONADOR</h4>
           <p className="text-uppercase">
             <strong>Nombre:</strong>
-            <br /> {donation.userID}
+            <br /> {donation.userName}
           </p>
           <p className="text-uppercase">
             <strong>Dirección:</strong>
@@ -93,6 +101,7 @@ export default function DonationDetail() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
