@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
+import { postDonation } from "../../services/createPostDonations";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
@@ -19,6 +20,7 @@ export default function CreateDonations() {
   const [expDate, setExpDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
+  const [recommendations, setRecommendations] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,6 +37,7 @@ export default function CreateDonations() {
       expDate,
       foodDescription,
       foodCondition,
+      recommendations,
     };
     console.log(data);
 
@@ -44,6 +47,7 @@ export default function CreateDonations() {
       console.log(error);
     }
   };
+
   //Recomendations
   const recomendaciones = (food) => {
     if (
