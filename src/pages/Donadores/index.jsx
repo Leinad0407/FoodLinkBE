@@ -60,8 +60,7 @@ export default function Donaciones() {
   );
 
   return (
-
-    <div className="fatherContainer container">
+    <div className=" container">
       <div className="titleContainer">
         <span>
           <h1 className="boldTitle">Comida Disponible </h1>
@@ -71,47 +70,48 @@ export default function Donaciones() {
         </span>
       </div>
 
-    <div className="row container">
-      <Header ph1="Comida Disponible " ph2=" en tu área" />
+      <div className="row container">
+        <Header ph1="Comida Disponible " ph2=" en tu área" />
 
+        <div className="searchContainer">
+          <Stack direction="horizontal" gap={1}>
+            <Form.Control
+              className="me-auto"
+              placeholder="Buscar platillo..."
+            />
+            <Button id="searchButton" variant="secondary">
+              Buscar
+            </Button>
+          </Stack>
+        </div>
+        <div className="container " id="main">
+          <div className="row colpost">{donationsUI}</div>
+        </div>
+        <div>
+          <img
+            className="logoInMain"
+            src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
+            alt="logo"
+          />
+        </div>
+        <div className="utilitiesContainer"></div>
+        <navbar className="navBar">
+          <AiOutlineHome
+            onClick={() => navigate("/donations")}
+            size={100}
+            className="navIcon"
+          />
 
-      <div className="searchContainer">
-        <Stack direction="horizontal" gap={1}>
-          <Form.Control className="me-auto" placeholder="Buscar platillo..." />
-          <Button id="searchButton" variant="secondary">
-            Buscar
-          </Button>
-        </Stack>
+          <BiSearch size={90} className="navIcon" />
+
+          <AiOutlineUser
+            size={100}
+            className="navIcon"
+            onClick={() => navigate("/profile")}
+          />
+        </navbar>
+        <Footer />
       </div>
-      <div className="container " id="main">
-        <div className="row colpost">{donationsUI}</div>
-      </div>
-      <div>
-        <img
-          className="logoInMain"
-          src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
-          alt="logo"
-        />
-      </div>
-      <div className="utilitiesContainer"></div>
-      <navbar className="navBar">
-        <AiOutlineHome
-          onClick={() => navigate("/donations")}
-          size={100}
-          className="navIcon"
-        />
-
-        <BiSearch size={90} className="navIcon" />
-
-        <AiOutlineUser
-          size={100}
-          className="navIcon"
-          onClick={() => navigate("/profile")}
-        />
-      </navbar>
-      <Footer />
-
-      <Outlet />
     </div>
   );
 }

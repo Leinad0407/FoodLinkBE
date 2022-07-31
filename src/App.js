@@ -7,12 +7,7 @@ import "./App.scss";
 //Components
 import Donadores from "./pages/Donadores";
 
-
-import Home from "./pages/Home"
-
-import CreateDonations from "./pages/CreateDonations";
-
-
+import Home from "./pages/Home";
 
 import Registro from "./pages/formularioRegistro";
 import RegistroDonador from "./pages/formularioRegistroDonador";
@@ -22,14 +17,16 @@ import Profile from "./pages/profile/profile";
 import ProfileEdit from "./pages/profileEdit/profileEdit";
 import UserDonations from "./pages/UserDonations/userDonations";
 import OrderReady from "./pages/OrderReady/orderReady";
-
+import Login from "./pages/Login/login";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="login" element={<Login />} />
+
         <Route path="donations/detail/:id" element={<DonationDetail />} />
-        <Route path="/donadores" element={<Donadores />} />
+
         <Route path="/" element={<Home />} />
         <Route path="donations" element={<Donadores />} />
         <Route path="donations/detail/:id" element={<DonationDetail />} />
@@ -37,7 +34,7 @@ function App() {
           path="donations/detail/:id/OrderReady"
           element={<OrderReady />}
         />
-        <Route path="/" element={<Donadores />} />
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
         <Route path="/profile/donations" element={<UserDonations />} />
