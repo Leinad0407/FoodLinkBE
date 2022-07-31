@@ -6,15 +6,14 @@ import "./App.scss";
 
 //Components
 import Donadores from "./pages/Donadores";
-<<<<<<< HEAD
+
 
 import Home from "./pages/Home"
-import Registro from "./pages/formularioRegistro";
 
 import CreateDonations from "./pages/CreateDonations";
 
-=======
-import Home from "./pages/Home";
+
+
 import Registro from "./pages/formularioRegistro";
 import RegistroDonador from "./pages/formularioRegistroDonador";
 import CreateDonations from "./pages/CreateDonations";
@@ -23,7 +22,7 @@ import Profile from "./pages/profile/profile";
 import ProfileEdit from "./pages/profileEdit/profileEdit";
 import UserDonations from "./pages/UserDonations/userDonations";
 import OrderReady from "./pages/OrderReady/orderReady";
->>>>>>> d5805e0e9b668dc8611def874a3ed36bddde4e6a
+
 
 function App() {
   return (
