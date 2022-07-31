@@ -60,8 +60,20 @@ export default function Donaciones() {
   );
 
   return (
+
+    <div className="fatherContainer container">
+      <div className="titleContainer">
+        <span>
+          <h1 className="boldTitle">Comida Disponible </h1>
+        </span>
+        <span>
+          <h2 className="normalTitle">en tu area</h2>
+        </span>
+      </div>
+
     <div className="row container">
       <Header ph1="Comida Disponible " ph2=" en tu área" />
+
 
       <div className="searchContainer">
         <Stack direction="horizontal" gap={1}>
