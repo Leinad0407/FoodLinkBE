@@ -658,19 +658,6 @@ export default function CreateDonations() {
                 </InputGroup.Text>
                 <Form.Control type="date" />
               </InputGroup>
-              {/* <InputGroup
-                value={expDate}
-                onChange={(e) => handleChangeDate(e, "expireDate")}
-              >
-                <InputGroup.Text>
-                  Fecha de expriración del alimento
-                </InputGroup.Text>
-                <Form.Control
-                  aria-label="Default"
-                  aria-describedby="inputGroup-sizing-default"
-                  type="date"
-                />
-              </InputGroup> */}
               <p
                 value={expDate}
                 onChange={(e) => handleChangeDate(e, "expireDate")}
