@@ -7,7 +7,7 @@ export default function Registro(){
             <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100">
                 <div class="mb-4 d-flex justify-content-start align-items-center">
               
-                <h2 class="text-success mt-4">Registrate con Nosotros</h2>
+                <h2 class="text-success text-center mt-4">Registrate con Nosotros</h2>
                 </div>
                 <div class="mb-1">
                     <form id = "contacto">
@@ -82,7 +82,7 @@ export default function Registro(){
                         <label for="nombre"> <i class="bi bi-person-fill"></i> Nombre de Usuario</label>
                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder= "ej: AaronKing21" required></input>
                         <div class="nombre text "></div>
-                    </div>
+                    </div><br></br>
 
                     <div class="mb-2">
                         <button id ="botton" class="col-12 btn btn-success d-flex justify-content-between  ">

@@ -1,15 +1,17 @@
-body {
-    background-color: F2F4F4;
-    text-align: center;
-}
+// body {
+//     background-color: F2F4F4;
+//     text-align: center;
+// }
 
 
 .text-container {
-    background-color: #57B186;
+    background-color: rgb(87, 178, 134);
     color: whitesmoke;
-    height: 70px;
+    height: 80px;
     text-align: center;
     margin-bottom: 30px;
+    padding-top: 9px;
+    padding-bottom: 8px;
 }
 
 .carousel-item {
@@ -22,8 +24,14 @@ body {
     background-size: cover;
   }
 
+  .caption-car {
+    font-weight: bolder;
+    filter: drop-shadow(0 0 0.75rem  rgb(50, 50, 50));
+  }
+
 h1{
     filter: drop-shadow(0 0 0.75rem  rgb(50, 50, 50));
+    background: rgba(87, 178, 134, 0.3)
 }
 
 .text-Welcome {
@@ -46,12 +54,14 @@ h2{
 .btn-buscador {
     background-color: #3C5298;
     color: whitesmoke;
-    width: 220px;
-    height: 50px;
+    // width: 240px;
+    // height: 50px;
+   
     border: none;
     border-radius: 8px;
     font-size: 25px;
-    margin: 15px auto 20px auto;
+    margin: 10px auto 10px auto;
+    font-weight: bold;
     filter: drop-shadow(0 0 0.25rem  gray);
 }
 .btn-buscador:hover {
@@ -62,12 +72,12 @@ h2{
 .btn-donador {
     background-color: #57B186;
     color: whitesmoke;
-    width: 220px;
-    height: 50px;
+    
     border: none;
     border-radius: 8px;
     font-size: 25px;
-    margin: 5px auto 15px auto;
+    margin: 10px auto 10px auto;
+    font-weight: bold;
     filter: drop-shadow(0 0 0.25rem  gray);
 }
 
@@ -84,10 +94,15 @@ h2{
     
 }
 
+.logo-img:hover {
+    transform: translateY(0) scale(1.2);
+}
+
 
 .footer {
     background-color: #3C5298;
-    height: 35px;
+    padding: 13px;
+    height: 50px;
     color: white;
     text-align: center;
     
