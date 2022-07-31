@@ -5,67 +5,62 @@ import Stack from "react-bootstrap/Stack";
 import { Card } from "react-bootstrap";
 import Figure from "react-bootstrap/Figure";
 import { BiSearch } from "react-icons/bi";
+import { BiRestaurant } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import { getDonations } from "../../services/postDonaciones";
+import { useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
 
 export default function Donaciones() {
-  const donaciones = [
-    {
-      photo:
-        "https://elpoderdelconsumidor.org/wp-content/uploads/2022/02/quesadillas-d-maiz-con-queso-y-flor-d-calabaza-b.jpg",
-      descripcion:
-        "Las quesadillas son uno de los platillos que no me canso de preparar. Me encanta tener tortillas disponibles en casa para prepararlas acompañadas de mis ingredientes favoritos",
-    },
-    {
-      photo:
-        "https://static-sevilla.abc.es/media/gurmesevilla/2014/06/receta-salteado-verduras-1.jpg",
-      descripcion:
-        "Las quesadillas son uno de los platillos que no me canso de preparar. Me encanta tener tortillas disponibles en casa para prepararlas acompañadas de mis ingredientes favoritos",
-    },
-    {
-      photo:
-        "https://elpoderdelconsumidor.org/wp-content/uploads/2022/02/quesadillas-d-maiz-con-queso-y-flor-d-calabaza-b.jpg",
-      descripcion:
-        "Las quesadillas son uno de los platillos que no me canso de preparar. Me encanta tener tortillas disponibles en casa para prepararlas acompañadas de mis ingredientes favoritos",
-    },
-    {
-      photo:
-        "https://static-sevilla.abc.es/media/gurmesevilla/2014/06/receta-salteado-verduras-1.jpg",
-      descripcion:
-        "Las quesadillas son uno de los platillos que no me canso de preparar. Me encanta tener tortillas disponibles en casa para prepararlas acompañadas de mis ingredientes favoritos",
-    },
-  ];
+  const [donations, setDonations] = useState([]);
 
-  const donacionesUI = donaciones.map(({ photo, descripcion }) => (
-    // <div className="postContainer">
-    //   <div>
-    //     <img alt="" src={photo} />
-    //   </div>
-    //   <div>
-    //     <p>{descripcion}</p>
-    //   </div>
-    // </div>
+  //RRD
+  const navigate = useNavigate();
 
-    <div className="postContainer">
-      <div className="figurePostContainer">
-        <Figure>
-          <Figure.Image className="photoPostContainer" src={photo} />
-        </Figure>
-      </div>
+  //REQUEST A Donations
+  useEffect(() => {
+    const getDonationsQuery = async () => {
+      const donations = await getDonations();
 
-      <div className="descriptionContainer">
-        <Card>
+      setDonations(donations);
+    };
+    getDonationsQuery();
+  }, []);
+  console.log(donations);
+
+  const donationsUI = donations.map(
+    ({ _id, foodDescription, foodPhoto, index }) => (
+      <div
+        key={index}
+        onClick={() => navigate(`detail/${_id}`)}
+        className="colpost  col-12 col-xl-3 col-lg-4 col-sm-12 col-xs-12"
+        id="postContainer"
+      >
+        <div className="figurePostContainer">
+          <Figure.Image className="foodPhoto" src={foodPhoto} />
+        </div>
+
+        <div className="descriptionContainer">
           <Card.Body>
-            <Card.Title>Descripción</Card.Title>
-            <Card.Text>{descripcion}</Card.Text>
-            <Button variant="success">Seleccionar</Button>{" "}
+            <strong className="text-uppercase">Descripción:</strong>
+
+            <Card.Text>{foodDescription}</Card.Text>
+            <Button className="selectButton" variant="success">
+              Seleccionar
+              <BiRestaurant className="forkLogo" size={20}></BiRestaurant>
+            </Button>
           </Card.Body>
-        </Card>
+        </div>
       </div>
-    </div>
-  ));
+    )
+  );
 
   return (
+
     <div className="fatherContainer container">
       <div className="titleContainer">
         <span>
@@ -75,29 +70,48 @@ export default function Donaciones() {
           <h2 className="normalTitle">en tu area</h2>
         </span>
       </div>
+
+    <div className="row container">
+      <Header ph1="Comida Disponible " ph2=" en tu área" />
+
+
       <div className="searchContainer">
         <Stack direction="horizontal" gap={1}>
-          <Form.Control className="me-auto" placeholder="Buscar Platillo" />
-          <Button variant="secondary">Buscar</Button>
+          <Form.Control className="me-auto" placeholder="Buscar platillo..." />
+          <Button id="searchButton" variant="secondary">
+            Buscar
+          </Button>
         </Stack>
       </div>
-      <div>{donacionesUI}</div>
+      <div className="container " id="main">
+        <div className="row colpost">{donationsUI}</div>
+      </div>
       <div>
-        <img src="./public/logoFoodLink.PNG" alt="logo" />
+        <img
+          className="logoInMain"
+          src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
+          alt="logo"
+        />
       </div>
-      <div className="utilitiesContainer">
-        <form>
-          <li>
-            <AiOutlineHome />
-          </li>
-          <li>
-            <BiSearch />
-          </li>
-          <li>
-            <AiOutlineUser />
-          </li>
-        </form>
-      </div>
+      <div className="utilitiesContainer"></div>
+      <navbar className="navBar">
+        <AiOutlineHome
+          onClick={() => navigate("/donations")}
+          size={100}
+          className="navIcon"
+        />
+
+        <BiSearch size={90} className="navIcon" />
+
+        <AiOutlineUser
+          size={100}
+          className="navIcon"
+          onClick={() => navigate("/profile")}
+        />
+      </navbar>
+      <Footer />
+
+      <Outlet />
     </div>
   );
 }
