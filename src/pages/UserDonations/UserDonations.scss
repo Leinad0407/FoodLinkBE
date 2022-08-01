@@ -1,12 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 
 
- body{
-   width: 100%;
-  display: flex;
- justify-content: center;
-  align-items: center;
-}
+// body{
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
 
  $mainColor: #57B186;
  $secondaryColor: #3C5298;
@@ -23,8 +23,6 @@ $bgMainColor:#f2f4f4;
   border: 1px solid black;
    box-sizing: border-box;
   }
- 
-
 
 .colpost{
    display: flex;
@@ -34,9 +32,9 @@ $bgMainColor:#f2f4f4;
    justify-content: center;
  }
 
-  .fatherContainer{
-   background-color: $bgMainColor;
-}
+//  .fatherContainer{
+//    background-color: $bgMainColor;
+// }
 
  body{
      width: 100%;
@@ -46,9 +44,9 @@ $bgMainColor:#f2f4f4;
  }
  #postContainer{
 
-    //  border: 1px solid $lightgrey;
+ border: 1px solid $lightgrey;
      border-radius: 20px;
-    //  background-color: $lightgrey;
+ background-color: $lightgrey;
      padding: 1rem;
 
      display: flex;
@@ -84,15 +82,15 @@ $bgMainColor:#f2f4f4;
  }
 
  .descriptionContainer{
-      background-color: $transparent;
+ background-color: $transparent;
     text-align: justify;
      width: 100%;
  }
  .card{
-     background-color: $transparent;
+background-color: $transparent;
  }
  .card-body{
-      background-color: $transparent;
+     background-color: $transparent;
  }
 
  .titleContainer{
@@ -109,12 +107,12 @@ $bgMainColor:#f2f4f4;
 
  .boldTitle{
      text-overflow: bold;
-     color: $secondaryColor;
+    color: $secondaryColor;
      font-weight: 700;
  }
 
  .normalTitle{
-    color:$secondaryColor;
+ color:$secondaryColor;
  }
 
  .searchContainer{
@@ -143,8 +141,8 @@ $bgMainColor:#f2f4f4;
  //Empieza estilizado
  .selectButton{
      border-radius: 10px;
-    background-color: $mainColor;
-    font-weight: $mainWeight;
+     background-color: $mainColor;
+     font-weight: $mainWeight;
      padding: 0.5rem;
  }
 
@@ -158,8 +156,8 @@ $bgMainColor:#f2f4f4;
      align-items: flex-end;
  }
  #searchButton{
-    background-color: $secondaryColor;
-    font-weight: $mainWeight;
+     background-color: $secondaryColor;
+     font-weight: $mainWeight;
      border-radius: 10px;
 
  }
@@ -184,12 +182,11 @@ $bgMainColor:#f2f4f4;
      width: auto;
      margin: 1rem 10rem;
      color: $secondaryColor;
-
  }
 
  .navIcon:hover{
      padding: 0.2rem;
-     background-color: $lightgrey;
+    background-color: $lightgrey;
      border-radius: 100%;
      transform: scale(1.05);
 
