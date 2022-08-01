@@ -17,6 +17,7 @@ import ProfileEdit from "./pages/profileEdit/profileEdit";
 import UserDonations from "./pages/UserDonations/userDonations";
 import OrderReady from "./pages/OrderReady/orderReady";
 import Login from "./pages/Login/login";
+import CreateDonations from "./pages/CreateDonations";
 
 function App() {
   return (
