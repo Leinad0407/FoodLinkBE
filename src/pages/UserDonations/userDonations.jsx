@@ -11,8 +11,8 @@ import { AiOutlineUser } from "react-icons/ai";
 import { getDonations } from "../../services/postDonaciones";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
-import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 
 export default function UserDonations() {
@@ -75,7 +75,23 @@ export default function UserDonations() {
           </span>
         </div>
       </div>
-
+      <div>
+        <Nav
+          activeKey="/home"
+          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+        >
+          <Nav.Item>
+            <Nav.Link href="/">Página principal</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/donorProfile">Editar Perfil</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/createDonations">Crear una Donación</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        );
+      </div>
       <div className="row container">
         <div className="searchContainer">
           <Stack direction="horizontal" gap={1}>
