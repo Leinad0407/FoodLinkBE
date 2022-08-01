@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import { postDonation } from "../../services/createPostDonations";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
@@ -20,7 +19,6 @@ export default function CreateDonations() {
   const [expDate, setExpDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
-  const [recommendations, setRecommendations] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,7 +35,6 @@ export default function CreateDonations() {
       expDate,
       foodDescription,
       foodCondition,
-      recommendations,
     };
     console.log(data);
 
@@ -460,15 +457,23 @@ export default function CreateDonations() {
   console.log(expDate);
 
   return (
-    <div>
-      <div className="tittlePostDonation">
-        <h1>Sube tu comida!!! :p</h1>
+    <div className="fatherContainer container">
+      <img
+        className="logoInMain"
+        src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
+        alt="logo"
+      />
+      <div className="titleContainer">
+        <span>
+          <h1 className="boldTitle">
+            Crea una donación mediante el siguiente formulario
+          </h1>
+        </span>
       </div>
-      <div className="fatherContainer">
+      <div className="postedContainer">
         <div>
-          <Form className="formContainer" onSubmit={handleSubmit}>
+          <Form className="mb-3" onSubmit={handleSubmit}>
             <div className="infoUser">
-              <h3>Formulario</h3>
               <InputGroup
                 className="mb-3"
                 id="inputGroup-sizing-default"
@@ -520,8 +525,9 @@ export default function CreateDonations() {
                 />
               </InputGroup>
             </div>
-            <div className="foodContainer">
+            <div className="mb-3">
               <InputGroup
+                className="mb-3"
                 value={food}
                 onChange={(e) => setFood(e.target.value)}
               >
@@ -642,6 +648,7 @@ export default function CreateDonations() {
                 </InputGroup.Text>
               </InputGroup>
               <InputGroup
+                className="mb-3"
                 value={foodPhoto}
                 onChange={(e) => setFoodPhoto(e.target.value)}
               >
@@ -654,6 +661,7 @@ export default function CreateDonations() {
                 />
               </InputGroup>
               <InputGroup
+                className="mb-3"
                 value={postedDate}
                 onChange={(e) => handleChangeDate(e, "actualDate")}
               >
@@ -662,13 +670,16 @@ export default function CreateDonations() {
                 </InputGroup.Text>
                 <Form.Control type="date" />
               </InputGroup>
+
               <p
+                className="mb-3"
                 value={expDate}
                 onChange={(e) => handleChangeDate(e, "expireDate")}
               >
                 Fecha de expiración: {expDate}
               </p>
               <InputGroup
+                className="mb-3"
                 value={foodDescription}
                 onChange={(e) => setFoodDescription(e.target.value)}
               >
@@ -680,6 +691,7 @@ export default function CreateDonations() {
                 />
               </InputGroup>
               <InputGroup
+                className="mb-3"
                 value={foodCondition}
                 onChange={(e) => setFoodCondition(e.target.value)}
               >
@@ -693,6 +705,7 @@ export default function CreateDonations() {
             </div>
             <div className="infoUser">
               <InputGroup
+                className="mb-3"
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
               >
@@ -704,10 +717,12 @@ export default function CreateDonations() {
                 />
               </InputGroup>
             </div>
-            <button type="submit">Sube tu comida</button>
+            <button id="botton" type="submit">
+              Sube tu comida
+            </button>
           </Form>
         </div>
-        <div>
+        <div className="descriptionContainer">
           <Card style={{ width: "30rem" }}>
             <Card.Body>
               <Card.Title>Tu donación</Card.Title>

@@ -111,6 +111,7 @@ export default function Donaciones() {
           />
         </navbar>
         <Footer />
+        <Outlet />
       </div>
     </div>
   );
