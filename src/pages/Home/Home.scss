@@ -1,9 +1,4 @@
-// body {
-//     background-color: F2F4F4;
-//     text-align: center;
-// }
-
-
+@import "../Donadores/Donadores.scss";
 .text-container {
     background-color: rgb(87, 178, 134);
     color: whitesmoke;
@@ -106,4 +101,7 @@ h2{
     color: white;
     text-align: center;
     
+}
+.btn{
+    margin: 0 0.5rem;
 }
