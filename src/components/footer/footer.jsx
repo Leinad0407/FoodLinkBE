@@ -10,7 +10,7 @@ export default function Footer() {
           Ciudad de México
         </p>
       </div>
-      <p> © 2022 FoodLink. Todos los derechos reservados. </p>
+      <p id="rights">© 2022 FoodLink. Todos los derechos reservados. </p>
     </div>
   );
 }

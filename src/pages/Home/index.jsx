@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/header/header";
-
+import Footer from "../../components/footer/footer";
 export default function Home() {
   const navigate = useNavigate();
   return (
@@ -77,10 +77,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="row">
-          <Row className="row d-flex justify-content-around" xs={1} md={2}>
-            <Col className="col col-6 justify-content-center">
-              <Card style={{ width: "25rem" }}>
+        <div className="col col-12">
+          <div className="row " xs={1} md={2}>
+            <Col className="col col-12 col-lg-6 justify-content-center">
+              <Card style={{ width: "2  5rem" }}>
                 <Card.Img variant="top" src="/images/card1.jpg" />
                 <Card.Body>
                   <Card.Title>Donaciones</Card.Title>
@@ -106,7 +106,7 @@ export default function Home() {
               </Card>
             </Col>
 
-            <Col className="col col-6 justify-content-center">
+            <Col className="col col-12 col-lg-6 justify-content-center">
               <Card style={{ width: "2  5rem" }}>
                 <Card.Img variant="top" src="/images/card2.jpg" />
                 <Card.Body>
@@ -132,24 +132,11 @@ export default function Home() {
                 </Card.Body>
               </Card>
             </Col>
-          </Row>
-        </div>
-
-        <div class="logo-container">
-          <a class="logo-img" href="http://localhost:3000/">
-            <img
-              src="./images/logo.png"
-              alt="HTML tutorial"
-              width={300}
-              height={83}
-            />
-          </a>
+          </div>
         </div>
       </div>
 
-      <div class="footer">
-        <p>FoodLink®, Todos los derechos Reservados, 2022</p>
-      </div>
+      <Footer />
     </div>
   );
 }

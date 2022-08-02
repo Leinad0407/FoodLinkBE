@@ -1,17 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 
 
-// body{
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-.postContainer{
-    width: 90%;
-    border: 1px solid black;
-    box-sizing: border-box;
-}
+
+
 $mainColor: #57B186;
 $secondaryColor: #3C5298;
 $transparent: #9f9f9f0a;
@@ -21,6 +12,11 @@ $bgMainColor:#f2f4f4;
 
 
 $mainWeight: 500;
+.postContainer{
+    width: 90%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
 
 
 .colpost{

@@ -60,19 +60,9 @@ export default function Donaciones() {
   );
 
   return (
-    <div className=" container">
-      <div className="titleContainer">
-        <span>
-          <h1 className="boldTitle">Comida Disponible </h1>
-        </span>
-        <span>
-          <h2 className="normalTitle">en tu area</h2>
-        </span>
-      </div>
-
+    <div>
+      <Header ph1="Comida Disponible " ph2=" en tu área" />
       <div className="row container">
-        <Header ph1="Comida Disponible " ph2=" en tu área" />
-
         <div className="searchContainer">
           <Stack direction="horizontal" gap={1}>
             <Form.Control
@@ -87,13 +77,7 @@ export default function Donaciones() {
         <div className="container " id="main">
           <div className="row colpost">{donationsUI}</div>
         </div>
-        <div>
-          <img
-            className="logoInMain"
-            src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
-            alt="logo"
-          />
-        </div>
+
         <div className="utilitiesContainer"></div>
         <navbar className="navBar">
           <AiOutlineHome
@@ -110,8 +94,8 @@ export default function Donaciones() {
             onClick={() => navigate("/profile")}
           />
         </navbar>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

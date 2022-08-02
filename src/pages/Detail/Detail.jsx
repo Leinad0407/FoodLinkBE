@@ -79,7 +79,7 @@ export default function DonationDetail() {
           </Button>
         </div>
 
-        <div className="col col-lg-6" id="donorInfo">
+        <div className="col col-lg-6 col-12" id="donorInfo">
           <h4 className="subtitle">INFORMACIÓN DEL DONADOR</h4>
           <p className="text-uppercase">
             <strong>Nombre:</strong>
