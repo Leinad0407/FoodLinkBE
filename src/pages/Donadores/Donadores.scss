@@ -22,7 +22,7 @@ $mainWeight: 500;
 .colpost{
     display: flex;
     flex-wrap: wrap;
-    
+    min-height: 25rem;
     align-items: center;
     justify-content: center;
 }
@@ -192,6 +192,8 @@ margin-left: auto;
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
+    max-height: 10rem;
+    width: 100%;
  }
 
  .figurePostContainer{

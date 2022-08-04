@@ -6,67 +6,69 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { useNavigate } from "react-router-dom";
 
-import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 export default function Home() {
   const navigate = useNavigate();
   return (
-    <div className="">
-      <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./images/donacion6.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h1>
-              Actualmente se desperdicia 30,000 toneladas de comida en México
-            </h1>
-            <p class="caption-car">
-              Con esto se podría alimentar a más de 20 millones de mexicanos.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./images/donacion5.jpg"
-            alt="Second slide"
-          />
+    <div>
+      <div className="row">
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/donacion6.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h1>
+                Actualmente se desperdicia 30,000 toneladas de comida en México
+              </h1>
+              <p class="caption-car">
+                Con esto se podría alimentar a más de 20 millones de mexicanos.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/donacion5.jpg"
+              alt="Second slide"
+            />
 
-          <Carousel.Caption>
-            <h1>¿Quieres donar comida?</h1>
-            <p class="caption-car">
-              Rescatamos alimento en tu ciudad, mientras evitamos el
-              desperdicio.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./images/donacion4.jpg"
-            alt="Third slide"
-          />
+            <Carousel.Caption>
+              <h1>¿Quieres donar comida?</h1>
+              <p class="caption-car">
+                Rescatamos alimento en tu ciudad, mientras evitamos el
+                desperdicio.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/donacion4.jpg"
+              alt="Third slide"
+            />
 
-          <Carousel.Caption>
-            <h1>¿Buscas Comida?</h1>
-            <p class="caption-car">
-              1/3 del alimento que se produce en México se desperdicia, nosotros
-              te podemos ayudar.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-      <div className="text-container">
-        <h4>
-          Comparte, evita el desperdicio y ayuda al planeta.
-          <br /> La mejor app de donacion de comida
-        </h4>
+            <Carousel.Caption>
+              <h1>¿Buscas Comida?</h1>
+              <p class="caption-car">
+                1/3 del alimento que se produce en México se desperdicia,
+                nosotros te podemos ayudar.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+        <div className=" text-container">
+          <h4>
+            Comparte, evita el desperdicio y ayuda al planeta.
+            <br /> La mejor app de donacion de comida
+          </h4>
+        </div>
       </div>
+
       <div className="container">
-        <div class="text-Welcome">
+        <div class=" text-Welcome">
           <h2 id="welcome-text">Bienvenido a FoodLink®</h2>
           <p>
             FOODLINK surge de la necesidad de reducir el desperdicio de la
@@ -82,7 +84,7 @@ export default function Home() {
             <Col className="col col-12 col-lg-6 justify-content-center">
               <Card style={{ width: "2  5rem" }}>
                 <Card.Img variant="top" src="/images/card1.jpg" />
-                <Card.Body>
+                <Card.Body className="butn row">
                   <Card.Title>Donaciones</Card.Title>
                   <Card.Text>
                     Con un click, tú puedes donar el alimento que necesitan para
@@ -95,23 +97,18 @@ export default function Home() {
                   >
                     Donar Comida
                   </Button>
-                  <Button
-                    onClick={() => navigate("/login")}
-                    className="btn-donador"
-                    variant="success"
-                  >
-                    Iniciar Sesión
-                  </Button>
                 </Card.Body>
               </Card>
             </Col>
 
-            <Col className="col col-12 col-lg-6 justify-content-center">
+            <Col className="col col-12 col-lg-6">
               <Card style={{ width: "2  5rem" }}>
                 <Card.Img variant="top" src="/images/card2.jpg" />
-                <Card.Body>
-                  <Card.Title>Busqueda de comida</Card.Title>
-                  <Card.Text>
+                <Card.Body className="butn row">
+                  <Card.Title className="text-transform-uppercase">
+                    Busqueda de comida
+                  </Card.Title>
+                  <Card.Text className="text-transform-lowercase">
                     Puedes buscar alimentos que necesitas, Sólo toma unos
                     segundos darte de alta y encontrar lugares con donaciones.
                   </Card.Text>
@@ -122,21 +119,32 @@ export default function Home() {
                   >
                     ¿Buscas Comida?
                   </Button>
-                  <Button
-                    onClick={() => navigate("/login")}
-                    className="btn-buscador"
-                    variant="success"
-                  >
-                    Iniciar Sesión
-                  </Button>
                 </Card.Body>
               </Card>
             </Col>
           </div>
         </div>
+        <div id="loginButton">
+          <Button
+            id="loginBtn"
+            onClick={() => navigate("/login")}
+            className="btn-donador"
+            variant="success"
+          >
+            Iniciar Sesión
+          </Button>
+          <Button
+            id="loginBtn"
+            onClick={() => navigate("/donations")}
+            variant="success"
+          >
+            Ver donaciones
+          </Button>
+        </div>
       </div>
-
-      <Footer />
+      <div className="row">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -7,7 +7,4 @@ export default function Header({ ph1, ph2 }) {
       </h4>
     </div>
   );
-
-
 }
-

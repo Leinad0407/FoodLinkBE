@@ -1,4 +1,4 @@
-// @import "../../pages/Donadores/Donadores.scss";
+@import "../../pages/Donadores/Donadores.scss";
 
 
 #firstPart{
@@ -16,6 +16,7 @@
     padding: 1.5rem;
     text-transform: uppercase;
     font-weight: 500;
+    border: 1px solid $secondaryColor;
 }
 .FoodLinkAddress{
     margin-left: auto;
