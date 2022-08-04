@@ -5,7 +5,10 @@ import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 import moment from "moment";
+import Nav from "react-bootstrap/Nav";
 
 export default function CreateDonations() {
   const [id, setId] = useState("");
@@ -457,13 +460,13 @@ export default function CreateDonations() {
   console.log(expDate);
 
   return (
-    <div className="fatherContainer container">
+    <div className="masterContainer container">
       <img
         className="logoInMain"
         src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
         alt="logo"
       />
-      <div className="titleContainer">
+      <div>
         <span>
           <h1 className="boldTitle">
             Crea una donación mediante el siguiente formulario
@@ -471,7 +474,7 @@ export default function CreateDonations() {
         </span>
       </div>
       <div className="postedContainer">
-        <div>
+        <div className="formContainer">
           <Form className="mb-3" onSubmit={handleSubmit}>
             <div className="infoUser">
               <InputGroup
@@ -717,13 +720,17 @@ export default function CreateDonations() {
                 />
               </InputGroup>
             </div>
-            <button id="botton" type="submit">
+            <button
+              className="col col-lg-2 selectButton"
+              type="submit"
+              size="lg"
+            >
               Sube tu comida
             </button>
           </Form>
         </div>
         <div className="descriptionContainer">
-          <Card style={{ width: "30rem" }}>
+          <Card variant="top" style={{ width: "100%" }}>
             <Card.Body>
               <Card.Title>Tu donación</Card.Title>
               <Card.Text>
@@ -750,6 +757,7 @@ export default function CreateDonations() {
           </Card>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

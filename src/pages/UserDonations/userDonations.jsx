@@ -84,7 +84,7 @@ export default function UserDonations() {
             <Nav.Link href="/">Página principal</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/donorProfile">Editar Perfil</Nav.Link>
+            <Nav.Link href="/profileEditDonors">Editar Perfil</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/createDonations">Crear una Donación</Nav.Link>
@@ -106,7 +106,6 @@ export default function UserDonations() {
         <div className="container " id="main">
           <div className="row colpost">{donationsUI}</div>
         </div>
-        <div className="utilitiesContainer"></div>
         <navbar className="navBar">
           <AiOutlineHome
             onClick={() => navigate("/donations")}

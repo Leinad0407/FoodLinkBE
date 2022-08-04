@@ -18,6 +18,7 @@ import UserDonations from "./pages/UserDonations/userDonations";
 import OrderReady from "./pages/OrderReady/orderReady";
 import Login from "./pages/Login/login";
 import CreateDonations from "./pages/CreateDonations";
+import ProfileEditDonors from "./pages/ProfileEditDonors/profileEditDonors";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/registro" element={<Registro />} />
         <Route path="/registroDonador" element={<RegistroDonador />} />
         <Route path="/createDonations" element={<CreateDonations />} />
+        <Route path="/profileEditDonors" element={<ProfileEditDonors />} />
       </Routes>
     </div>
   );
