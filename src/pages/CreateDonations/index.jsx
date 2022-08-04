@@ -8,6 +8,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
 export default function CreateDonations() {
@@ -458,9 +459,27 @@ export default function CreateDonations() {
     }
   };
   console.log(expDate);
+  //RRD
+  const navigate = useNavigate();
 
   return (
     <div className="masterContainer container">
+      <div>
+        <Nav
+          activeKey="/home"
+          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+        >
+          <Nav.Item>
+            <Nav.Link href="/">Página principal</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/profileEditDonors">Editar Perfil</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/profile/donations">Ir a tus donaciones</Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </div>
       <img
         className="logoInMain"
         src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
@@ -724,6 +743,8 @@ export default function CreateDonations() {
               className="col col-lg-2 selectButton"
               type="submit"
               size="lg"
+              onClick={() => navigate(-1)}
+              variant="success"
             >
               Sube tu comida
             </button>

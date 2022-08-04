@@ -1,8 +1,6 @@
-
-
-export default function RegistroDonador(){
-    return(
-        <div className="container">
+export default function RegistroDonador() {
+  return (
+    <div className="container">
       <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100">
           <div class="mb-4 d-flex justify-content-start align-items-center">
@@ -142,11 +140,7 @@ export default function RegistroDonador(){
                   {" "}
                   <i class="bi bi-person-fill"></i> Contraseña
                 </label>
-                <input
-                  type="password"
-                  class="form-control"
-                  required
-                ></input>
+                <input type="password" class="form-control" required></input>
                 <div class="nombre text "></div>
               </div>
               <div class="mb-4">
@@ -200,7 +194,6 @@ export default function RegistroDonador(){
                 <div class="nombre text "></div>
               </div>
               <br></br>
-             
 
               <div class="mb-2">
                 <button
