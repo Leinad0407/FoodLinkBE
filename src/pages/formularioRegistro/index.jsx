@@ -203,6 +203,19 @@ export default function Registro() {
                 <div class="nombre text "></div>
               </div>
               <br></br>
+              <div>
+                <label for="Password">
+                  {" "}
+                  <i class="bi bi-person-fill"></i> Contraseña
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  required
+                ></input>
+                <div class="nombre text "></div>
+              </div>
+              <br></br>
 
               <div class="mb-2">
                 <button
