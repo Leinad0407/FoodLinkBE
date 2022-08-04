@@ -90,7 +90,6 @@ export default function UserDonations() {
             <Nav.Link href="/createDonations">Crear una Donación</Nav.Link>
           </Nav.Item>
         </Nav>
-        );
       </div>
       <div className="row container">
         <div className="searchContainer">

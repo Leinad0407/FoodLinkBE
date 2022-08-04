@@ -60,16 +60,14 @@ export default function Donaciones() {
   );
 
   return (
-    <div>
-      <div className="fatherContainer container">
-        <div className="titleContainer">
-          <span>
-            <h1 className="boldTitle">Comida Disponible </h1>
-          </span>
-          <span>
-            <h2 className="normalTitle">en tu area</h2>
-          </span>
-        </div>
+    <div className=" container">
+      <div className="titleContainer">
+        <span>
+          <h1 className="boldTitle">Comida Disponible </h1>
+        </span>
+        <span>
+          <h2 className="normalTitle">en tu area</h2>
+        </span>
       </div>
 
       <div className="row container">
@@ -113,7 +111,6 @@ export default function Donaciones() {
           />
         </navbar>
         <Footer />
-
         <Outlet />
       </div>
     </div>
