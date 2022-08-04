@@ -1,4 +1,4 @@
-import "../formularioRegistroDonador/formularioRegistroDonador.scss";
+
 
 export default function RegistroDonador(){
     return(

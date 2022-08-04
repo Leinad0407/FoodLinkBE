@@ -1,4 +1,3 @@
-import "../formularioRegistro/formularioRegistro.scss";
 
 export default function Registro() {
   return (
