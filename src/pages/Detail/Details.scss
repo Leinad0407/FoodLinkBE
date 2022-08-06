@@ -18,14 +18,17 @@
 }
 .subtitle{
     margin: 2rem 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     padding: 1rem;
     border-radius: 10px;
     width: 100%;
     background-color: $lightgrey;
     box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
 
 }
 #getButton{
@@ -47,6 +50,10 @@ Button{
 }
 
 #foodInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 2rem 0;
 }
 
