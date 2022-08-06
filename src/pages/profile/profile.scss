@@ -1,17 +1,21 @@
-Button{
-    border-radius: 10px;
-    padding: 0.5rem;
-    height: 3rem;
-    margin: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// Button{
+//     border-radius: 10px;
+//     padding: 0.5rem;
+//     height: 3rem;
+//     margin: 1rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
     
 
+// }
+.selectButton{
+    margin: 1rem 0;
 }
 
-#backBtn{
+#profileInfo{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
