@@ -30,7 +30,6 @@ export default function Donaciones() {
     };
     getDonationsQuery();
   }, []);
-  console.log(donations);
 
   const donationsUI = donations.map(
     ({ _id, foodDescription, foodPhoto, index }) => (
@@ -97,6 +96,7 @@ export default function Donaciones() {
           </navbar>
         </div>
         <Footer />
+        <Outlet />
       </div>
     </div>
   );

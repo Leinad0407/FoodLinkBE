@@ -1,12 +1,15 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import { postDonation } from "../../services/createPostDonations";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
 export default function CreateDonations() {
   const [id, setId] = useState("");
@@ -20,7 +23,6 @@ export default function CreateDonations() {
   const [expDate, setExpDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
-  const [recommendations, setRecommendations] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,7 +39,6 @@ export default function CreateDonations() {
       expDate,
       foodDescription,
       foodCondition,
-      recommendations,
     };
     console.log(data);
 
@@ -458,17 +459,43 @@ export default function CreateDonations() {
     }
   };
   console.log(expDate);
+  //RRD
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="tittlePostDonation">
-        <h1>Sube tu comida!!! :p</h1>
+    <div className="masterContainer container">
+      <div>
+        <Nav
+          activeKey="/home"
+          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+        >
+          <Nav.Item>
+            <Nav.Link href="/">Página principal</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/profileEditDonors">Editar Perfil</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/profile/donations">Ir a tus donaciones</Nav.Link>
+          </Nav.Item>
+        </Nav>
       </div>
-      <div className="fatherContainer">
-        <div>
-          <Form className="formContainer" onSubmit={handleSubmit}>
+      <img
+        className="logoInMain"
+        src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
+        alt="logo"
+      />
+      <div>
+        <span>
+          <h1 className="boldTitle">
+            Crea una donación mediante el siguiente formulario
+          </h1>
+        </span>
+      </div>
+      <div className="postedContainer">
+        <div className="formContainer">
+          <Form className="mb-3" onSubmit={handleSubmit}>
             <div className="infoUser">
-              <h3>Formulario</h3>
               <InputGroup
                 className="mb-3"
                 id="inputGroup-sizing-default"
@@ -520,8 +547,9 @@ export default function CreateDonations() {
                 />
               </InputGroup>
             </div>
-            <div className="foodContainer">
+            <div className="mb-3">
               <InputGroup
+                className="mb-3"
                 value={food}
                 onChange={(e) => setFood(e.target.value)}
               >
@@ -642,6 +670,7 @@ export default function CreateDonations() {
                 </InputGroup.Text>
               </InputGroup>
               <InputGroup
+                className="mb-3"
                 value={foodPhoto}
                 onChange={(e) => setFoodPhoto(e.target.value)}
               >
@@ -654,6 +683,7 @@ export default function CreateDonations() {
                 />
               </InputGroup>
               <InputGroup
+                className="mb-3"
                 value={postedDate}
                 onChange={(e) => handleChangeDate(e, "actualDate")}
               >
@@ -662,13 +692,16 @@ export default function CreateDonations() {
                 </InputGroup.Text>
                 <Form.Control type="date" />
               </InputGroup>
+
               <p
+                className="mb-3"
                 value={expDate}
                 onChange={(e) => handleChangeDate(e, "expireDate")}
               >
                 Fecha de expiración: {expDate}
               </p>
               <InputGroup
+                className="mb-3"
                 value={foodDescription}
                 onChange={(e) => setFoodDescription(e.target.value)}
               >
@@ -680,6 +713,7 @@ export default function CreateDonations() {
                 />
               </InputGroup>
               <InputGroup
+                className="mb-3"
                 value={foodCondition}
                 onChange={(e) => setFoodCondition(e.target.value)}
               >
@@ -693,6 +727,7 @@ export default function CreateDonations() {
             </div>
             <div className="infoUser">
               <InputGroup
+                className="mb-3"
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
               >
@@ -704,11 +739,19 @@ export default function CreateDonations() {
                 />
               </InputGroup>
             </div>
-            <button type="submit">Sube tu comida</button>
+            <button
+              className="col col-lg-2 selectButton"
+              type="submit"
+              size="lg"
+              onClick={() => navigate(-1)}
+              variant="success"
+            >
+              Sube tu comida
+            </button>
           </Form>
         </div>
-        <div>
-          <Card style={{ width: "30rem" }}>
+        <div className="descriptionContainer">
+          <Card variant="top" style={{ width: "100%" }}>
             <Card.Body>
               <Card.Title>Tu donación</Card.Title>
               <Card.Text>
@@ -735,6 +778,7 @@ export default function CreateDonations() {
           </Card>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

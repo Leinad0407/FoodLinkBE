@@ -18,7 +18,7 @@ export default function ProfileEdit() {
       <div className="row">
         <Header className="col col-12" ph1="Edita" ph2="  tu perfil" />
         <Button
-          id="backBtn"
+          // id="backBtn"
           className="col col-lg-2 selectButton"
           variant="success"
           onClick={() => navigate(-1)}
@@ -26,7 +26,7 @@ export default function ProfileEdit() {
           <BsArrowLeft size={25} />
         </Button>
 
-        <div className="container row">
+        <div id="profileInfo" className="container">
           <img></img>
           <TitAndSub title="Nombre de usuario:" info="Aqui debe ir el nombre" />
           <TitAndSub
@@ -42,15 +42,13 @@ export default function ProfileEdit() {
             info="Aqui debe ir el address"
           />
 
-          <div id="profileButtons">
-            <Button
-              className="col col-lg-2 selectButton"
-              onClick={() => navigate(-1)}
-              variant="success"
-            >
-              Guardar mis datos
-            </Button>
-          </div>
+          <Button
+            className="col col-lg-2 selectButton"
+            onClick={() => navigate(-1)}
+            variant="success"
+          >
+            Guardar mis datos
+          </Button>
         </div>
 
         <Footer />

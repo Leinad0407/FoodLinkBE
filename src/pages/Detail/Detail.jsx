@@ -21,6 +21,7 @@ export default function DonationDetail() {
   useEffect(() => {
     const getDonation = async () => {
       const donation = await retrieveDonation(id);
+
       setDonation(donation);
     };
 
