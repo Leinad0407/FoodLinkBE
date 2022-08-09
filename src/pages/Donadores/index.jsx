@@ -17,6 +17,7 @@ import Footer from "../../components/footer/footer";
 
 export default function Donaciones() {
   const [donations, setDonations] = useState([]);
+  const [search, setSerarch] = useState("");
 
   //RRD
   const navigate = useNavigate();
@@ -32,8 +33,32 @@ export default function Donaciones() {
   }, []);
   console.log(donations);
 
-  const donationsUI = donations.map(
-    ({ _id, foodDescription, foodPhoto, index }) => (
+  //search function
+  const searcher = (e) => {
+    setSerarch(e.target.value);
+    console.log(e.target.value);
+  };
+
+  //filter method
+
+  const result = !search
+    ? donations
+    : donations.filter((dato) =>
+        dato.address.toUpperCase().includes(search.toUpperCase())
+      );
+  // let result = [];
+  // if (!search) {
+  //   result = donations;
+  // } else {
+  //   donations.filter((dato) => {
+  //     result = dato.foodDescription
+  //       .toUpperCase()
+  //       .includes(search.toUpperCase());
+  //   });
+  // }
+
+  const donationsUI = result.map(
+    ({ _id, foodDescription, foodPhoto, address, index }) => (
       <div
         key={index}
         onClick={() => navigate(`detail/${_id}`)}
@@ -76,8 +101,11 @@ export default function Donaciones() {
         <div className="searchContainer">
           <Stack direction="horizontal" gap={1}>
             <Form.Control
+              value={search}
+              onChange={searcher}
+              type="text"
               className="me-auto"
-              placeholder="Buscar platillo..."
+              placeholder="Filtrar por dirección"
             />
             <Button id="searchButton" variant="secondary">
               Buscar
