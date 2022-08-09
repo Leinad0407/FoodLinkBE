@@ -118,11 +118,14 @@ export default function UserDonations() {
       </div>
       <div className="row container">
         <div className="searchContainer">
+          <span></span>
+          <p>Alimento</p>
+
           <input
             value={search}
             onChange={searcher}
             type="text"
-            placeholder="Filtrar por alimento"
+            placeholder="Escriba el nombre del platillo"
             className="form-control"
           />
         </div>
