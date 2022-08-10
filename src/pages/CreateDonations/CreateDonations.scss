@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "../Donadores/Donadores.scss";
 // body{
 //     width: 100%;
 //     background-color: #f4f4f6;
@@ -20,7 +21,7 @@
     width: 100%;
     align-items:center;
     justify-content: center;  
-    margin: 3%;
+    // margin: 3%;
  
      
 }
@@ -34,10 +35,25 @@
     margin-right: 5%;  
 
 }
-.descriptionContainer{
-width: 93%;
+.previewContainer{
+width: 90%;
+background-color: $secondaryColor;
+padding: 1rem;
+color: white;
+border-radius: 20px;
 }
 
 .cardContainer{
     background-color: white;
+}
+
+.navLink{
+    margin: 1rem 1rem;
+    padding: 5px;
+    font-weight: $mainWeight;
+    color: $secondaryColor;
+}
+.navLink:hover{
+    color: $mainColor;
+    text-decoration: underline 5px;
 }

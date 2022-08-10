@@ -11,6 +11,8 @@ import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
+import { Button } from "react-bootstrap";
+
 export default function CreateDonations() {
   const [id, setId] = useState("");
   const [userName, setUserName] = useState("");
@@ -463,35 +465,41 @@ export default function CreateDonations() {
   const navigate = useNavigate();
 
   return (
-    <div className="masterContainer container">
-      <div>
+    <div>
+      <div className="row">
+        <Header
+          ph1="Crea una donación"
+          ph2="mediante el siguiente formulario"
+        />
         <Nav
           activeKey="/home"
           onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
         >
           <Nav.Item>
-            <Nav.Link href="/">Página principal</Nav.Link>
+            <Nav.Link className="navLink" href="/">
+              Página principal
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/profileEditDonors">Editar Perfil</Nav.Link>
+            <Nav.Link className="navLink" href="/profileEditDonors">
+              Editar Perfil
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/profile/donations">Ir a tus donaciones</Nav.Link>
+            <Nav.Link className="navLink" href="/profile/donations">
+              Ir a tus donaciones
+            </Nav.Link>
           </Nav.Item>
         </Nav>
       </div>
-      <img
-        className="logoInMain"
-        src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
-        alt="logo"
-      />
-      <div>
+
+      {/* <div>
         <span>
           <h1 className="boldTitle">
             Crea una donación mediante el siguiente formulario
           </h1>
         </span>
-      </div>
+      </div> */}
       <div className="postedContainer">
         <div className="formContainer">
           <Form className="mb-3" onSubmit={handleSubmit}>
@@ -739,18 +747,19 @@ export default function CreateDonations() {
                 />
               </InputGroup>
             </div>
-            <button
-              className="col col-lg-2 selectButton"
-              type="submit"
-              size="lg"
-              onClick={() => navigate(-1)}
-              variant="success"
-            >
-              Sube tu comida
-            </button>
+            <div className="d-flex align-items-center justify-content-center">
+              <Button
+                className="col col-lg-4 selectButton"
+                type="submit"
+                onClick={() => navigate(-1)}
+                variant="success"
+              >
+                Crea tu donación
+              </Button>
+            </div>
           </Form>
         </div>
-        <div className="descriptionContainer">
+        <div className="previewContainer d-flex align-items-center justify-content-center">
           <Card variant="top" style={{ width: "100%" }}>
             <Card.Body>
               <Card.Title>Tu donación</Card.Title>

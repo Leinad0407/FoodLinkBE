@@ -31,16 +31,16 @@ export default function DonationDetail() {
   return (
     <>
       <Header className="" ph1="Descripción de " ph2="la comida" />
+      <Button
+        id="backBtn"
+        className="col col-lg-2 selectButton"
+        variant="success"
+        onClick={() => navigate(-1)}
+      >
+        <BsArrowLeft size={25} />
+      </Button>
       <div>
         <div className="row" style={{ margin: "0px 160px" }}>
-          <Button
-            id="backBtn"
-            className="col col-lg-2 selectButton"
-            variant="success"
-            onClick={() => navigate(-1)}
-          >
-            <BsArrowLeft size={25} />
-          </Button>
           <div className="row">
             <img
               className="col col-lg-12"

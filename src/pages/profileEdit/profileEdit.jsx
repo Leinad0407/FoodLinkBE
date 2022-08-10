@@ -27,28 +27,33 @@ export default function ProfileEdit() {
         </Button>
 
         <div id="profileInfo" className="container">
-          <img></img>
-          <TitAndSub title="Nombre de usuario:" info="Aqui debe ir el nombre" />
-          <TitAndSub
-            title="Correo electrónico:"
-            info="Aqui debe ir el correo"
-          />
-          <TitAndSub
-            title="Número de contacto:"
-            info="Aqui debe ir el numero"
-          />
-          <TitAndSub
-            title="Dirección de recolección:"
-            info="Aqui debe ir el address"
-          />
+          <div id="containerGood" className="container">
+            <img></img>
+            <TitAndSub
+              title="Nombre de usuario:"
+              info="Aqui debe ir el nombre"
+            />
+            <TitAndSub
+              title="Correo electrónico:"
+              info="Aqui debe ir el correo"
+            />
+            <TitAndSub
+              title="Número de contacto:"
+              info="Aqui debe ir el numero"
+            />
+            <TitAndSub
+              title="Dirección de recolección:"
+              info="Aqui debe ir el address"
+            />
 
-          <Button
-            className="col col-lg-2 selectButton"
-            onClick={() => navigate(-1)}
-            variant="success"
-          >
-            Guardar mis datos
-          </Button>
+            <Button
+              className="col col-lg-2 selectButton"
+              onClick={() => navigate(-1)}
+              variant="success"
+            >
+              Guardar mis datos
+            </Button>
+          </div>
         </div>
 
         <Footer />

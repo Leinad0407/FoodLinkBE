@@ -24,47 +24,49 @@ export default function Profile() {
         >
           <BsArrowLeft size={25} />
         </Button>
-        <div id="profileInfo" className="container">
-          <img alt=""></img>
-          <TitAndSub
-            className="col col-lg-12"
-            title="Nombre de usuario:"
-            info="Aqui debe ir el nombre"
-          />
-          <TitAndSub
-            className="col col-lg-12"
-            title="Correo electrónico:"
-            info="Aqui debe ir el correo"
-          />
-          <TitAndSub
-            className="col col-lg-12"
-            title="Número de contacto:"
-            info="Aqui debe ir el numero"
-          />
-          <TitAndSub
-            className="col col-lg-12"
-            title="Dirección de recolección:"
-            info="Aqui debe ir el address"
-          />
+        <div className="container">
+          <div id="containerGood" className="container">
+            <img alt=""></img>
+            <TitAndSub
+              className="col col-lg-12"
+              title="Nombre de usuario:"
+              info="Aqui debe ir el nombre"
+            />
+            <TitAndSub
+              className="col col-lg-12"
+              title="Correo electrónico:"
+              info="Aqui debe ir el correo"
+            />
+            <TitAndSub
+              className="col col-lg-12"
+              title="Número de contacto:"
+              info="Aqui debe ir el numero"
+            />
+            <TitAndSub
+              className="col col-lg-12"
+              title="Dirección de recolección:"
+              info="Aqui debe ir el address"
+            />
 
-          <Button
-            className="col col-lg-2 selectButton"
-            onClick={() => navigate("edit")}
-            variant="success"
-          >
-            {" "}
-            Editar mis datos{" "}
-          </Button>
-          {/* Este botón nos dirige a la pantalla donde podremos ver las donaciones
+            <Button
+              className="col col-lg-2 selectButton"
+              onClick={() => navigate("edit")}
+              variant="success"
+            >
+              {" "}
+              Editar mis datos{" "}
+            </Button>
+            {/* Este botón nos dirige a la pantalla donde podremos ver las donaciones
         que ha realizado este usuario */}
-          <Button
-            onClick={() => navigate("donations")}
-            className=" col col-lg-2 selectButton"
-            variant="success"
-          >
-            {" "}
-            Mis Donaciones{" "}
-          </Button>
+            <Button
+              onClick={() => navigate("donations")}
+              className=" col col-lg-2 selectButton"
+              variant="success"
+            >
+              {" "}
+              Mis Donaciones{" "}
+            </Button>
+          </div>
         </div>
 
         <Footer />

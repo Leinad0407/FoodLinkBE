@@ -14,6 +14,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
 import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 
 export default function UserDonations() {
   const [donations, setDonations] = useState([]);
@@ -63,17 +64,8 @@ export default function UserDonations() {
 
   return (
     <div>
-      <div className="fatherContainer container">
-        <img
-          className="logoInMain"
-          src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
-          alt="logo"
-        />
-        <div className="titleContainer">
-          <span>
-            <h1 className="boldTitle">Tus Donaciones Activas</h1>
-          </span>
-        </div>
+      <div className="row">
+        <Header ph1="Tus donaciones" ph2="activas" />
       </div>
       <div>
         <Nav
