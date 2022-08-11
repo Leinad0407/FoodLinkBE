@@ -52,7 +52,15 @@ export default function Profile() {
           variant="success"
         >
           {" "}
-          Mis Donaciones{" "}
+          Donaciones Activas{" "}
+        </Button>
+        <Button
+          onClick={() => navigate("bookedDonations")}
+          className=" col col-lg-2 selectButton"
+          variant="success"
+        >
+          {" "}
+          Donaciones Apartadas{" "}
         </Button>
       </div>
       <Footer />
