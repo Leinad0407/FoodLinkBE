@@ -8,7 +8,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import moment from "moment";
-import Nav from "react-bootstrap/Nav";
 
 export default function CreateDonations() {
   const [id, setId] = useState("");
@@ -650,19 +649,21 @@ export default function CreateDonations() {
                   </Form.Select>
                 </InputGroup.Text>
               </InputGroup>
-              <InputGroup
-                className="mb-3"
-                value={foodPhoto}
-                onChange={(e) => setFoodPhoto(e.target.value)}
-              >
-                <InputGroup.Text>Foto</InputGroup.Text>
-                <Form.Control
-                  aria-label="Default"
-                  aria-describedby="inputGroup-sizing-default"
-                  placeholder="pega la url del alimento"
-                  type="url"
-                />
-              </InputGroup>
+              <div class="dropzone">
+                <InputGroup
+                  className="mb-3"
+                  value={foodPhoto}
+                  onChange={(e) => setFoodPhoto(e.target.value)}
+                >
+                  <InputGroup.Text>Foto</InputGroup.Text>
+                  <Form.Control
+                    aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default"
+                    placeholder="pega la url del alimento"
+                    type="url"
+                  />
+                </InputGroup>
+              </div>
               <InputGroup
                 className="mb-3"
                 value={postedDate}
