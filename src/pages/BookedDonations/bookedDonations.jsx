@@ -10,7 +10,9 @@ import { useNavigate } from "react-router-dom";
 
 //importamos cosas de bootstrap//
 import { Figure, Card, Button } from "react-bootstrap";
+import { BsArrowLeft } from "react-icons/bs";
 import { BiRestaurant } from "react-icons/bi";
+import { changeStatus } from "../../services/changeDonationStatus";
 
 //importamos servicios a utilizar
 
@@ -30,11 +32,12 @@ export default function BookedDonations() {
     getDonationsQuery();
   }, []);
   console.log(bookedDonations);
+
   const donationsUI = bookedDonations.map(
     ({ _id, foodDescription, foodPhoto, index }) => (
       <div
         key={index}
-        onClick={() => navigate(`detail/${_id}`)}
+        // onClick={() => navigate(`detail/${_id}`)}
         className="colpost  col-12 col-xl-3 col-lg-4 col-sm-12 col-xs-12"
         id="postContainer"
       >
@@ -47,9 +50,12 @@ export default function BookedDonations() {
             <strong className="text-uppercase">Descripción:</strong>
 
             <Card.Text>{foodDescription}</Card.Text>
-            <Button className="selectButton" variant="success">
-              Seleccionar
-              <BiRestaurant className="forkLogo" size={20}></BiRestaurant>
+            <Button
+              onClick={() => console.log("jala")}
+              className="selectButton"
+              variant="danger"
+            >
+              NO RECOLECTADO
             </Button>
           </Card.Body>
         </div>
@@ -60,6 +66,14 @@ export default function BookedDonations() {
     <div className="row">
       <Header ph1="Donaciones" ph2="apartadas" />
       <div className="container " id="main">
+        <Button
+          id="backBtn"
+          className="col col-lg-2 selectButton"
+          variant="success"
+          onClick={() => navigate(-1)}
+        >
+          <BsArrowLeft size={25} />
+        </Button>
         <div className="row colpost">{donationsUI}</div>
       </div>
 

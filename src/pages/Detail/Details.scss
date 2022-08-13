@@ -5,11 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height:auto;
-    width: 100%;
+    max-height:70vh;
+    width: auto;
     border-radius: 10px;
     margin: 0 0 2rem 0 ;
     border: 1px solid $lightgrey;
+}
+#img:hover{
+    border-radius: 45px;
+    opacity: 85%;
 }
 #donorInfo{
     display: flex;

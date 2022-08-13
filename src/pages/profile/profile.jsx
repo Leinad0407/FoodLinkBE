@@ -16,15 +16,16 @@ export default function Profile() {
     <div>
       <div className="row">
         <Header className="" ph1="Detalle de" ph2="  tu perfil" />
-        <Button
-          // id="backBtn"
-          className="col col-lg-2 selectButton"
-          variant="success"
-          onClick={() => navigate(-1)}
-        >
-          <BsArrowLeft size={25} />
-        </Button>
+
         <div id="profileInfo" className="container">
+          <Button
+            // id="backBtn"
+            className="col col-lg-2 backButton"
+            variant="success"
+            onClick={() => navigate(-1)}
+          >
+            <BsArrowLeft size={25} />
+          </Button>
           <img alt=""></img>
           <TitAndSub
             className="col col-lg-12"
@@ -64,6 +65,14 @@ export default function Profile() {
           >
             {" "}
             Mis Donaciones{" "}
+          </Button>
+          <Button
+            onClick={() => navigate("bookedDonations")}
+            className=" col col-lg-2 selectButton"
+            variant="success"
+          >
+            {" "}
+            Donaciones Apartadas{" "}
           </Button>
         </div>
 
