@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.scss";
 import "./sass/styles.scss";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 
 //Components
@@ -19,7 +19,10 @@ import OrderReady from "./pages/OrderReady/orderReady";
 import Login from "./pages/Login/login";
 import CreateDonations from "./pages/CreateDonations";
 import ProfileEditDonors from "./pages/ProfileEditDonors/profileEditDonors";
+
 import BookedDonations from "./pages/BookedDonations/bookedDonations";
+
+import UploadImage from "./pages/UploadImage/uploadImage";
 
 function App() {
   return (
@@ -45,6 +48,7 @@ function App() {
         <Route path="/registroDonador" element={<RegistroDonador />} />
         <Route path="/createDonations" element={<CreateDonations />} />
         <Route path="/profileEditDonors" element={<ProfileEditDonors />} />
+        <Route path="/images" element={<UploadImage />} />
       </Routes>
     </div>
   );

@@ -18,9 +18,34 @@ import Header from "../../components/header/header";
 
 export default function UserDonations() {
   const [donations, setDonations] = useState([]);
+  const [search, setSerarch] = useState("");
 
   //RRD
   const navigate = useNavigate();
+
+  //search function
+  const searcher = (e) => {
+    setSerarch(e.target.value);
+    console.log(e.target.value);
+  };
+
+  //filter method
+
+  const result = !search
+    ? donations
+    : donations.filter((dato) =>
+        dato.foodDescription.toUpperCase().includes(search.toUpperCase())
+      );
+  // let result = [];
+  // if (!search) {
+  //   result = donations;
+  // } else {
+  //   donations.filter((dato) => {
+  //     result = dato.foodDescription
+  //       .toUpperCase()
+  //       .includes(search.toUpperCase());
+  //   });
+  // }
 
   //REQUEST A Donations
   useEffect(() => {
@@ -33,7 +58,7 @@ export default function UserDonations() {
   }, []);
   console.log(donations);
 
-  const donationsUI = donations.map(
+  const donationsUI = result.map(
     ({ _id, food, postedDate, expDate, foodDescription, foodPhoto, index }) => (
       <div
         key={index}
@@ -85,15 +110,16 @@ export default function UserDonations() {
       </div>
       <div className="row container">
         <div className="searchContainer">
-          <Stack direction="horizontal" gap={1}>
-            <Form.Control
-              className="me-auto"
-              placeholder="Buscar platillo..."
-            />
-            <Button id="searchButton" variant="secondary">
-              Buscar
-            </Button>
-          </Stack>
+          <span></span>
+          <p>Alimento</p>
+
+          <input
+            value={search}
+            onChange={searcher}
+            type="text"
+            placeholder="Escriba el nombre del platillo"
+            className="form-control"
+          />
         </div>
         <div className="container " id="main">
           <div className="row colpost">{donationsUI}</div>

@@ -5,6 +5,7 @@ export default function Footer() {
       <div id="firstPart" className="row">
         <div id="splitter" className="col col-lg-12"></div>
         <img
+          id="footerLogo"
           className="col col-lg-4 col-12"
           src="https://pbs.twimg.com/media/FX_2fGBWAAAON7X?format=png&name=240x240"
         ></img>
