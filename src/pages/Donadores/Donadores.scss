@@ -1,32 +1,40 @@
 @import "~bootstrap/scss/bootstrap";
 
 
-// body{
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+
+
+$mainColor: #57B186;
+$secondaryColor: #3C5298;
+$transparent: #9f9f9f0a;
+$lightgrey: #9f9f9f6c;
+
+$bgMainColor:#f2f4f4;
+
+$mainWeight: 500;
+
+
 .postContainer{
     width: 90%;
     border: 1px solid black;
     box-sizing: border-box;
 }
-$mainColor: #57B186;
-$secondaryColor: #3C5298;
-$transparent: #9f9f9f0a;
- $lightgrey: #9f9f9f6c;
-
-$bgMainColor:#f2f4f4;
 
 
- $mainWeight: 500;
+.colpost{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 25rem;
+    align-items: center;
+    justify-content: center;
+}
 
- .postContainer{
+ 
+
+.postContainer{
     width: 90%;
   border: 1px solid black;
    box-sizing: border-box;
-  }
+}
  
 
 
@@ -34,21 +42,22 @@ $bgMainColor:#f2f4f4;
    display: flex;
  flex-wrap: wrap;
 
+
   align-items: center;
    justify-content: center;
- }
+}
 
-  .fatherContainer{
+.fatherContainer{
    background-color: $bgMainColor;
 }
 
- body{
+body{
      width: 100%;
      display: flex;
      justify-content: center;
      align-items: center;
- }
- #postContainer{
+}
+#postContainer{
 
     //  border: 1px solid $lightgrey;
      border-radius: 20px;
@@ -62,44 +71,44 @@ $bgMainColor:#f2f4f4;
      margin: 1rem
 
 
- }
+}
 
- #postContainer:hover{
+#postContainer:hover{
      background-color: #3c51984f;
       transform: scale(1.04);
      & .figurePostContainer{
          transform: scale(1.05);
      }
- }
+}
 
 
- Figure.Image{
+Figure.Image{
      height: 200%;
      display: flex;
      justify-content: center;
      align-items: center;
- }
+}
 
 
 
- .photoPostContainer{
+.photoPostContainer{
      width: 100%;
 
- }
+}
 
- .descriptionContainer{
+.descriptionContainer{
       background-color: $transparent;
     text-align: justify;
      width: 100%;
- }
- .card{
+}
+.card{
      background-color: $transparent;
- }
- .card-body{
+}
+.card-body{
       background-color: $transparent;
- }
+}
 
- .titleContainer{
+.titleContainer{
 
      border-radius: 0 0 20px 20px;
      margin: 5px;
@@ -109,25 +118,25 @@ $bgMainColor:#f2f4f4;
  -moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
 
 
- }
+}
 
- .boldTitle{
+.boldTitle{
      text-overflow: bold;
      color: $secondaryColor;
      font-weight: 700;
- }
+}
 
- .normalTitle{
+.normalTitle{
     color:$secondaryColor;
- }
+}
 
- .searchContainer{
+.searchContainer{
  width: 45%;
  margin-top: 2rem;
  margin-left: auto;
- }
+}
 
- .utilitiesContainer form{
+.utilitiesContainer form{
      border: 1px solid black;
      border-radius: 20px;
      width: 90%;
@@ -136,43 +145,47 @@ $bgMainColor:#f2f4f4;
      justify-content: space-around;
     align-items: center;
      text-decoration: none;
- }
+}
 
- .utilitiesContainer form li{
+.utilitiesContainer form li{
      text-decoration: none;
 
 
- }
+}
 
  //Empieza estilizado
- .selectButton{
+.selectButton{
      border-radius: 10px;
     background-color: $mainColor;
     font-weight: $mainWeight;
      padding: 0.5rem;
- }
+     
+}
+#backBtn{
+     margin-left: 2rem;
+}
 
- .card-text{
+.card-text{
      text-transform:uppercase;
- }
- .searchContainer{
+}
+.searchContainer{
       margin-left: auto;
      display: flex;
      justify-content: flex-end;
      align-items: flex-end;
- }
- #searchButton{
+}
+#searchButton{
     background-color: $secondaryColor;
     font-weight: $mainWeight;
      border-radius: 10px;
 
- }
+}
 
- .logoInMain{
+.logoInMain{
      margin: 2rem;
- }
+}
 
- .navBar{
+.navBar{
          display: flex;
 
    align-items: center;
@@ -182,35 +195,54 @@ $bgMainColor:#f2f4f4;
      width: 100%;
 
 
- }
- .navIcon{
+}
+.navIcon:hover{
+    padding: 0.2rem;
+    background-color: $lightgrey;
+    border-radius: 100%;
+    transform: scale(1.05);
+    
+}
+.foodPhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    max-height: 10rem;
+    width: 100%;
+
+
+}
+
+.navIcon{
      height: 2rem;
      width: auto;
      margin: 1rem 10rem;
      color: $secondaryColor;
 
- }
+}
 
- .navIcon:hover{
-     padding: 0.2rem;
+.navIcon:hover{
+
+    padding: 0.2rem;
      background-color: $lightgrey;
      border-radius: 100%;
      transform: scale(1.05);
 
- }
-  .foodPhoto{
+}
+.foodPhoto{
      display: flex;
      justify-content: center;
      align-items: center;
      border-radius: 1rem;
-  }
+}
 
-  .figurePostContainer{
+.figurePostContainer{
      display: flex;
      justify-content: center;
      align-items: center;
      width: 100%;
-  }
-  .forkLogo{
+}
+.forkLogo{
      margin-left: 1rem;
-  }
+}

@@ -1,6 +1,12 @@
-// @import "../../pages/Donadores/Donadores.scss";
+@import "../../pages/Donadores/Donadores.scss";
 
-
+#rights{
+    color: $secondaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 0 0;
+}
 #firstPart{
     display: flex;
     align-items: center;
@@ -13,11 +19,22 @@
 
 }
 #fatherContainer{
+    color: $secondaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1.5rem;
     text-transform: uppercase;
     font-weight: 500;
     width: 100%;
+
 }
 .FoodLinkAddress{
     margin-left: auto;
+}
+#splitter{
+    margin: 2rem;
+    background-color: $secondaryColor;
+    height: 2px;
+    border-radius: 10px;;
 }
