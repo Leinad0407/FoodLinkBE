@@ -5,7 +5,7 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import moment from "moment";
-import Dropzone from "react-dropzone";
+// import Dropzone from "react-dropzone";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
