@@ -20,7 +20,7 @@ export default function UploadImage() {
     <>
       <div className="uploadImageContainer">
         <p className="titleUpload">Sube una imagen del alimento</p>
-        <FileUpload files={files} setFiles={setFiles}></FileUpload>
+        <FileUpload files={files} setFiles={setFiles} removeFile={removeFile} />
         <FileList files={files} removeFile={removeFile} />
       </div>
     </>

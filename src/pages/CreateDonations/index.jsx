@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
+import UploadImage from "../UploadImage/uploadImage";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
@@ -670,21 +671,15 @@ export default function CreateDonations() {
                   </Form.Select>
                 </InputGroup.Text>
               </InputGroup>
-              <div class="dropzone">
-                <InputGroup
+
+              <InputGroup>
+                <UploadImage
                   className="mb-3"
                   value={foodPhoto}
                   onChange={(e) => setFoodPhoto(e.target.value)}
-                >
-                  <InputGroup.Text>Foto</InputGroup.Text>
-                  <Form.Control
-                    aria-label="Default"
-                    aria-describedby="inputGroup-sizing-default"
-                    placeholder="pega la url del alimento"
-                    type="url"
-                  />
-                </InputGroup>
-              </div>
+                ></UploadImage>
+              </InputGroup>
+
               <InputGroup
                 className="mb-3"
                 value={postedDate}

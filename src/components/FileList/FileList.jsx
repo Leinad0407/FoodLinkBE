@@ -1,13 +1,13 @@
+import axios from "axios";
 import React from "react";
 import FileItem from "../FileItem/FileItem";
 
 const FileList = ({ files, removeFile }) => {
-  const deleteFileHandler = ({ _name }) => {
-    fetch("https://.json", {
-      method: "DELETE",
-    })
+  const deleteFileHandler = (_name) => {
+    axios
+      .delete(`http://localhost:8080/upload/:id?name=${_name}`)
       .then((res) => removeFile(_name))
-      .then((err) => console.error(err));
+      .catch((err) => console.error(err));
   };
   return (
     <ul className="file-list">

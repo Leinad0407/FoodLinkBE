@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import "./FileUpload.scss";
 import { createImg } from "../../services/postImage";
@@ -9,29 +10,27 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
     file.isUploading = true;
     setFiles([...files, file]);
 
-    // upload file
+    //upload file
     const formData = new FormData();
     formData.append(file.name, file, file.name);
 
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-      console.log("Jalando Ando");
-      const formData = {
-        files,
-      };
-      try {
-        await createImg(formData);
-      } catch (error) {
-        console.log(error);
+    axios
+      .post("http://localhost:8080/upload", formData)
+      .then((res) => {
+        file.isUploading = false;
+        setFiles([...files, file]);
+      })
+      .catch((err) => {
+        //inform the user
+        console.error(err);
         removeFile(file.name);
-      }
-    };
+      });
   };
 
   return (
     <>
-      <div className="file-card">
-        <div className="file-inputs">
+      <div className="file-card-upload">
+        <div className="file-inputs-upload">
           <input type="file" onChange={uploadHandler} />
           <button>
             <i>
@@ -39,8 +38,8 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
             </i>
             Cargar archivo
           </button>
-          <p className="mainUpload">Archivos que soporta</p>
-          <p className="infoUpload">PDF, JPG, PNG</p>
+          <p className="mainUpload">Archivos que pueden subirse</p>
+          <p className="infoUpload">JPG, PNG</p>
         </div>
       </div>
     </>

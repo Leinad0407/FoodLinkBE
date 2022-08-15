@@ -1,6 +1,6 @@
-.file-card{
+.file-card-upload{
    background-color: #edf2f7;
-   border: 3px dashed; 
+   border: 3px dashed #edf2f7; 
    padding: 1em;
    min-width: 380px;
    min-height: 230px;
@@ -9,9 +9,13 @@
    align-items: center;
    flex-direction: column;
 
-   .file-inputs{
+   .mainUpload{
+    color: black;
+   }
+
+   .file-inputs-upload{
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5em;
 
     input{
         position: relative;
@@ -20,6 +24,7 @@
         z-index: 2;
         opacity: 0;
         cursor: pointer;
+        color: black;
     }
     button{
         position: absolute;
@@ -39,7 +44,7 @@
         border-radius: 4px;
         border: none;
         outline: none;
-        transition: background-color 0.4;
+        transition: background-color 0.4s;
         box-shadow: 0px 8px 24px rgba($color: #37d875, $alpha: 0.5);
 
         i{
@@ -62,10 +67,5 @@
         }
     }
 }
-}
-
-.infoUpload{
-    color: black;
-    z-index: 2;
 }
 
