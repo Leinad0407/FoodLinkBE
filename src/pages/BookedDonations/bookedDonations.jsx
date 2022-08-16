@@ -31,7 +31,6 @@ export default function BookedDonations() {
     };
     getDonationsQuery();
   }, []);
-  console.log(bookedDonations);
 
   const donationsUI = bookedDonations.map(
     ({ _id, foodDescription, foodPhoto, index }) => (
