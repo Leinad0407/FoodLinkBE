@@ -24,7 +24,7 @@ export default function Registro() {
   const [userType, setUserType] = useState("");
 
   const handleSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
     const userData = {
       firstName,
@@ -43,19 +43,20 @@ export default function Registro() {
       userType,
     };
     console.log(userData);
-    // try {
-    //   await createNewUser(userData);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      await createNewUser(userData);
+      event.preventDefault();
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div>
       <div className="row">
         <div className="container">
           <div className="container d-flex justify-content-center align-items-center">
-            <section class="col col-lg-6 d-flex justify-content-center align-items-center">
-              <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100 d-flex align-items-center justify-content-center">
+            <section class="col col-lg-6 col-8 d-flex justify-content-center align-items-center">
+              <div class="card shadow  col-xs-12 col-sm-4 col-md-6 col-lg-4  p-4 w-100 d-flex align-items-center justify-content-center">
                 <div class="mb-4 d-flex justify-content-start align-items-center">
                   <h2 class="text-success text-center mt-4 ">
                     Registrate con Nosotros
@@ -304,7 +305,7 @@ export default function Registro() {
                       <button
                         id="botton"
                         class="col-4 btn btn-success d-flex justify-content-center align-items-center"
-                        onClick={() => handleSubmit()}
+                        onSubmit={() => handleSubmit()}
                       >
                         Registrarse
                       </button>
