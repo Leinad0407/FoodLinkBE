@@ -2,11 +2,10 @@ import React from "react";
 import axios from "axios";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import "./FileUpload.scss";
-import { createImg } from "../../services/postImage";
 
 const FileUpload = ({ files, setFiles, removeFile }) => {
   const uploadHandler = (event) => {
-    const file = event.tatget.files[0];
+    const file = event.target.files[0];
     file.isUploading = true;
     setFiles([...files, file]);
 
@@ -15,7 +14,7 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
     formData.append(file.name, file, file.name);
 
     axios
-      .post("http://localhost:8080/upload", formData)
+      .post("http://localhost:8080/api/uploadImage/s3", formData)
       .then((res) => {
         file.isUploading = false;
         setFiles([...files, file]);
