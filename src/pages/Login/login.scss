@@ -1,1 +1,27 @@
-@import "../Donadores/Donadores.scss"
+@import "../Donadores/Donadores.scss";
+
+#loginContainer{
+margin-top: 20vh;
+}
+
+.input{
+    margin: 0 0 2rem 0 ;
+    height: 3rem;
+    border-radius: 20px;
+}
+#accessBtn{
+  margin-bottom: 1rem;
+}
+#registerBtn{
+    font-weight: $mainWeight;
+}
+#registerBtn:hover{
+    color: $secondaryColor;
+    font-weight: $mainWeight;
+    transform: scale(1.2);
+    cursor: pointer;
+    text-decoration: underline;
+}
+#loginLogo{
+    margin-bottom: 2rem;
+}
