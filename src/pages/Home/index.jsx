@@ -91,7 +91,7 @@ export default function Home() {
                     sobrevivir. Sólo toma unos segundos apoyar con tu donación.
                   </Card.Text>
                   <Button
-                    onClick={() => navigate("/registroDonador")}
+                    onClick={() => navigate("/registro")}
                     className="btn-donador"
                     variant="success"
                   >

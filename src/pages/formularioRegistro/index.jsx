@@ -1,12 +1,14 @@
 import "../Donadores/Donadores.scss";
 import "./registro.scss";
 
-import { createNewUser } from "../../services/PostNewUser";
+import { createNewUser } from "../../services/CreateNewUser";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Registro() {
+  const navigate = useNavigate();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [address, setAddress] = useState("");
@@ -23,10 +25,10 @@ export default function Registro() {
   const [gender, setGender] = useState("");
   const [userType, setUserType] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleClick = async (e) => {
+    e.preventDefault();
 
-    const userData = {
+    const dataToSend = {
       firstName,
       lastName,
       address: {
@@ -42,53 +44,49 @@ export default function Registro() {
       gender,
       userType,
     };
-    console.log(userData);
-    try {
-      await createNewUser(userData);
-      event.preventDefault();
-    } catch (error) {
-      console.log(error);
-    }
+
+    await createNewUser(dataToSend);
+    navigate("/login");
   };
   return (
     <div>
       <div className="row">
         <div className="container">
           <div className="container d-flex justify-content-center align-items-center">
-            <section class="col col-lg-6 col-8 d-flex justify-content-center align-items-center">
-              <div class="card shadow  col-xs-12 col-sm-4 col-md-6 col-lg-4  p-4 w-100 d-flex align-items-center justify-content-center">
-                <div class="mb-4 d-flex justify-content-start align-items-center">
-                  <h2 class="text-success text-center mt-4 ">
+            <section className="col col-lg-6 col-8 d-flex justify-content-center align-items-center">
+              <div className="card shadow  col-xs-12 col-sm-4 col-md-6 col-lg-4  p-4 w-100 d-flex align-items-center justify-content-center">
+                <div className="mb-4 d-flex justify-content-start align-items-center">
+                  <h2 className="text-success text-center mt-4 ">
                     Registrate con Nosotros
                   </h2>
                 </div>
-                <div class="mb-1">
+                <div className="mb-1">
                   <form id="contacto">
-                    <div class="mb-4 d-flex justify-content-around">
+                    <div className="mb-4 d-flex justify-content-around">
                       <div>
-                        <label for="nombre">
+                        <label id="nombre">
                           {" "}
-                          <i class="bi bi-person-fill"></i> Nombre
+                          <i className="bi bi-person-fill"></i> Nombre
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="nombre"
                           id="nombre"
                           placeholder="ej: Aaron"
                           required={true}
                           onChange={(e) => setFirstName(e.target.value)}
                         ></input>
-                        <div class="nombre text "></div>
+                        <div className="nombre text "></div>
                       </div>
                       <div>
-                        <label for="apellido">
+                        <label id="apellido">
                           {" "}
-                          <i class="bi bi-person-fill"></i> Apellido
+                          <i className="bi bi-person-fill"></i> Apellido
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="apellido"
                           id="apellido"
                           placeholder="ej: Enciso"
@@ -99,154 +97,154 @@ export default function Registro() {
                       </div>
                     </div>
                     <div>
-                      <label for="direccion">
+                      <label id="direccion">
                         {" "}
-                        <i class="bi bi-house-door-fill"></i> Calle
+                        <i className="bi bi-house-door-fill"></i> Calle
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="direccion"
                         id="direccion"
                         placeholder="ej: Av.Antonio toledo coro"
                         required={true}
                         onChange={(e) => setStreet(e.target.value)}
                       ></input>
-                      <div class="direccion text"></div>
+                      <div className="direccion text"></div>
                     </div>
-                    <div class="mb-4 d-flex justify-content-between">
+                    <div className="mb-4 d-flex justify-content-between">
                       <div>
-                        <label for="colonia">
+                        <label id="colonia">
                           {" "}
-                          <i class="bi bi-house-door-fill"></i> Colonia
+                          <i className="bi bi-house-door-fill"></i> Colonia
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="colonia"
                           id="colonia"
                           placeholder="ej: Los Sauces"
                           required={true}
                           onChange={(e) => setColonia(e.target.value)}
                         ></input>
-                        <div class="colonia text "></div>
+                        <div className="colonia text "></div>
                       </div>
                       <div>
-                        <label for="numero">
+                        <label id="numero">
                           {" "}
-                          <i class="bi bi-house-door-fill"></i> Número
+                          <i className="bi bi-house-door-fill"></i> Número
                         </label>
                         <input
                           type="number"
-                          class="form-control"
+                          className="form-control"
                           name="numero"
                           id="numero"
                           placeholder="ej: 3410"
                           required={true}
                           onChange={(e) => setNumero(e.target.value)}
                         ></input>
-                        <div class="numero text"></div>
+                        <div className="numero text"></div>
                       </div>
                     </div>
-                    <div class="mb-4 d-flex justify-content-between">
+                    <div className="mb-4 d-flex justify-content-between">
                       <div>
-                        <label for="estado">
+                        <label id="estado">
                           {" "}
-                          <i class="bi bi-building"></i> Estado
+                          <i className="bi bi-building"></i> Estado
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="estado"
                           id="estado"
                           placeholder="ej: Sinaloa"
                           required={true}
                           onChange={(e) => setEsatdo(e.target.value)}
                         ></input>
-                        <div class="estado text "></div>
+                        <div className="estado text "></div>
                       </div>
                       <div>
-                        <label for="ciudad">
+                        <label id="ciudad">
                           {" "}
-                          <i class="bi bi-building"></i> Ciudad
+                          <i className="bi bi-building"></i> Ciudad
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="ciudad"
                           id="ciudad"
                           placeholder="ej: Mazatlan"
                           required={true}
                           onChange={(e) => setCiudad(e.target.value)}
                         ></input>
-                        <div class="ciudad text"></div>
+                        <div className="ciudad text"></div>
                       </div>
                     </div>
-                    <div class="mb-4">
-                      <label for="correo">
-                        <i class="bi bi-envelope-fill"></i> Correo
+                    <div className="mb-4">
+                      <label id="correo">
+                        <i className="bi bi-envelope-fill"></i> Correo
                       </label>
                       <input
                         type="email"
-                        class="form-control"
+                        className="form-control"
                         name="correo"
                         id="correo"
                         placeholder="ej: aaronenciso@gmail.com"
                         required={true}
                         onChange={(e) => setEmail(e.target.value)}
                       ></input>
-                      <div class="correo text"></div>
+                      <div className="correo text"></div>
                     </div>
                     <div>
-                      <label for="Password">
+                      <label id="Password">
                         {" "}
-                        <i class="bi bi-person-fill"></i> Contraseña
+                        <i className="bi bi-person-fill"></i> Contraseña
                       </label>
                       <input
                         type="password"
-                        class="form-control"
+                        className="form-control"
                         required={true}
                         onChange={(e) => setPassword(e.target.value)}
                       ></input>
-                      <div class="nombre text "></div>
+                      <div className="nombre text "></div>
                     </div>
-                    <div class="mb-4">
-                      <label for="telefono">
-                        <i class="bi bi-phone-fill"></i> Teléfono
+                    <div className="mb-4">
+                      <label id="telefono">
+                        <i className="bi bi-phone-fill"></i> Teléfono
                       </label>
                       <input
                         type="cel"
-                        class="form-control"
+                        className="form-control"
                         name="telefono"
                         id="telefono"
                         placeholder="ej: 6691008819"
                         required={true}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                       ></input>
-                      <div class="telefono text"></div>
+                      <div className="telefono text"></div>
                     </div>
                     <div>
-                      <label for="tipo">
+                      <label id="tipo">
                         {" "}
-                        <i class="bi bi-briefcase-fill"></i> Tipo de negocio
+                        <i className="bi bi-briefcase-fill"></i> Tipo de negocio
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="tipo"
                         id="tipo"
                         placeholder="ej: Tienda abarrotes"
                         required
                       ></input>
-                      <div class="tipo text "></div>
+                      <div className="tipo text "></div>
                     </div>
-                    <div class="mb-4  ">
-                      <label for="genero">
-                        <i class="bi bi-gender-ambiguous"></i> Género:
+                    <div className="mb-4  ">
+                      <label id="genero">
+                        <i className="bi bi-gender-ambiguous"></i> Género:
                       </label>
                       <input
                         type="radio"
-                        class="form-check-input circleOption "
+                        className="form-check-input circleOption "
                         name="genero"
                         value="masculino"
                         onClick={(e) => setGender(e.target.value)}
@@ -254,23 +252,23 @@ export default function Registro() {
                       Masculino
                       <input
                         type="radio"
-                        class="form-check-input circleOption"
+                        className="form-check-input circleOption"
                         name="genero"
                         value="femenino"
                         onClick={(e) => setGender(e.target.value)}
                       ></input>{" "}
                       Femenino
-                      <div class="genero text"></div>
+                      <div className="genero text"></div>
                     </div>
                     {/* Opción para marcar si eres persona física o persona
                     moral */}
-                    <div class="mb-4  ">
-                      <label for="Usuario">
-                        <i class="bi bi-gender-ambiguous"></i> Usuario:
+                    <div className="mb-4  ">
+                      <label id="Usuario">
+                        <i className="bi bi-gender-ambiguous"></i> Usuario:
                       </label>
                       <input
                         type="radio"
-                        class="form-check-input circleOption "
+                        className="form-check-input circleOption "
                         name="tipo de donor"
                         value="donador"
                         onChange={(e) => setUserType(e.target.value)}
@@ -278,7 +276,7 @@ export default function Registro() {
                       Donador
                       <input
                         type="radio"
-                        class="form-check-input circleOption"
+                        className="form-check-input circleOption"
                         name="tipo de donor"
                         value="beneficiario"
                         onChange={(e) => setUserType(e.target.value)}
@@ -286,26 +284,26 @@ export default function Registro() {
                       Beneficiario
                     </div>
                     {/* <div>
-                      <label for="nombre">
+                      <label id="nombre">
                         {" "}
-                        <i class="bi bi-person-fill"></i> Nombre de Usuario
+                        <i className="bi bi-person-fill"></i> Nombre de Usuario
                       </label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="nombre"
                         id="nombre"
                         placeholder="ej: AaronKing21"
                         required
                       ></input>
-                      <div class="nombre text "></div>
+                      <div className="nombre text "></div>
                     </div> */}
                     <br></br>
-                    <div class="mb-2 d-flex justify-content-center align-items-center">
+                    <div className="mb-2 d-flex justify-content-center align-items-center">
                       <button
                         id="botton"
-                        class="col-4 btn btn-success d-flex justify-content-center align-items-center"
-                        onSubmit={() => handleSubmit()}
+                        className="col-4 btn btn-success d-flex justify-content-center align-items-center"
+                        onClick={handleClick}
                       >
                         Registrarse
                       </button>
