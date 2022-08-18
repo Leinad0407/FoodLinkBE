@@ -11,6 +11,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { getDonations } from "../../services/postDonaciones";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
@@ -87,8 +88,30 @@ export default function Donaciones() {
     <div>
       <div className="row">
         <Header ph1="Comida Disponible " ph2=" en tu área" />
+
         <div className="row container">
           <div className="searchContainer">
+            <Nav
+              className="Nav"
+              activeKey="/home"
+              onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+            >
+              <Nav.Item>
+                <Nav.Link className="navItem" href="/">
+                  Página principal
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link className="navItem" href="/profileEditDonors">
+                  Ver Perfil
+                </Nav.Link>
+              </Nav.Item>
+              {/* <Nav.Item>
+                <Nav.Link className="navItem" href="/createDonations">
+                  Crear una Donación
+                </Nav.Link>
+              </Nav.Item> */}
+            </Nav>
             <Stack direction="horizontal" gap={1}>
               <Form.Control
                 value={search}

@@ -1,4 +1,4 @@
-import "../UserDonations/UserDonations.scss";
+import "./UserDonations.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Stack from "react-bootstrap/Stack";
@@ -72,7 +72,8 @@ export default function UserDonations() {
 
         <div className="descriptionContainer">
           <Card.Body>
-            <strong className="text-uppercase">{foodDescription}</strong>
+            <strong className="text-uppercase">Descripción:</strong>
+            <Card.Text>{foodDescription}</Card.Text>
 
             <Card.Text>Fecha de publicación: {postedDate}</Card.Text>
             <Card.Text>Clasificación: {food}</Card.Text>
@@ -89,10 +90,8 @@ export default function UserDonations() {
 
   return (
     <div>
-      <div className="fatherContainer container">
-        <Header ph1="tus donaciones" ph2="activas" />
-      </div>
-      <div>
+      <div className="row">
+        <Header ph1="Tus donaciones activas" ph2="" />
         <Nav
           activeKey="/home"
           onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
@@ -108,7 +107,7 @@ export default function UserDonations() {
           </Nav.Item>
         </Nav>
       </div>
-      <div className="row container">
+      <div className="row">
         <div className="searchContainer">
           <span></span>
           <p>Alimento</p>
@@ -121,26 +120,43 @@ export default function UserDonations() {
             className="form-control"
           />
         </div>
-        <div className="container " id="main">
-          <div className="row colpost">{donationsUI}</div>
+        <div className="row container">
+          <div className="searchContainer">
+            <Stack direction="horizontal" gap={1}>
+              <Form.Control
+                value={search}
+                onChange={searcher}
+                type="text"
+                className="me-auto"
+                placeholder="Filtrar por dirección"
+              />
+              <Button id="searchButton" variant="secondary">
+                Buscar
+              </Button>
+            </Stack>
+          </div>
+          <div className="container " id="main">
+            <div className="row colpost">{donationsUI}</div>
+          </div>
+
+          <div className="utilitiesContainer"></div>
+          <navbar className="navBar">
+            <AiOutlineHome
+              onClick={() => navigate("/donations")}
+              size={100}
+              className="navIcon"
+            />
+
+            <BiSearch size={90} className="navIcon" />
+
+            <AiOutlineUser
+              size={100}
+              className="navIcon"
+              onClick={() => navigate("/profile")}
+            />
+          </navbar>
         </div>
-        <navbar className="navBar">
-          <AiOutlineHome
-            onClick={() => navigate("/donations")}
-            size={100}
-            className="navIcon"
-          />
-
-          <BiSearch size={90} className="navIcon" />
-
-          <AiOutlineUser
-            size={100}
-            className="navIcon"
-            onClick={() => navigate("/profile")}
-          />
-        </navbar>
         <Footer />
-
         <Outlet />
       </div>
     </div>

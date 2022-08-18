@@ -17,6 +17,7 @@ $mainWeight: 500;
     width: 90%;
     border: 1px solid black;
     box-sizing: border-box;
+    background-color: $lightgrey;
 }
 
 
@@ -246,3 +247,14 @@ Figure.Image{
 .forkLogo{
      margin-left: 1rem;
 }
+.navItem{
+     color: $secondaryColor;
+     font-weight: $mainWeight;
+}
+.navItem:hover{
+     color: $mainColor;
+     text-decoration: underline;
+}
+// .Nav{
+//      margin-left: 2rem;
+// }

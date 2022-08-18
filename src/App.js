@@ -46,7 +46,7 @@ function App() {
         <Route path="/profile/donations" element={<UserDonations />} />
         <Route path="/profile/bookedDonations" element={<BookedDonations />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/registroDonador" element={<RegistroDonador />} />
+        {/* <Route path="/registroDonador" element={<RegistroDonador />} /> */}
         <Route path="/createDonations" element={<CreateDonations />} />
         <Route path="/profileEditDonors" element={<ProfileEditDonors />} />
         <Route path="/images" element={<UploadImage />} />

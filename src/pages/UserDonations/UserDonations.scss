@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "../Donadores/Donadores.scss"
 
 
 // body{
@@ -8,201 +9,201 @@
 //     align-items: center;
 // }
 
- $mainColor: #57B186;
- $secondaryColor: #3C5298;
-$transparent: #9f9f9f0a;
- $lightgrey: #9f9f9f6c;
+//  $mainColor: #57B186;
+//  $secondaryColor: #3C5298;
+// $transparent: #9f9f9f0a;
+//  $lightgrey: #9f9f9f6c;
 
-$bgMainColor:#f2f4f4;
-
-
- $mainWeight: 500;
-
- .postContainer{
-    width: 100%;
-  border: 1px solid black;
-   box-sizing: border-box;
-  }
-
-.colpost{
-   display: flex;
- flex-wrap: wrap;
-
-  align-items: center;
-   justify-content: center;
- }
-
-//  .fatherContainer{
-//    background-color: $bgMainColor;
-// }
-
- body{
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
- #postContainer{
-
- border: 1px solid $lightgrey;
-     border-radius: 20px;
- background-color: $lightgrey;
-     padding: 1rem;
-
-     display: flex;
-     align-items: center;
-     flex-direction: row;
-     justify-content: center;
-     margin: 1rem
+// $bgMainColor:#f2f4f4;
 
 
- }
+//  $mainWeight: 500;
 
- #postContainer:hover{
-     background-color: #3c51984f;
-      transform: scale(1.04);
-     & .figurePostContainer{
-         transform: scale(1.05);
-     }
- }
+//  .postContainer{
+//     width: 100%;
+//   border: 1px solid black;
+//    box-sizing: border-box;
+//   }
 
+// .colpost{
+//    display: flex;
+//  flex-wrap: wrap;
 
- Figure.Image{
-     height: 200%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
+//   align-items: center;
+//    justify-content: center;
+//  }
 
+// //  .fatherContainer{
+// //    background-color: $bgMainColor;
+// // }
 
+//  body{
+//      width: 100%;
+//      display: flex;
+//      justify-content: center;
+//      align-items: center;
+//  }
+//  #postContainer{
 
- .photoPostContainer{
-     width: 100%;
+//  border: 1px solid $lightgrey;
+//      border-radius: 20px;
+//  background-color: $lightgrey;
+//      padding: 1rem;
 
- }
-
- .descriptionContainer{
- background-color: $transparent;
-    text-align: justify;
-     width: 100%;
- }
- .card{
-background-color: $transparent;
- }
- .card-body{
-     background-color: $transparent;
- }
-
- .titleContainer{
-     border-radius: 0 0 20px 20px;
-     margin: 5px;
-    background-color: $bgMainColor;
-     box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
- -webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
- -moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+//      display: flex;
+//      align-items: center;
+//      flex-direction: row;
+//      justify-content: center;
+//      margin: 1rem
 
 
- }
+//  }
 
- .boldTitle{
-     text-overflow: bold;
-    color: $secondaryColor;
-     font-weight: 700;
- }
-
- .normalTitle{
- color:$secondaryColor;
- }
-
- .searchContainer{
- width: 45%;
- margin-top: 2rem;
- margin-left: auto;
- }
-
- .utilitiesContainer form{
-     border: 1px solid black;
-     border-radius: 20px;
-     width: 90%;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-around;
-    align-items: center;
-     text-decoration: none;
- }
-
- .utilitiesContainer form li{
-     text-decoration: none;
+//  #postContainer:hover{
+//      background-color: #3c51984f;
+//       transform: scale(1.04);
+//      & .figurePostContainer{
+//          transform: scale(1.05);
+//      }
+//  }
 
 
- }
-
- //Empieza estilizado
- .selectButton{
-     border-radius: 10px;
-     background-color: $mainColor;
-     font-weight: $mainWeight;
-     padding: 0.5rem;
- }
-
- .card-text{
-     text-transform:uppercase;
- }
- .searchContainer{
-      margin-left: auto;
-     display: flex;
-     justify-content: flex-end;
-     align-items: flex-end;
- }
- #searchButton{
-     background-color: $secondaryColor;
-     font-weight: $mainWeight;
-     border-radius: 10px;
-
- }
-
- .logoInMain{
-     margin: 2rem;
- }
-
- .navBar{
-         display: flex;
-
-   align-items: center;
-     justify-content: center;
-     align-content: space-around;
-     height: 3rem;
-     width: 100%;
+//  Figure.Image{
+//      height: 200%;
+//      display: flex;
+//      justify-content: center;
+//      align-items: center;
+//  }
 
 
- }
- .navIcon{
-     height: 2rem;
-     width: auto;
-     margin: 1rem 10rem;
-     color: $secondaryColor;
- }
 
- .navIcon:hover{
-     padding: 0.2rem;
-    background-color: $lightgrey;
-     border-radius: 100%;
-     transform: scale(1.05);
+//  .photoPostContainer{
+//      width: 100%;
 
- }
-  .foodPhoto{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     border-radius: 1rem;
-  }
+//  }
 
-  .figurePostContainer{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-  }
-  .forkLogo{
-     margin-left: 1rem;
-  }
+//  .descriptionContainer{
+//  background-color: $transparent;
+//     text-align: justify;
+//      width: 100%;
+//  }
+//  .card{
+// background-color: $transparent;
+//  }
+//  .card-body{
+//      background-color: $transparent;
+//  }
+
+//  .titleContainer{
+//      border-radius: 0 0 20px 20px;
+//      margin: 5px;
+//     background-color: $bgMainColor;
+//      box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+//  -webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+//  -moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+
+
+//  }
+
+//  .boldTitle{
+//      text-overflow: bold;
+//     color: $secondaryColor;
+//      font-weight: 700;
+//  }
+
+//  .normalTitle{
+//  color:$secondaryColor;
+//  }
+
+//  .searchContainer{
+//  width: 45%;
+//  margin-top: 2rem;
+//  margin-left: auto;
+//  }
+
+//  .utilitiesContainer form{
+//      border: 1px solid black;
+//      border-radius: 20px;
+//      width: 90%;
+//      display: flex;
+//      flex-direction: row;
+//      justify-content: space-around;
+//     align-items: center;
+//      text-decoration: none;
+//  }
+
+//  .utilitiesContainer form li{
+//      text-decoration: none;
+
+
+//  }
+
+//  //Empieza estilizado
+//  .selectButton{
+//      border-radius: 10px;
+//      background-color: $mainColor;
+//      font-weight: $mainWeight;
+//      padding: 0.5rem;
+//  }
+
+//  .card-text{
+//      text-transform:uppercase;
+//  }
+//  .searchContainer{
+//       margin-left: auto;
+//      display: flex;
+//      justify-content: flex-end;
+//      align-items: flex-end;
+//  }
+//  #searchButton{
+//      background-color: $secondaryColor;
+//      font-weight: $mainWeight;
+//      border-radius: 10px;
+
+//  }
+
+//  .logoInMain{
+//      margin: 2rem;
+//  }
+
+//  .navBar{
+//          display: flex;
+
+//    align-items: center;
+//      justify-content: center;
+//      align-content: space-around;
+//      height: 3rem;
+//      width: 100%;
+
+
+//  }
+//  .navIcon{
+//      height: 2rem;
+//      width: auto;
+//      margin: 1rem 10rem;
+//      color: $secondaryColor;
+//  }
+
+//  .navIcon:hover{
+//      padding: 0.2rem;
+//     background-color: $lightgrey;
+//      border-radius: 100%;
+//      transform: scale(1.05);
+
+//  }
+//   .foodPhoto{
+//      display: flex;
+//      justify-content: center;
+//      align-items: center;
+//      border-radius: 1rem;
+//   }
+
+//   .figurePostContainer{
+//      display: flex;
+//      justify-content: center;
+//      align-items: center;
+//      width: 100%;
+//   }
+//   .forkLogo{
+//      margin-left: 1rem;
+//   }
