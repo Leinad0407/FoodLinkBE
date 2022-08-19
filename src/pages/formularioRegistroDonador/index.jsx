@@ -1,6 +1,12 @@
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import Button from 'react-bootstrap/Button';
+
+
 export default function RegistroDonador() {
   return (
     <div className="container">
+      <Header className="justify-content-center" ph1="Para Donar comida," ph2="es necesario que te registres" />
       <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100">
           <div class="mb-4 d-flex justify-content-start align-items-center">
@@ -45,7 +51,7 @@ export default function RegistroDonador() {
               <div>
                 <label for="direccion">
                   {" "}
-                  <i class="bi bi-house-door-fill"></i> Direccion
+                  <i class="bi bi-house-door-fill"></i> Dirección
                 </label>
                 <input
                   type="text"
@@ -76,7 +82,7 @@ export default function RegistroDonador() {
                 <div>
                   <label for="numero">
                     {" "}
-                    <i class="bi bi-house-door-fill"></i> Numero
+                    <i class="bi bi-house-door-fill"></i> Número
                   </label>
                   <input
                     type="number"
@@ -196,15 +202,15 @@ export default function RegistroDonador() {
               <br></br>
 
               <div class="mb-2">
-                <button
-                  id="botton"
-                  class="col-12 btn btn-success d-flex justify-content-between  "
-                >
-                  <p class="text-center ">Registrarse </p>
-                </button>
+              <Button variant="success">Registrarte</Button>{' '}
               </div>
             </form>
           </div>
+        </div>
+      </section>
+     <section>
+        <div className="row">
+          <Footer />
         </div>
       </section>
     </div>
