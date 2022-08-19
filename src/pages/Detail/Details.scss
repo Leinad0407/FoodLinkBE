@@ -1,0 +1,106 @@
+@import "../Donadores/Donadores.scss";
+
+
+#img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height:70vh;
+    width: auto;
+    border-radius: 10px;
+    margin: 0 0 2rem 0 ;
+    border: 1px solid $lightgrey;
+}
+#img:hover{
+    border-radius: 45px;
+    opacity: 85%;
+}
+#donorInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subtitle{
+    margin: 2rem 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: $lightgrey;
+    box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+
+}
+#getButton{
+   
+    border-radius: 10px;
+    background-color: $mainColor;
+    font-weight: $mainWeight;
+    width: 20rem;
+}
+
+#img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:auto;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 0 2rem 0 ;
+    border: 1px solid $lightgrey;
+}
+#donorInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subtitle{
+    margin: 2rem 0 ;
+
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: $lightgrey;
+    box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 16px 40px -15px rgba(0,0,0,0.75);
+
+}
+#getButton{
+    border-radius: 10px;
+    background-color: $mainColor;
+    font-weight: $mainWeight;
+    width: 20rem;
+}
+
+
+Button{
+    border-radius: 10px;
+    width: 10rem;
+}
+
+#backBtn{
+    margin:1rem 0;
+    margin-right:100%
+}
+
+
+#foodInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+#foodInfo{
+    margin: 2rem 0;
+}
+
+

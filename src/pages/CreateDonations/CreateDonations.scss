@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/bootstrap";
+// body{
+//     width: 100%;
+//     background-color: #f4f4f6;
+//     margin: 15px;
+//     box-sizing: border-box;
+// }
+
+.masterContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.postedContainer{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    width: 100%;
+    align-items:center;
+    justify-content: center;  
+    margin: 3%;
+ 
+     
+}
+
+
+.formContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5%;  
+
+}
+.descriptionContainer{
+width: 93%;
+}
+
+.cardContainer{
+    background-color: white;
+}

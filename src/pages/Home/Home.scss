@@ -1,0 +1,128 @@
+@import "../Donadores/Donadores.scss";
+.text-container {
+    background-color: rgb(87, 178, 134);
+    color: whitesmoke;
+    height: 80px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+}
+
+.carousel-item {
+    height: 40vh;
+    min-height: 100px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .caption-car {
+    font-weight: bolder;
+    filter: drop-shadow(0 0 0.75rem  rgb(50, 50, 50));
+  }
+
+h1{
+    filter: drop-shadow(0 0 0.75rem  rgb(50, 50, 50));
+    background: rgba(87, 178, 134, 0.3)
+}
+
+.text-Welcome {
+   
+    text-align: center;
+    padding-top: px;
+}
+
+h2{
+    color: #57B186;
+   
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.btn-buscador {
+    background-color: $mainColor;
+    
+    color: whitesmoke;
+    // width: 240px;
+    // height: 50px;
+   
+    border: none;
+    border-radius: 8px;
+    // font-size: 25px;
+    margin: 10px auto 10px auto;
+    font-weight: bold;
+    filter: drop-shadow(0 0 0.25rem  gray);
+}
+.btn-buscador:hover {
+    background-color: #222f5d;
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+
+
+.btn-donador {
+    background-color: #57B186;
+    color: whitesmoke;
+    
+    border: none;
+    border-radius: 8px;
+    // font-size: 25px;
+    margin: 10px auto 10px auto;
+    font-weight: bold;
+    filter: drop-shadow(0 0 0.25rem  gray);
+}
+
+.btn-donador:hover {
+    
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+
+
+.logo-container {
+    width: 300px;
+    height: 150px;
+    margin: 30px auto 0px auto;
+    text-align: center;
+    
+}
+
+.logo-img:hover {
+    transform: translateY(0) scale(1.2);
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+
+
+
+
+.btn{
+    margin: 0 0.5rem;
+}
+
+#loginButton{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loginBtn{
+    background-color: $secondaryColor;
+}
+#loginBtn:hover{
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+.butn{
+   display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+}
