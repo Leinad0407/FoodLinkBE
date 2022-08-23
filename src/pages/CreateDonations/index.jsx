@@ -671,13 +671,11 @@ export default function CreateDonations() {
                   </Form.Select>
                 </InputGroup.Text>
               </InputGroup>
-
-              <InputGroup>
-                <UploadImage
-                  className="mb-3"
-                  value={foodPhoto}
-                  onChange={(e) => setFoodPhoto(e.target.value)}
-                ></UploadImage>
+              <InputGroup
+                value={foodPhoto}
+                onChange={(e) => setFoodPhoto(e.target.value)}
+              >
+                <UploadImage></UploadImage>
               </InputGroup>
 
               <InputGroup
