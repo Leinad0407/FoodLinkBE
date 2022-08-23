@@ -1,11 +1,17 @@
 
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import Button from 'react-bootstrap/Button';
+
+
 export default function Registro() {
   return (
     <div className="container">
+      <Header className="justify-content-center" ph1="Para econtrar comida," ph2="es necesario que te registres" />
       <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4  p-4 w-100">
           <div class="mb-4 d-flex justify-content-start align-items-center">
-            <h2 class="text-success text-center mt-4">
+            <h2 class="text-success text-center mt-4 boldTitle">
               Registrate con Nosotros
             </h2>
           </div>
@@ -46,7 +52,7 @@ export default function Registro() {
               <div>
                 <label for="direccion">
                   {" "}
-                  <i class="bi bi-house-door-fill"></i> Direccion
+                  <i class="bi bi-house-door-fill"></i> Dirección
                 </label>
                 <input
                   type="text"
@@ -77,7 +83,7 @@ export default function Registro() {
                 <div>
                   <label for="numero">
                     {" "}
-                    <i class="bi bi-house-door-fill"></i> Numero
+                    <i class="bi bi-house-door-fill"></i> Número
                   </label>
                   <input
                     type="number"
@@ -150,7 +156,7 @@ export default function Registro() {
               </div>
               <div class="mb-4">
                 <label for="telefono">
-                  <i class="bi bi-phone-fill"></i> Telefono
+                  <i class="bi bi-phone-fill"></i> Teléfono
                 </label>
                 <input
                   type="cel"
@@ -180,7 +186,7 @@ export default function Registro() {
 
               <div class="mb-4  ">
                 <label for="genero">
-                  <i class="bi bi-gender-ambiguous"></i> Genero:
+                  <i class="bi bi-gender-ambiguous"></i> Género:
                 </label>
                 <input
                   type="radio"
@@ -214,18 +220,16 @@ export default function Registro() {
                 <div class="nombre text "></div>
               </div>
               <br></br>
-             
-
               <div class="mb-2">
-                <button
-                  id="botton"
-                  class="col-12 btn btn-success d-flex justify-content-between  "
-                >
-                  <p class="text-center ">Registrarse </p>
-                </button>
+              <Button variant="success">Registrarte</Button>{' '}
               </div>
             </form>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="row">
+          <Footer />
         </div>
       </section>
     </div>

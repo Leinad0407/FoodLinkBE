@@ -21,7 +21,7 @@ import CreateDonations from "./pages/CreateDonations";
 import ProfileEditDonors from "./pages/ProfileEditDonors/profileEditDonors";
 // import BookedDonations from "./pages/bookedDonations/BookedDonations";
 
-import BookedDonations from "./pages/BookedDonations/bookedDonations";
+import BookedDonations from "./pages/BookedDonations/BookedDonations";
 
 import UploadImage from "./pages/UploadImage/uploadImage";
 
