@@ -6,19 +6,25 @@
 $mainColor: #57B186;
 $secondaryColor: #3C5298;
 $transparent: #9f9f9f0a;
-$lightgrey: #9f9f9f6c;
+$lightgrey: #9f9f9f64;
 
 $bgMainColor:#f2f4f4;
 
 $mainWeight: 500;
 
+.spinner{
+     
+     top: 50%;
+     left: 50%;
+     margin-top: 35vh;
 
-.postContainer{
-    width: 90%;
-    border: 1px solid black;
-    box-sizing: border-box;
-    background-color: $lightgrey;
 }
+// .postContainer{
+//     width: 90%;
+//     border: 1px solid black;
+//     box-sizing: border-box;
+//     background-color: $lightgrey;
+// }
 
 
 .colpost{
@@ -27,6 +33,8 @@ $mainWeight: 500;
     min-height: 25rem;
     align-items: center;
     justify-content: center;
+    background-color: $lightgrey;
+    max-width: fit-content;
 }
 
  
@@ -39,14 +47,7 @@ $mainWeight: 500;
  
 
 
-.colpost{
-   display: flex;
- flex-wrap: wrap;
 
-
-  align-items: center;
-   justify-content: center;
-}
 
 .fatherContainer{
    background-color: $bgMainColor;
@@ -98,7 +99,7 @@ Figure.Image{
 }
 
 .descriptionContainer{
-      background-color: $transparent;
+background-color: none;
     text-align: justify;
      width: 100%;
 }
@@ -166,9 +167,7 @@ Figure.Image{
      margin-left: 2rem;
 }
 
-.card-text{
-     text-transform:uppercase;
-}
+
 .searchContainer{
       margin-left: auto;
      display: flex;

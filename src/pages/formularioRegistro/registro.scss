@@ -1,3 +1,10 @@
+@import "../Donadores/Donadores.scss";
 .circleOption{
     margin: 0 0.5rem;
+}
+.divider{
+    height: 2px ;
+    width: 90%;
+    background-color: $secondaryColor;
+    
 }

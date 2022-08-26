@@ -1,3 +1,6 @@
+//Importamos estilos
+import "../Donadores/Donadores.scss";
+
 //Importamos componentes//
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
@@ -11,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 //importamos cosas de bootstrap//
 import { Figure, Card, Button } from "react-bootstrap";
 import { BiRestaurant } from "react-icons/bi";
+import { BsArrowLeft } from "react-icons/bs";
 
 //importamos servicios a utilizar
 
@@ -57,13 +61,23 @@ export default function BookedDonations() {
     )
   );
   return (
-    <div className="row">
-      <Header ph1="Donaciones" ph2="apartadas" />
-      <div className="container " id="main">
-        <div className="row colpost">{donationsUI}</div>
-      </div>
+    <div>
+      <div className="row">
+        <Header ph1="Donaciones" ph2="apartadas" />
+        <Button
+          id="backBtn"
+          className="col col-lg-2 selectButton"
+          variant="success"
+          onClick={() => navigate(-1)}
+        >
+          <BsArrowLeft size={25} />
+        </Button>
+        <div className="container " id="main">
+          <div className="container">{donationsUI}</div>
+        </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
