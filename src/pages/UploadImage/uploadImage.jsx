@@ -4,11 +4,7 @@ import FileUpload from "../../components/FileUpload/FileUpload";
 import FileList from "../../components/FileList/FileList";
 
 export default function UploadImage() {
-  const [files, setFiles] = useState([
-    {
-      name: "myFile.pdf",
-    },
-  ]);
+  const [files, setFiles] = useState([]);
 
   const removeFile = (filename) => {
     setFiles(files.filter((file) => file.name !== filename));

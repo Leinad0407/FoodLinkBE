@@ -1,8 +1,13 @@
 import Header from "../../components/header/header";
+
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+import Footer from "../../components/footer/footer";
+
 import "./login.scss";
+import Form from "react-bootstrap/Form";
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");
