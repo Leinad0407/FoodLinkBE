@@ -86,6 +86,37 @@ export default function Donaciones() {
 
   return (
     <div className="row d-felx justify-content-center align-items-center">
+      <div className="searchContainer">
+        <Nav className="Nav" activeKey="/home">
+          <Nav.Item>
+            <Nav.Link className="navItem" href="/">
+              Página principal
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link className="navItem" href="/profile">
+              Ver Perfil
+            </Nav.Link>
+          </Nav.Item>
+          {/* <Nav.Item>
+                <Nav.Link className="navItem" href="/createDonations">
+                  Crear una Donación
+                </Nav.Link>
+              </Nav.Item> */}
+        </Nav>
+        <Stack direction="horizontal" gap={1}>
+          <Form.Control
+            value={search}
+            onChange={searcher}
+            type="text"
+            className="me-auto"
+            placeholder="Filtrar por dirección"
+          />
+          <Button id="searchButton" variant="secondary">
+            Buscar
+          </Button>
+        </Stack>
+      </div>
       <div className="row d-felx justify-content-center align-items-center">
         <div className="row container d-felx justify-content-center align-items-center">
           <div

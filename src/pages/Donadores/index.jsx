@@ -26,6 +26,7 @@ export default function Donaciones() {
 
   //RRD
   const navigate = useNavigate();
+
   useEffect(() => {
     setTimeout(() => {
       setDonationsPage(true);
@@ -34,15 +35,15 @@ export default function Donaciones() {
     // return () => clearTimeout(timeoutId);
   }, []);
 
-  //REQUEST A Donations
-  useEffect(() => {
-    const getDonationsQuery = async () => {
-      const donations = await getDonations();
+  // //REQUEST A Donations
+  // useEffect(() => {
+  //   const getDonationsQuery = async () => {
+  //     const donations = await getDonations();
 
-      setDonations(donations);
-    };
-    getDonationsQuery();
-  }, []);
+  //     setDonations(donations);
+  //   };
+  //   getDonationsQuery();
+  // }, []);
 
   //search function
   const searcher = (e) => {
@@ -64,37 +65,6 @@ export default function Donaciones() {
         <Header ph1="Comida Disponible " ph2=" en tu área" />
 
         <div className="row container">
-          <div className="searchContainer">
-            <Nav className="Nav" activeKey="/home">
-              <Nav.Item>
-                <Nav.Link className="navItem" href="/">
-                  Página principal
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link className="navItem" href="/profile">
-                  Ver Perfil
-                </Nav.Link>
-              </Nav.Item>
-              {/* <Nav.Item>
-                <Nav.Link className="navItem" href="/createDonations">
-                  Crear una Donación
-                </Nav.Link>
-              </Nav.Item> */}
-            </Nav>
-            <Stack direction="horizontal" gap={1}>
-              <Form.Control
-                value={search}
-                onChange={searcher}
-                type="text"
-                className="me-auto"
-                placeholder="Filtrar por dirección"
-              />
-              <Button id="searchButton" variant="secondary">
-                Buscar
-              </Button>
-            </Stack>
-          </div>
           <div className="container " id="main">
             {!donationsPage && <Spinner className="spinner" color="success" />}
             {donationsPage && <DonationsAv />}

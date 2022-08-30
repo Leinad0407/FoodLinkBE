@@ -39,11 +39,12 @@ $mainWeight: 500;
 
  
 
-.postContainer{
-    width: 90%;
-  border: 1px solid black;
-   box-sizing: border-box;
-}
+// .postContainer{
+//     width: 100%;
+//   border: 1px solid black;
+//    box-sizing: border-box;
+   
+// }
  
 
 
@@ -60,7 +61,8 @@ body{
      align-items: center;
 }
 #postContainer{
-
+     max-width: 345px;
+     max-height: 400px;
     //  border: 1px solid $lightgrey;
      border-radius: 20px;
     //  background-color: $lightgrey;
@@ -157,10 +159,13 @@ background-color: none;
 
  //Empieza estilizado
 .selectButton{
+     display: flex;
+     flex-direction: row;
      border-radius: 10px;
     background-color: $mainColor;
     font-weight: $mainWeight;
      padding: 0.5rem;
+     max-width: 90%;
      
 }
 #backBtn{
@@ -204,12 +209,19 @@ background-color: none;
     
 }
 .foodPhoto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+     // position: absolute;
+     // clip: inherit;
+     // left:50%; top:50%;
+     // transform: translate(-50%,-50%);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
     border-radius: 1rem;
+min: height 10rem; ;
     max-height: 10rem;
-    width: 100%;
+    min-width: 90%;
+//     width: 100%;
+    
 
 
 }
@@ -230,30 +242,30 @@ background-color: none;
      transform: scale(1.05);
 
 }
-.foodPhoto{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     border-radius: 1rem;
-}
+
 
 .figurePostContainer{
      display: flex;
      justify-content: center;
      align-items: center;
      width: 100%;
+     height: 100%;
+     clip-path: polygon(50%,50%,50%,50%);
 }
 .forkLogo{
      margin-left: 1rem;
 }
-.navItem{
-     color: $secondaryColor;
+.nav-item{
+     color: white!important;
      font-weight: $mainWeight;
+     
 }
 .navItem:hover{
-     color: $mainColor;
+     color: white;
      text-decoration: underline;
 }
-// .Nav{
-//      margin-left: 2rem;
-// }
+.Nav{
+     border: 2px solid #3C5298;
+     
+     
+}
