@@ -17,10 +17,13 @@ import { BiRestaurant } from "react-icons/bi";
 import { BsArrowLeft } from "react-icons/bs";
 
 //importamos servicios a utilizar
+import { PatchPerson } from "../../services/changeDonationStatus";
 
 export default function BookedDonations() {
   const [bookedDonations, setBookedDonations] = useState([]);
 
+  const [status, setStatus] = useState("");
+  const [id, setID] = useState("");
   //RRD
   const navigate = useNavigate();
 
@@ -33,12 +36,12 @@ export default function BookedDonations() {
     };
     getDonationsQuery();
   }, []);
-  console.log(bookedDonations);
+
   const donationsUI = bookedDonations.map(
     ({ _id, foodDescription, foodPhoto, index }) => (
       <div
         key={index}
-        onClick={() => navigate(`detail/${_id}`)}
+        // onClick={() => navigate(`detail/${_id}`)}
         className="colpost  col-12 col-xl-3 col-lg-4 col-sm-12 col-xs-12"
         id="postContainer"
       >
@@ -51,8 +54,12 @@ export default function BookedDonations() {
             <strong className="text-uppercase">Descripción:</strong>
 
             <Card.Text>{foodDescription}</Card.Text>
-            <Button className="selectButton" variant="success">
-              Seleccionar
+            <Button
+              className="selectButton"
+              variant="warning"
+              onClick={() => navigate(`${_id}`)}
+            >
+              Mostrar donación
               <BiRestaurant className="forkLogo" size={20}></BiRestaurant>
             </Button>
           </Card.Body>
@@ -72,8 +79,13 @@ export default function BookedDonations() {
         >
           <BsArrowLeft size={25} />
         </Button>
-        <div className="container " id="main">
-          <div className="container">{donationsUI}</div>
+        <div
+          className="container d-flex justify-content-center align-items-center"
+          id="main"
+        >
+          <div className="container row d-flex justify-content-center align-items-center">
+            {donationsUI}
+          </div>
         </div>
 
         <Footer />
