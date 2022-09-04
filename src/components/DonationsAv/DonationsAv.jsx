@@ -68,7 +68,6 @@ export default function Donaciones() {
         <div className="figurePostContainer">
           <Figure.Image className="foodPhoto" src={foodPhoto} />
         </div>
-
         <div className="descriptionContainer">
           <Card.Body>
             <strong className="text-uppercase">Descripción:</strong>
@@ -129,7 +128,7 @@ export default function Donaciones() {
           </div>
 
           <div className="utilitiesContainer"></div>
-          <navbar className="navBar">
+          <nav className="navBar">
             <AiOutlineHome
               onClick={() => navigate("/donations")}
               size={100}
@@ -143,7 +142,7 @@ export default function Donaciones() {
               className="navIcon"
               onClick={() => navigate("/profile")}
             />
-          </navbar>
+          </nav>
         </div>
 
         <Outlet />

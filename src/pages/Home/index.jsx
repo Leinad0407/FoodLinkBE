@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+
 import { useNavigate } from "react-router-dom";
 
 import Footer from "../../components/footer/footer";
@@ -23,7 +23,7 @@ export default function Home() {
               <h1>
                 Actualmente se desperdicia 30,000 toneladas de comida en México
               </h1>
-              <p class="caption-car">
+              <p className="caption-car">
                 Con esto se podría alimentar a más de 20 millones de mexicanos.
               </p>
             </Carousel.Caption>
@@ -37,7 +37,7 @@ export default function Home() {
 
             <Carousel.Caption>
               <h1>¿Quieres donar comida?</h1>
-              <p class="caption-car">
+              <p className="caption-car">
                 Rescatamos alimento en tu ciudad, mientras evitamos el
                 desperdicio.
               </p>
@@ -52,7 +52,7 @@ export default function Home() {
 
             <Carousel.Caption>
               <h1>¿Buscas Comida?</h1>
-              <p class="caption-car">
+              <p className="caption-car">
                 1/3 del alimento que se produce en México se desperdicia,
                 nosotros te podemos ayudar.
               </p>
@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <div class=" text-Welcome">
+        <div className=" text-Welcome">
           <h2 id="welcome-text">Bienvenido a FoodLink®</h2>
           <p>
             FOODLINK surge de la necesidad de reducir el desperdicio de la
