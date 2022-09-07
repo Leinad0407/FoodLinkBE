@@ -37,7 +37,7 @@ function App() {
         <Route path="donations" element={<Donadores />} />
         <Route path="donations/detail/:id" element={<DonationDetail />} />
         <Route
-          path="donations/detail/:id/OrderReady"
+          path="donations/detail/:id/orderReady/:id"
           element={<OrderReady />}
         />
 

@@ -34,7 +34,7 @@ export default function DonationDetail() {
 
   const handleClick = () => {
     BookDon(id, newStatus);
-    navigate("orderReady");
+    navigate(`orderReady/${id}`);
   };
 
   return (
