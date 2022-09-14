@@ -25,7 +25,8 @@
     align-items: center;
     padding: 1.5rem;
     text-transform: uppercase;
-    font-weight: 500;
+    font-size: small;
+    font-weight: 400;
     width: 100%;
 
 }
@@ -37,4 +38,9 @@
     background-color: $secondaryColor;
     height: 2px;
     border-radius: 10px;;
+}
+#footerLogo{
+    height: 5rem;
+    width: auto;
+    
 }

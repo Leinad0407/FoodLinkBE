@@ -20,7 +20,6 @@ import Login from "./pages/Login/login";
 import CreateDonations from "./pages/CreateDonations";
 import ProfileEditDonors from "./pages/ProfileEditDonors/profileEditDonors";
 import BookedDonations from "./pages/bookedDonations/BookedDonations";
-
 import UploadImage from "./pages/UploadImage/uploadImage";
 
 function App() {
@@ -42,9 +41,14 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
         <Route path="/profile/donations" element={<UserDonations />} />
-        <Route path="/profile/bookedDonations" element={<BookedDonations />} />
+        <Route
+          path="/profile/bookedDonations"
+          index
+          element={<BookedDonations />}
+        />
+        <Route path="/profile/bookedDonations/:id" element={<Reactivate />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/registroDonador" element={<RegistroDonador />} />
+        {/* <Route path="/registroDonador" element={<RegistroDonador />} /> */}
         <Route path="/createDonations" element={<CreateDonations />} />
         <Route path="/profileEditDonors" element={<ProfileEditDonors />} />
         <Route path="/images" element={<UploadImage />} />

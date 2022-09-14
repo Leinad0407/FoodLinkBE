@@ -10,6 +10,9 @@
     border-radius: 10px;
     margin: 0 0 2rem 0 ;
     border: 1px solid $lightgrey;
+    max-height: 50vh;
+    max-width: 100vh;
+
 }
 #img:hover{
     border-radius: 45px;

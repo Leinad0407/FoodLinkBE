@@ -25,10 +25,12 @@ export default function CreateDonations() {
   const [expDate, setExpDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Jalando Ando");
+    setStatus = "active";
+
     const data = {
       id,
       userName,
@@ -41,8 +43,8 @@ export default function CreateDonations() {
       expDate,
       foodDescription,
       foodCondition,
+      status,
     };
-    console.log(data);
 
     try {
       await createPost(data);

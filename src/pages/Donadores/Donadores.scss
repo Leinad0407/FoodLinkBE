@@ -6,18 +6,25 @@
 $mainColor: #57B186;
 $secondaryColor: #3C5298;
 $transparent: #9f9f9f0a;
-$lightgrey: #9f9f9f6c;
+$lightgrey: #9f9f9f64;
 
 $bgMainColor:#f2f4f4;
 
 $mainWeight: 500;
 
+.spinner{
+     
+     top: 50%;
+     left: 50%;
+     margin-top: 35vh;
 
-.postContainer{
-    width: 90%;
-    border: 1px solid black;
-    box-sizing: border-box;
 }
+// .postContainer{
+//     width: 90%;
+//     border: 1px solid black;
+//     box-sizing: border-box;
+//     background-color: $lightgrey;
+// }
 
 
 .colpost{
@@ -26,26 +33,22 @@ $mainWeight: 500;
     min-height: 25rem;
     align-items: center;
     justify-content: center;
+    background-color: $lightgrey;
+    max-width: fit-content;
 }
 
  
 
-.postContainer{
-    width: 90%;
-  border: 1px solid black;
-   box-sizing: border-box;
-}
+// .postContainer{
+//     width: 100%;
+//   border: 1px solid black;
+//    box-sizing: border-box;
+   
+// }
  
 
 
-.colpost{
-   display: flex;
- flex-wrap: wrap;
 
-
-  align-items: center;
-   justify-content: center;
-}
 
 .fatherContainer{
    background-color: $bgMainColor;
@@ -58,7 +61,8 @@ body{
      align-items: center;
 }
 #postContainer{
-
+     max-width: 345px;
+     max-height: 400px;
     //  border: 1px solid $lightgrey;
      border-radius: 20px;
     //  background-color: $lightgrey;
@@ -97,7 +101,7 @@ Figure.Image{
 }
 
 .descriptionContainer{
-      background-color: $transparent;
+background-color: none;
     text-align: justify;
      width: 100%;
 }
@@ -155,19 +159,20 @@ Figure.Image{
 
  //Empieza estilizado
 .selectButton{
+     display: flex;
+     flex-direction: row;
      border-radius: 10px;
     background-color: $mainColor;
     font-weight: $mainWeight;
      padding: 0.5rem;
+     max-width: 90%;
      
 }
 #backBtn{
      margin-left: 2rem;
 }
 
-.card-text{
-     text-transform:uppercase;
-}
+
 .searchContainer{
       margin-left: auto;
      display: flex;
@@ -204,12 +209,19 @@ Figure.Image{
     
 }
 .foodPhoto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+     // position: absolute;
+     // clip: inherit;
+     // left:50%; top:50%;
+     // transform: translate(-50%,-50%);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
     border-radius: 1rem;
+min: height 10rem; ;
     max-height: 10rem;
-    width: 100%;
+    min-width: 90%;
+//     width: 100%;
+    
 
 
 }
@@ -230,19 +242,30 @@ Figure.Image{
      transform: scale(1.05);
 
 }
-.foodPhoto{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     border-radius: 1rem;
-}
+
 
 .figurePostContainer{
      display: flex;
      justify-content: center;
      align-items: center;
      width: 100%;
+     height: 100%;
+     clip-path: polygon(50%,50%,50%,50%);
 }
 .forkLogo{
      margin-left: 1rem;
+}
+.nav-item{
+     color: white!important;
+     font-weight: $mainWeight;
+     
+}
+.navItem:hover{
+     color: white;
+     text-decoration: underline;
+}
+.Nav{
+     border: 2px solid #3C5298;
+     
+     
 }
