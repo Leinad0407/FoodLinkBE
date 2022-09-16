@@ -1,7 +1,7 @@
-import "../UploadImage/UploadImage.scss";
+import "./UploadImage.scss";
 import { useState } from "react";
-import FileUpload from "../../components/FileUpload/FileUpload";
-import FileList from "../../components/FileList/FileList";
+import FileUpload from "./FileUpload/FileUpload";
+import FileList from "./FileList/FileList";
 
 export default function UploadImage() {
   const [files, setFiles] = useState([]);

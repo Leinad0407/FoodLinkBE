@@ -20,7 +20,7 @@ import Login from "./pages/Login/login";
 import CreateDonations from "./pages/CreateDonations";
 import ProfileEditDonors from "./pages/ProfileEditDonors/profileEditDonors";
 import BookedDonations from "./pages/bookedDonations/BookedDonations";
-import UploadImage from "./pages/UploadImage/uploadImage";
+import UploadImage from "./components/UploadImage/uploadImage";
 
 function App() {
   return (
@@ -46,12 +46,12 @@ function App() {
           index
           element={<BookedDonations />}
         />
-        <Route path="/profile/bookedDonations/:id" element={<Reactivate />} />
+        {/* <Route path="/profile/bookedDonations/:id" element={<Reactivate />} /> */}
         <Route path="/registro" element={<Registro />} />
-        {/* <Route path="/registroDonador" element={<RegistroDonador />} /> */}
+        <Route path="/registroDonador" element={<RegistroDonador />} />
         <Route path="/createDonations" element={<CreateDonations />} />
         <Route path="/profileEditDonors" element={<ProfileEditDonors />} />
-        <Route path="/images" element={<UploadImage />} />
+        <Route path="/foodImages" element={<UploadImage />} />
       </Routes>
     </div>
   );

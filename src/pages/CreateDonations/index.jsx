@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import UploadImage from "../UploadImage/uploadImage";
+import UploadImage from "../../components/UploadImage/uploadImage";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
