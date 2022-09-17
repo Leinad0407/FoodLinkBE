@@ -1,4 +1,3 @@
-import "./UserDonations.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Stack from "react-bootstrap/Stack";
@@ -11,17 +10,28 @@ import { AiOutlineUser } from "react-icons/ai";
 import { getDonations } from "../../services/postDonaciones";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
+import { Nav } from "react-bootstrap";
 
-import Footer from "../../components/footer/footer";
+import "../../pages/Donadores/Donadores.scss";
+
 import Header from "../../components/header/header";
-
-export default function UserDonations() {
+import Footer from "../../components/footer/footer";
+export default function Donaciones() {
   const [donations, setDonations] = useState([]);
   const [search, setSerarch] = useState("");
 
   //RRD
   const navigate = useNavigate();
+
+  //REQUEST A Donations
+  useEffect(() => {
+    const getDonationsQuery = async () => {
+      const donations = await getDonations();
+
+      setDonations(donations);
+    };
+    getDonationsQuery();
+  }, []);
 
   //search function
   const searcher = (e) => {
@@ -34,7 +44,7 @@ export default function UserDonations() {
   const result = !search
     ? donations
     : donations.filter((dato) =>
-        dato.foodDescription.toUpperCase().includes(search.toUpperCase())
+        dato.address.toUpperCase().includes(search.toUpperCase())
       );
   // let result = [];
   // if (!search) {
@@ -47,39 +57,24 @@ export default function UserDonations() {
   //   });
   // }
 
-  //REQUEST A Donations
-  useEffect(() => {
-    const getDonationsQuery = async () => {
-      const donations = await getDonations();
-
-      setDonations(donations);
-    };
-    getDonationsQuery();
-  }, []);
-  console.log(donations);
-
   const donationsUI = result.map(
-    ({ _id, food, postedDate, expDate, foodDescription, foodPhoto, index }) => (
+    ({ _id, foodDescription, foodPhoto, address, index }) => (
       <div
         key={index}
         onClick={() => navigate(`detail/${_id}`)}
-        className="colpost  col-12 col-xl-3 col-lg-4 col-sm-12 col-xs-12"
+        className="colpost container col-12 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-xs-12"
         id="postContainer"
       >
         <div className="figurePostContainer">
           <Figure.Image className="foodPhoto" src={foodPhoto} />
         </div>
-
         <div className="descriptionContainer">
           <Card.Body>
             <strong className="text-uppercase">Descripción:</strong>
-            <Card.Text>{foodDescription}</Card.Text>
 
-            <Card.Text>Fecha de publicación: {postedDate}</Card.Text>
-            <Card.Text>Clasificación: {food}</Card.Text>
-            <Card.Text>Fecha de expiración: {expDate}</Card.Text>
+            <Card.Text>{foodDescription}</Card.Text>
             <Button className="selectButton" variant="success">
-              Ver detalle
+              Seleccionar
               <BiRestaurant className="forkLogo" size={20}></BiRestaurant>
             </Button>
           </Card.Body>
@@ -89,58 +84,51 @@ export default function UserDonations() {
   );
 
   return (
-    <div>
-      <div className="row">
-        <Header ph1="Tus donaciones activas" ph2="" />
-        <Nav
-          activeKey="/home"
-          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-        >
+    <div className="row d-felx justify-content-center align-items-center">
+      <div className="searchContainer">
+        <Nav className="Nav" activeKey="/home">
           <Nav.Item>
-            <Nav.Link href="/">Página principal</Nav.Link>
+            <Nav.Link className="navItem" href="/">
+              Página principal
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/profileEditDonors">Editar Perfil</Nav.Link>
+            <Nav.Link className="navItem" href="/profile">
+              Ver Perfil
+            </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/createDonations">Crear una Donación</Nav.Link>
-          </Nav.Item>
+          {/* <Nav.Item>
+                <Nav.Link className="navItem" href="/createDonations">
+                  Crear una Donación
+                </Nav.Link>
+              </Nav.Item> */}
         </Nav>
-      </div>
-      <div className="row">
-        <div className="searchContainer">
-          <span></span>
-          <p>Alimento</p>
-
-          <input
+        <Stack direction="horizontal" gap={1}>
+          <Form.Control
             value={search}
             onChange={searcher}
             type="text"
-            placeholder="Escriba el nombre del platillo"
-            className="form-control"
+            className="me-auto"
+            placeholder="Filtrar por dirección"
           />
-        </div>
-        <div className="row container">
-          <div className="searchContainer">
-            <Stack direction="horizontal" gap={1}>
-              <Form.Control
-                value={search}
-                onChange={searcher}
-                type="text"
-                className="me-auto"
-                placeholder="Filtrar por dirección"
-              />
-              <Button id="searchButton" variant="secondary">
-                Buscar
-              </Button>
-            </Stack>
-          </div>
-          <div className="container " id="main">
-            <div className="row colpost">{donationsUI}</div>
+          <Button id="searchButton" variant="secondary">
+            Buscar
+          </Button>
+        </Stack>
+      </div>
+      <div className="row d-felx justify-content-center align-items-center">
+        <div className="row container d-felx justify-content-center align-items-center">
+          <div
+            className="container d-felx justify-content-center align-items-center "
+            id="main"
+          >
+            <div className="row d-felx justify-content-center align-items-center">
+              {donationsUI}
+            </div>
           </div>
 
           <div className="utilitiesContainer"></div>
-          <navbar className="navBar">
+          <nav className="navBar">
             <AiOutlineHome
               onClick={() => navigate("/donations")}
               size={100}
@@ -154,9 +142,9 @@ export default function UserDonations() {
               className="navIcon"
               onClick={() => navigate("/profile")}
             />
-          </navbar>
+          </nav>
         </div>
-        <Footer />
+
         <Outlet />
       </div>
     </div>

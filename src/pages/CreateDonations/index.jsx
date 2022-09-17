@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import UploadImage from "../UploadImage/uploadImage";
+import UploadImage from "../../components/UploadImage/uploadImage";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
@@ -25,10 +25,12 @@ export default function CreateDonations() {
   const [expDate, setExpDate] = useState("");
   const [foodDescription, setFoodDescription] = useState("");
   const [foodCondition, setFoodCondition] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Jalando Ando");
+    setStatus = "active";
+
     const data = {
       id,
       userName,
@@ -41,8 +43,8 @@ export default function CreateDonations() {
       expDate,
       foodDescription,
       foodCondition,
+      status,
     };
-    console.log(data);
 
     try {
       await createPost(data);
@@ -671,14 +673,12 @@ export default function CreateDonations() {
                   </Form.Select>
                 </InputGroup.Text>
               </InputGroup>
-
-              <InputGroup>
-                <UploadImage
-                  className="mb-3"
-                  value={foodPhoto}
-                  onChange={(e) => setFoodPhoto(e.target.value)}
-                ></UploadImage>
-              </InputGroup>
+              {/* <InputGroup
+                value={foodPhoto}
+                onChange={(e) => setFoodPhoto(e.target.value)}
+              >
+                <UploadImage></UploadImage>
+              </InputGroup> */}
 
               <InputGroup
                 className="mb-3"

@@ -1,14 +1,10 @@
-import "../UploadImage/UploadImage.scss";
+import "./UploadImage.scss";
 import { useState } from "react";
-import FileUpload from "../../components/FileUpload/FileUpload";
-import FileList from "../../components/FileList/FileList";
+import FileUpload from "./FileUpload/FileUpload";
+import FileList from "./FileList/FileList";
 
 export default function UploadImage() {
-  const [files, setFiles] = useState([
-    {
-      name: "myFile.pdf",
-    },
-  ]);
+  const [files, setFiles] = useState([]);
 
   const removeFile = (filename) => {
     setFiles(files.filter((file) => file.name !== filename));

@@ -19,11 +19,8 @@ import OrderReady from "./pages/OrderReady/orderReady";
 import Login from "./pages/Login/login";
 import CreateDonations from "./pages/CreateDonations";
 import ProfileEditDonors from "./pages/ProfileEditDonors/profileEditDonors";
-// import BookedDonations from "./pages/bookedDonations/BookedDonations";
-
-import BookedDonations from "./pages/BookedDonations/BookedDonations";
-
-import UploadImage from "./pages/UploadImage/uploadImage";
+import BookedDonations from "./pages/bookedDonations/BookedDonations";
+import UploadImage from "./components/UploadImage/uploadImage";
 
 function App() {
   return (
@@ -44,12 +41,17 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
         <Route path="/profile/donations" element={<UserDonations />} />
-        <Route path="/profile/bookedDonations" element={<BookedDonations />} />
+        <Route
+          path="/profile/bookedDonations"
+          index
+          element={<BookedDonations />}
+        />
+        {/* <Route path="/profile/bookedDonations/:id" element={<Reactivate />} /> */}
         <Route path="/registro" element={<Registro />} />
         <Route path="/registroDonador" element={<RegistroDonador />} />
         <Route path="/createDonations" element={<CreateDonations />} />
         <Route path="/profileEditDonors" element={<ProfileEditDonors />} />
-        <Route path="/images" element={<UploadImage />} />
+        <Route path="/foodImages" element={<UploadImage />} />
       </Routes>
     </div>
   );

@@ -1,14 +1,13 @@
 import "./header.scss";
 import { useNavigate } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
 
 export default function Header({ ph1, ph2 }) {
   const navigate = useNavigate();
   return (
     <div className="titleContainer" onClick={() => navigate("/")}>
-        <Container>
+      {/* <Container>
           <Navbar.Brand href="#home">
             <img
               src="./images/logo.png"
@@ -18,7 +17,7 @@ export default function Header({ ph1, ph2 }) {
               alt="React Bootstrap logo"
             />
           </Navbar.Brand>
-        </Container>
+        </Container> */}
       <h4 className="boldTitle">
         {ph1} {ph2}
       </h4>
