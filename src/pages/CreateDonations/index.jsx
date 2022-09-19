@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../CreateDonations/CreateDonations.scss";
-import UploadImage from "../../components/UploadImage/uploadImage";
 import { create as createPost } from "../../services/createPostDonations";
 import Card from "react-bootstrap/Card";
 import Figure from "react-bootstrap/Figure";
@@ -9,11 +8,16 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import moment from "moment";
+import UploadImage from "../../components/UploadImage/uploadImage";
 
 import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
+//services
+import { foodImage } from "../../services/foodImage";
+
 export default function CreateDonations() {
+  //Input
   const [id, setId] = useState("");
   const [userName, setUserName] = useState("");
   const [food, setFood] = useState("");
@@ -52,6 +56,20 @@ export default function CreateDonations() {
       console.log(error);
     }
   };
+
+  //request API
+
+  useEffect(() => {
+    const getFoodQuery = async () => {
+      const dataImage = await foodImage();
+      const dataLength = dataImage.length;
+      console.log(dataLength);
+      setFoodPhoto(dataImage[dataLength - 1].photoUrl);
+    };
+    getFoodQuery();
+  }, []);
+
+  console.log(foodPhoto);
 
   //Recomendations
   const recomendaciones = (food) => {
@@ -466,6 +484,8 @@ export default function CreateDonations() {
   //RRD
   const navigate = useNavigate();
 
+  console.log(foodPhoto);
+
   return (
     <div className="masterContainer container">
       <div>
@@ -673,13 +693,7 @@ export default function CreateDonations() {
                   </Form.Select>
                 </InputGroup.Text>
               </InputGroup>
-              {/* <InputGroup
-                value={foodPhoto}
-                onChange={(e) => setFoodPhoto(e.target.value)}
-              >
-                <UploadImage></UploadImage>
-              </InputGroup> */}
-
+              <UploadImage></UploadImage>
               <InputGroup
                 className="mb-3"
                 value={postedDate}

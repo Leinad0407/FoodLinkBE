@@ -4,7 +4,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import "./FileUpload.scss";
 
 const FileUpload = ({ files, setFiles, removeFile }) => {
-  const uploadHandler = (event) => {
+  const uploadHandler = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
     file.isUploading = true;
@@ -14,7 +14,7 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
     const formData = new FormData();
     formData.append("newFile", file, file.name);
 
-    axios
+    const res = await axios
       .post("http://localhost:8080/imagesFood", formData)
       .then((res) => {
         file.isUploading = false;
