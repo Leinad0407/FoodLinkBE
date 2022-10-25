@@ -7,6 +7,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 //import servicios
 import { PatchPerson } from "../../services/changeDonationStatus";
+import React from "react";
 
 //import estilos
 import "./confirmReactivate.css";

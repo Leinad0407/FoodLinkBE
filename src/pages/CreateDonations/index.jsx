@@ -9,6 +9,7 @@ import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import moment from "moment";
 import UploadImage from "../../components/UploadImage/uploadImage";
+import React from "react";
 
 import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";

@@ -1,3 +1,4 @@
+import React from "react";
 // //Importamos componentes//
 // import Header from "../../components/header/header";
 // import Footer from "../../components/footer/footer";

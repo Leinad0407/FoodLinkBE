@@ -3,6 +3,7 @@ import TitAndSub from "../../components/tit&sub/tit&sub";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
+import React from "react";
 
 //import de componentes necesarios
 import Footer from "../../components/footer/footer";

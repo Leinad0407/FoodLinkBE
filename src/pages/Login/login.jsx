@@ -8,6 +8,7 @@ import Footer from "../../components/footer/footer";
 
 import "./login.scss";
 import Form from "react-bootstrap/Form";
+import React from "react";
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");

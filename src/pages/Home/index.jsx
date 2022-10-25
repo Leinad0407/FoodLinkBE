@@ -3,6 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import React from "react";
 
 import { useNavigate } from "react-router-dom";
 

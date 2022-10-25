@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import { useState } from "react";
+import React from "react";
 
 //import de componentes necesarios
 import Footer from "../../components/footer/footer";

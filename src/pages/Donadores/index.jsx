@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { Spinner } from "reactstrap";
+import React from "react";
 
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";

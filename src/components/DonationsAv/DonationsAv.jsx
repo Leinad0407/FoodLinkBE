@@ -11,6 +11,7 @@ import { getDonations } from "../../services/postDonaciones";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
+import React from "react";
 
 import "../../pages/Donadores/Donadores.scss";
 

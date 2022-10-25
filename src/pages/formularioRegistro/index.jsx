@@ -13,6 +13,7 @@ import { useState } from "react";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import Button from "react-bootstrap/Button";
+import React from "react";
 
 export default function Registro() {
   const navigate = useNavigate();

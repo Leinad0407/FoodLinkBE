@@ -4,6 +4,7 @@ import "../Donadores/Donadores.scss";
 //Importamos componentes//
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
+import React from "react";
 
 //Importamos demás servicios
 import { getBookedDonations } from "../../services/getBookedDonations";

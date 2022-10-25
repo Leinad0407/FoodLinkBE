@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createNewUser, postPerson } from "../../services/CreateNewUser";
+import React from "react";
 
 export default function RegistroFisica() {
   const navigate = useNavigate();

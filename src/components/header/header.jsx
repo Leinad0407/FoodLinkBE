@@ -2,6 +2,7 @@ import "./header.scss";
 import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import React from "react";
 
 export default function Header({ ph1, ph2 }) {
   const navigate = useNavigate();

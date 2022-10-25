@@ -12,6 +12,7 @@ import { getDonations } from "../../services/postDonaciones";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import React from "react";
 
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";

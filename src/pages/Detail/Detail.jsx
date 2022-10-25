@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { retrieve as retrieveDonation } from "../../services/retrieveDonation";
 import { useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
+import React from "react";
 
 import Button from "react-bootstrap/Button";
 import "./Details.scss";
